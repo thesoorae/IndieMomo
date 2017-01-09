@@ -7,12 +7,12 @@ Heroku Link
 ## Minimum Viable Product
 Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data, and sufficient CSS styling:
 
-[ ] Hosting on Heroku
-[ ] New account creation, login, and guest/demo login
-[ ] Profiles
-[ ] Campaigns (Batches)
-[ ] Contributions (Orders)
-[ ] Rewards (Order Options)
+- [ ] Hosting on Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Profiles
+- [ ] Campaigns (Batches)
+- [ ] Contributions (Orders)
+- [ ] Rewards (Order Options)
 
 
 ## Design Docs
@@ -46,12 +46,12 @@ Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails a
 **Objective:** Show user profile page on click in nav bar
 
 ## Bonus Features (TBD)
-[ ] Categories
-[ ] Location-based search / Map
-[ ] Reviews on batch detail page 
-[ ] Chef detail container on batch detail page
-[ ] Product detail container on batch detail page
-[ ] Product detail container on batch detail page
-[ ] Follows
-[ ] Videos
-[ ] User features (my batches, edit, delete)
+- [ ] Categories
+- [ ] Location-based search / Map
+- [ ] Reviews on batch detail page
+- [ ] Chef detail container on batch detail page
+- [ ] Product detail container on batch detail page
+- [ ] Product detail container on batch detail page
+- [ ] Follows
+- [ ] Videos
+- [ ] User features (my batches, edit, delete)
