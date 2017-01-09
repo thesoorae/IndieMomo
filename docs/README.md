@@ -36,16 +36,16 @@ Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails a
 ### Phase 3: Styling and Rendering Info on Batch Detail Page (summary only) (2 days)
 **Objective:** Batch title, summary, user info, goal, progress tracker can be displayed on page  
 
-## Phase 4: Styling and rendering images and options on Batch Detail Page (1 day)
+### Phase 4: Styling and rendering images and options on Batch Detail Page (1 day)
 **Objective:** Image slider, options can be displayed on page
 
-## Phase 5: Home Page: Batch Brief Components, Batch Brief Slider (2 day)
+### Phase 5: Home Page: Batch Brief Components, Batch Brief Slider (2 day)
 **Objective:** Get data and render batch brief components and slider by zip code(?), home page nav header
 
-## Phase 6: User Profile Page (1 day)
+### Phase 6: User Profile Page (1 day)
 **Objective:** Show user profile page on click in nav bar
 
-## Bonus Features (TBD)
+### Bonus Features (TBD)
 - [ ] Categories
 - [ ] Location-based search / Map
 - [ ] Reviews on batch detail page
