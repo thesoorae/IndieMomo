@@ -1,12 +1,13 @@
-### Sample State
+# Sample State
+
 
 state = {
   currentUser: {:id, :username},
   relevantBatches: {
-    1: {:id, :title, :category, :description, images:[{:id, :url}...], :goal, :address, orders:[{:id, :userId, :order_qty}], chef:{:id, :username, :image, :description, :video, :certifications }, ...}
+    1: {:id, :title, :category, :description, :order_description, images:[{:id, :url}...], :goal, :zip_code, orders:[{:id, :userId, :order_qty}], chef:{:id, :username, :image, :description, :video, :certifications }, ...}
     ...}
 
-  currentBatch: {:id, :title, :category, :description, images:[{:id, :url}...], :goal, :address}
+  currentBatch: {:id, :title, :category, :description, images:[{:id, :url}...], :goal, :zip_code}
 
   forms: {
     signup: {errors:[]},
