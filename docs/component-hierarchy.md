@@ -1,4 +1,4 @@
-### Component Hierarchy
+# Component Hierarchy
 
 ## Login
 
@@ -41,7 +41,7 @@
   - **OrdersOptionsIndex**
     - OrdersOptionsItems
 
-## New Batch Form
+## New Batch Form (may not make)
 - Header
 - **NewBatchFormContainer**
   - NewBatchForm
@@ -49,10 +49,19 @@
 ## Batch Details Form
 - Header
 - BatchDetailsHeader
-- **BatchDetailsFormContainer
+- **BatchDetailsFormContainer**
   - BatchDetailsForm
 
-### Routes
+## User Profile Page
+- Header
+- **UserProfileContainer**
+  - UserInfo
+  - MyOrders
+  - MySales
+  
+
+# Routes
+
 | Path | Component |
 |------|-----------|
 | "/signup" | "AuthFormContainer" |
