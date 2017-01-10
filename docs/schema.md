@@ -6,7 +6,7 @@
 |---|---|---|
 |id|integer|not null, primary key|
 |username|string|not null, indexed, unique|
-|zip_code|string|not null, indexed|
+|zip_code|integer|not null, indexed|
 |img_url| string | |
 |password_digest| string| not null|
 |session_token| string|not null, indexed, unique|
