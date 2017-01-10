@@ -1,16 +1,68 @@
 # Sample State
 
-
+```
 state = {
-  currentUser: {:id, :username},
-  relevantBatches: {
-    1: {:id, :title, :category, :description, :order_description, images:[{:id, :url}...], :goal, :zip_code, orders:[{:id, :userId, :order_qty}], chef:{:id, :username, :image, :description, :video, :certifications }, ...}
-    ...}
+  currentUser: {
+    id: 1,
+    username: "Grandma Lau"
+    },
 
-  currentBatch: {:id, :title, :category, :description, images:[{:id, :url}...], :goal, :zip_code}
+  batches: {
+    1: {
+      id: 1,
+      title: "Pot Stickers",
+      category: "Chinese",
+      description: "...",
+      orderDescription: "...",
+      orderOptions: {
+        1: {
+          id: 1,
+          price: 5,
+          qty: 4,
+        },
+      ...}
+      images:[
+        {
+          id: 1,
+          url: '...'
+          }...],
+     goal: 10,
+     zipCode: 94805,
+     orders: [
+        {
+        id: 1,
+        userId: 12,
+        qty: 5
+        }...],
+     chef:{
+       id: 4,
+       username: 'Mr. Yang',
+       imageUrl: '...',
+       description: '...',
+       videoUrl: '...',
+       certifications: ['Food Safety']
+       },
+    ids: [1,5,6,10...]...
+    }
+    ...
+  }
 
-  forms: {
+  currentBatch: {
+    id: 1,
+    title: '',
+    category: '',
+    description: '',
+    images:[{
+      id: 1,
+      url: '',
+      }...],
+    goal: 28,
+    zipCode: 94001
+  }
+
+  forms {
     signup: {errors:[]},
-    login: {errors :[]}
+    login: {errors: []}
   }
 }
+```

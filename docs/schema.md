@@ -6,7 +6,6 @@
 |---|---|---|
 |id|integer|not null, primary key|
 |username|string|not null, indexed, unique|
-|email|string|not null, indexed, unique|
 |zip_code|string|not null, indexed|
 |img_url| string | |
 |password_digest| string| not null|
@@ -23,16 +22,23 @@
 |zip_code|integer|not null, indexed|
 |order_description| text| |
 |chef_id|integer|not null, indexed|
-|option1_cost| float | not null|
-|option1_qty|integer|not null|
-|option1_description|text||
-|option2_cost| float | not null|
-|option2_qty|integer|not null|
-|option2_description|text||
-|option3_cost| float | not null|
-|option3_qty|integer|not null|
-|option3_description|text||
 
+## order_options (rewards)
+| column name | data type | details |
+|---|---|---|
+|cost| float | not null|
+|qty|integer|not null|
+|description|text||
+|batch_id| integer | not null|
+
+
+## orders (contributions)
+| column name | data type | details |
+|---|---|---|
+|id|integer|not null, primary_key|
+|order_option_id|integer|not null, indexed|
+|user_id|integer|not null, indexed|
+|qty|integer|not null|
 
 
 ## batch_images
@@ -41,11 +47,3 @@
 |id|integer|not null, primary_key|
 |url| string |not null|
 |batch_id|integer|not null, indexed|
-
-## orders
-| column name | data type | details |
-|---|---|---|
-|id|integer|not null, primary_key|
-|batch_id|integer|not null, indexed|
-|user_id|integer|not null, indexed|
-|order_quantity|integer|not null|

@@ -1,4 +1,7 @@
 # Component Hierarchy
+## Root
+- Header
+- {Children}
 
 ## Login
 
@@ -9,7 +12,6 @@
 ## Home Page
 
 **HomeContainer**
-- Header
 - **ImagesSliderContainer**
   - ImagesSlider
 - **BatchesBriefSliderContainer**
@@ -20,45 +22,36 @@
   - CategoriesIndex
     - CategoriesIndexItem
 
-- **GetStartedContainer**
-  - GetStarted
+
 
 ## Batch Detail Description Page
 
-- Header
 - **BatchDetailContainer**
   - **ProductSummaryContainer**
     - ProductImagesSlider
     - ProductSummaryInformaiton
       - ProgressTracker
       - OrderForm
-  - **MeetTheChefContainer**
+  - **MeetTheChefContainer (bonus)**
     - MeetTheChefContainer
-  - **BatchDetailsTextContainer**
+  - **BatchDetailsTextContainer (bonus)**
     - BatchDetailItems
-  - **BatchReviewsContainer**
+  - **BatchReviewsContainer (bonus)**
     - BatchReviewItems
   - **OrdersOptionsIndex**
     - OrdersOptionsItems
 
-## New Batch Form (may not make)
-- Header
-- **NewBatchFormContainer**
-  - NewBatchForm
-
 ## Batch Details Form
-- Header
 - BatchDetailsHeader
 - **BatchDetailsFormContainer**
   - BatchDetailsForm
 
 ## User Profile Page
-- Header
 - **UserProfileContainer**
   - UserInfo
   - MyOrders
   - MySales
-  
+
 
 # Routes
 
@@ -67,6 +60,6 @@
 | "/signup" | "AuthFormContainer" |
 | "/login" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/batches/:batch_id" | "BatchDetailContainer" |
-| "/new-batch" | "NewBatchFormContainer" |
-| "/complete-your-batch" | "BatchDetailsFormContainer" |
+| "/batches/:batchId" | "BatchDetailContainer" |
+| "/batches/new" | "BatchDetailsFormContainer" |
+| "/batches/:batchId/edit" | "BatchDetailsFormContainer" |
