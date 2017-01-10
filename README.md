@@ -13,6 +13,7 @@ Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails a
 - [ ] Campaigns (Batches)
 - [ ] Contributions (Orders)
 - [ ] Rewards (Order Options)
+- [ ] Production README
 
 
 ## Design Docs
@@ -26,24 +27,24 @@ Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails a
 
 
 ## Implementation Timeline
+### Phase 0: Seed Data
+**Objective:** Create doc with seed data for site.
 
-### Phase 1: Backend setup and Front End User Authentication (1 day)
-**Objective:** Functioning rails project with front-end authentication
+### Phase 1: Backend setup and Front End User Authentication and Basic CSS (2 days)
+**Objective:** Functioning rails project with front-end authentication. Basic CSS features (sticky nav bar).
 
-### Phase 2: Batches Model, API, and Batch Creation Form (1 day)
-**Objective:** Batch can be created, read, edited, and destroyed through the API and browser rendered form (with sticky header, time permitting)
+### Phase 2: Batches Model, API, and Batch Creation Form (2 days)
+**Objective:** Batch can be created, read, edited, and destroyed through the API and browser rendered form
 
-### Phase 3: Styling and Rendering Info on Batch Detail Page (summary only) (2 days)
-**Objective:** Batch title, summary, user info, goal, progress tracker can be displayed on page  
+### Phase 3: Batch Detail Page (Campaign) and Order Options (Rewards) (2 days)
+**Objective:** Batch title, summary, user info, goal, progress tracker, images, and "options" (Rewards) are displayed on show page  
 
-### Phase 4: Styling and rendering images and options on Batch Detail Page (1 day)
-**Objective:** Image slider, options can be displayed on page
+### Phase 5: Orders (Contributions), and Profile Page (2 days)
+**Objective:** Enable orders to be taken on the Batch Detail Page, display complete user profile page with user information, image, orders, and sales.
 
-### Phase 5: Home Page: Batch Brief Components, Batch Brief Slider (2 day)
-**Objective:** Get data and render batch brief components and slider by zip code(?), home page nav header
+### Phase 6: Home Page Styling, Production ReadME (1 day)
+**Objective:** Style home page to display banner and batch summaries. Fix any other styling issues. Complete Production README.   
 
-### Phase 6: User Profile Page (1 day)
-**Objective:** Show user profile page on click in nav bar
 
 ### Bonus Features (TBD)
 - [ ] Categories
