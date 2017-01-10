@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
 
   def reset_session_token!
   	self.session_token = generate_session_token
-  	ensure_session_token_uniqueness
   	self.save
   	self.session_token
   end

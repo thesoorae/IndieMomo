@@ -1,3 +1,56 @@
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-form-container {
+  position:absolute;
+  
+}
+.login-form-box {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+  width: 400px;
+  border: 1px, black, solid;
+  position: relative;
+  padding: 30px;
+}
+
+.login-input {
+
+  padding: 8px;
+  height: 15px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#zip input {
+  width: 150px;
+}
+
+.login-buttons {
+  position: absolute;
+  right: 0;
+  display: flex;
+  bottom: -60px;
+}
+.login-buttons button{
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.login-change {
+  margin:10px;
+  font-size: 10px;
+  font-color: gray;
+  position: absolute;
+  bottom: -80px;
+  right: 0px;
+
+}
