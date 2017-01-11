@@ -13,14 +13,22 @@ export const fetchBatches = () => dispatch => {
   .then(batches => dispatch(receiveBatches(batches)));
 };
 
+
 export const receiveBatch = batch => ({
   type: RECEIVE_BATCH,
   batch
 });
 
+
+export const fetchBatch = id => dispatch => {
+  return APIUtil.fetchBatch(id)
+  .then(batch => dispatch(receiveBatch(batch)));
+};
+
+
 export const createBatch = batch => dispatch => {
   return APIUtil.createBatch(batch)
-  .then(newbatch => dispatch(receiveBatch(batch)));
+  .then(newbatch => dispatch(receiveBatch(newbatch)));
 };
 
 export const updateBatch = batch => dispatch => {
