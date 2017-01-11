@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import HeaderContainer from './header/header_container';
+import Header from './header/header';
 
 const App = ({ children }) => (
   <div>
-    <header>
-      <Link to="/" className="header-link">
-        <h1>Indiemomo</h1>
-      </Link>
-      <HeaderContainer />
-    </header>
+
+    <Header />
+    
     {children}
   </div>
 );
