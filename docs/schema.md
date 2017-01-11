@@ -5,10 +5,15 @@
 | column name | data type | details |
 |---|---|---|
 |id|integer|not null, primary key|
+<<<<<<< HEAD
 |first_name|string||
 |last_name|string||
 |username|string|not null, indexed, unique|
 |zip_code|integer|not null, indexed|
+=======
+|username|string|not null, indexed, unique|
+|zip_code|string|not null, indexed|
+>>>>>>> b451ef60dea3facb3cc0e9947b20e3411023345d
 |img_url| string | |
 |password_digest| string| not null|
 |session_token| string|not null, indexed, unique|
