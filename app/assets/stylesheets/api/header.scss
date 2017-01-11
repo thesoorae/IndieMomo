@@ -19,7 +19,7 @@ padding: 0px;
   font-size: 40px;
 }
 
-.left, .right{
+.left {
   display: flex;
   justify-content: space-around;
 }
@@ -27,6 +27,16 @@ padding: 0px;
 margin: 20px;
 }
 
-.right nav {
-  margin:20px;
+
+span.right {
+  display:flex;
+  justify-content:space-around;
+}
+
+span.header-group {
+  font-size: 16px;
+  margin: 18px;
+}
+#logout {
+  text-decoration: underline;
 }
