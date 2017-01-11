@@ -1,23 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
+import GreetingContainer from './greeting_container';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" activeClassName="current">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup" activeClassName="current">Sign up!</Link>
-  </nav>
-);
-
-const personalGreeting = (currentUser, logout) => (
-	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
-);
-
-const Header = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-);
+const Header = () => (
+  <header className="main-header">
+    <span className="left">
+      <Link to="/" className="header-link">
+        <h1 >Indiemomo</h1>
+      </Link>
+      <h2> Explore </h2>
+      <h2> How It Works </h2>
+    </span>
+  <span className="right">
+    <button>Start A Batch</button>
+    <GreetingContainer />
+  </span>
+</header>);
 
 export default Header;

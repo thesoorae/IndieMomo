@@ -42,7 +42,6 @@ class SessionForm extends React.Component {
 			return (
 
 				<span className="login-change">
-
 				Already have an account?
 				<Link to="/login">Log In</Link>
 			</span>);
@@ -111,12 +110,10 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<form className="login-form-box">
-					Welcome to Indiemomo!
-					<br/>
-					<h2> {title} </h2>
+
+					<h1> {title} </h1>
 					{this.renderErrors()}
 					<div className="login-form">
-          <br />
 					       {SignUpFullName}
 
 							<input type="text"
@@ -142,6 +139,7 @@ class SessionForm extends React.Component {
 						<button onClick={this.handleSubmit}>Lets Go!</button>
 						<button onClick={this.demoLogin}>Demo Login</button>
 						</span>
+
 						{this.navLink()}
 				</form>
 			</div>
