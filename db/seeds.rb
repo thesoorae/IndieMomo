@@ -16,6 +16,7 @@ batch1 = Batch.create!({title: 'Dumplings',
   zip_code: 94805,
   order_description: "5 pieces",
   chef_id: 1 })
+
 batch2 = Batch.create!({title: 'Steamed Buns',
   category: "Cantonese",
   description: "Steamed Red Bean Buns",

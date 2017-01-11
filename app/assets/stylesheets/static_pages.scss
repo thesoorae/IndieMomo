@@ -6,7 +6,7 @@ html, body, a, p, span, button, h2, h1, h3 {
   padding: 0px;
   border: 0px;
   font-size: inherit;
-  font-family: inherit;
+  font-family: sans-serif;
   color: inherit;
 }
 
@@ -19,4 +19,13 @@ button{
   font-size: 16px;
   border-radius: 5px;
   margin: 10px;
+}
+
+input{
+  padding: 8px;
+  height: 15px;
+  width: 300px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }

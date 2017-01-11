@@ -12,12 +12,23 @@ class Api::BatchesController < ApplicationController
 
   def create
     @batch = Batch.new(batch_params)
+    
     if @batch.save
       render :show
     else
       render json: @batch.errors.full_messages, status:422
     end
   end
+
+  def update
+    @batch = current_user.batches.find(params[:id])
+    if @batch.update(batch_params)
+      render :show
+    else
+      render json: @batch.errors.full_messages, status:422
+    end
+  end
+
 
   def destroy
     @batch = current_user.batches.find(params[:id])
@@ -33,7 +44,8 @@ class Api::BatchesController < ApplicationController
     :goal,
     :zip_code,
     :order_description,
-    :chef_id
+    :chef_id,
+    :active
     )
   end
 end
