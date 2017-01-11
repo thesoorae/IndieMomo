@@ -17,19 +17,12 @@ Indiemomo is a web application inspired by Indiegogo built using Ruby on Rails a
 
 
 ## Design Docs
-<<<<<<< HEAD
-- [View Wireframes](./docs/wireframes/)
+ - [View Wireframes](./docs/wireframes/)
 - [React Components](./docs/component-hierarchy.md)
 - [Sample State](./docs/sample-state.md)
 - [API endpoints](./docs/api-endpoints.md)
 - [DB Schema](./docs/schema.md)
-=======
-- [View Wireframes](./wireframes/)
-- [React Components](./component-hierarchy.md)
-- [Sample State](./sample-state.md)
-- [API endpoints](./api-endpoints.md)
-- [DB Schema](./schema.md)
->>>>>>> b451ef60dea3facb3cc0e9947b20e3411023345d
+
 
 
 
