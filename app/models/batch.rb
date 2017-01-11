@@ -4,7 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  title             :string           not null
-#  category_id       :integer
+#  category          :string
 #  description       :text
 #  goal              :integer          not null
 #  zip_code          :integer          not null
@@ -15,5 +15,13 @@
 #
 
 class Batch < ActiveRecord::Base
-  validates :title, :category_id, presence:true 
+  validates :title, :category_id, :zip_code, :goal, :order_description, :chef_id, presence:true
+
+  belongs_to :chef,
+  foreign_key: :chef_id,
+  class_name: :User
+
+
+
+
 end
