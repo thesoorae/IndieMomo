@@ -5,6 +5,8 @@
 | column name | data type | details |
 |---|---|---|
 |id|integer|not null, primary key|
+|first_name|string||
+|last_name|string||
 |username|string|not null, indexed, unique|
 |zip_code|integer|not null, indexed|
 |img_url| string | |
