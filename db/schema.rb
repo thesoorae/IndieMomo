@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111011657) do
+ActiveRecord::Schema.define(version: 20170111221735) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "batches", force: :cascade do |t|
-    t.string   "title",             null: false
+    t.string   "title",                            null: false
     t.string   "category"
     t.text     "description"
-    t.integer  "goal",              null: false
-    t.integer  "zip_code",          null: false
+    t.integer  "goal",                             null: false
+    t.integer  "zip_code",                         null: false
     t.text     "order_description"
-    t.integer  "chef_id",           null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer  "chef_id",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "active",            default: true
+
   end
 
   add_index "batches", ["category"], name: "index_batches_on_category", using: :btree

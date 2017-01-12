@@ -60,9 +60,9 @@ state = {
     zipCode: 94001
   }
 
-  forms {
-    signup: {errors:[]},
-    login: {errors: []}
+  errors {
+    batch: [],
+    reviews: []
   }
 }
 ```
