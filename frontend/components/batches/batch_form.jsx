@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 class BatchForm extends React.Component{
   constructor(props){
@@ -11,8 +12,7 @@ class BatchForm extends React.Component{
 
   saveBatch(e){
     e.preventDefault();
-    this.setState({
-      active: false}, () => this.props.updateBatch(this.state));
+    this.props.updateBatch(this.state);
   }
 
   update(type){
@@ -24,8 +24,10 @@ class BatchForm extends React.Component{
   launchBatch(e){
     e.preventDefault();
     this.setState({active: true},
-    () => this.props.updateBatch(this.state));
-  }
+    () => {
+      this.props.updateBatch(this.state);
+      hashHistory.replace(`/batches/${this.props.batchId}`);
+  });}
 
   renderErrors() {
     return(
@@ -44,6 +46,12 @@ class BatchForm extends React.Component{
     const BatchButtons = <div className="batch-form-buttons"><button onClick={this.saveBatch}> Save </button>
       <button onClick={this.launchBatch}>Launch</button></div>;
 
+    let NumberDropdown = '';
+    for(let i=1; i<101; i++){
+      NumberDropdown += `<option value='${i}'> ${i} </option>`;
+    }
+    let totalPieces = this.state.qty_in_order * this.state.goal;
+    console.log(totalPieces);
     return(
       <div className="batch-form-container">
         <div className="batch-buttons-bar">
@@ -92,15 +100,25 @@ class BatchForm extends React.Component{
 
           <label>
             How many pieces are in one order?
-            <input type="text" className="batch-input" onChange={this.update('order_description')} value={this.state.order_description} />
-          </label>
-          <br />
+            <span className="one-line-span">
+            <input
+              type="number"
+              className="batch-input"
+              onChange={this.update('qty_in_order')}
+              value={this.state.qty_in_order}
+              placeholder="How many do you want to sell?"/>
+              You will need to make {totalPieces} in this batch! </span>
+            </label>
 
-        <label>
+            <br />
+
+
+
+            <label>
           Pick Up Location
           <input type="text" className="batch-input" onChange={this.update('zip_code')} value={this.state.zip_code} placeholder="The zip code where customers can pick up their orders" />
-        </label>
-        <br />
+          </label>
+          <br />
 
         <label>
         Food Type

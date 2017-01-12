@@ -18,12 +18,13 @@
 |---|---|---|
 |id|integer|not null, primary key|
 |title|string|not null, indexed|
-|category_id| integer||
+|category| string||
 |description | text| |
 |goal|integer|not null|
 |zip_code|integer|not null, indexed|
 |order_description| text| |
 |chef_id|integer|not null, indexed|
+|qty_in_order| integer | default: 1|
 
 ## order_options (rewards)
 | column name | data type | details |

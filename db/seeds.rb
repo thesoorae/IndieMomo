@@ -14,7 +14,7 @@ batch1 = Batch.create!({title: 'Dumplings',
   description: "Yummy vegetarian dumplings",
   goal: 30,
   zip_code: 94805,
-  order_description: "5 pieces",
+  qty_in_order: 5,
   chef_id: 1 })
 
 batch2 = Batch.create!({title: 'Steamed Buns',
@@ -22,5 +22,5 @@ batch2 = Batch.create!({title: 'Steamed Buns',
   description: "Steamed Red Bean Buns",
   goal: 25,
   zip_code: 94804,
-  order_description: "1 piece",
+  qty_in_order: "1 piece",
   chef_id: 2 })

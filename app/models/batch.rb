@@ -27,6 +27,7 @@ class Batch < ActiveRecord::Base
   foreign_key: :chef_id,
   class_name: :User
 
+  has_many :order_options
 
 
 
