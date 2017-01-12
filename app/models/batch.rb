@@ -15,7 +15,7 @@
 #
 
 class Batch < ActiveRecord::Base
-  CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese"]
+  CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Uncategorized"]
 
   validates :title, :goal, :chef_id, presence:true
   validates :category, inclusion:{ in: CATEGORIES }
