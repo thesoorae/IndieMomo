@@ -17,6 +17,7 @@ import NewBatchFormContainer from './batches/new_batch_form_container';
 
 import {fetchBatches} from '../actions/batch_actions';
 
+
 const Root = ({ store }) => {
 
   const _ensureLoggedIn = (nextState, replace) => {
@@ -32,6 +33,7 @@ const Root = ({ store }) => {
       replace('/');
     }
   };
+
 
   const _getBatches = () => {
     
@@ -49,6 +51,7 @@ const Root = ({ store }) => {
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} />
             <Route path="/batches/:batchId" component={BatchShowContainer}>
             </Route>
+
         </Route>
       </Router>
     </Provider>

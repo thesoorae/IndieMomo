@@ -12,7 +12,6 @@ class Api::BatchesController < ApplicationController
 
   def create
     @batch = Batch.new(batch_params)
-    
     if @batch.save
       render :show
     else
@@ -46,6 +45,7 @@ class Api::BatchesController < ApplicationController
     :order_description,
     :chef_id,
     :active
+
     )
   end
 end
