@@ -1,6 +1,6 @@
 
 @order_options.each do |option|
   json.set! option.id do
-    json.partial! 'batch', batch: batch
+    json.partial! 'option', option: option
   end
 end
