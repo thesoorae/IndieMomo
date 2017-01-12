@@ -35,7 +35,7 @@ export const createBatch = batch => dispatch => {
   return APIUtil.createBatch(batch)
   .then(newbatch => {
     dispatch(receiveBatch(newbatch));
-    hashHistory.push(`/batches/${newbatch.id}`);
+    hashHistory.push(`/batches/${newbatch.id}/edit`);
   },
   err => dispatch(receiveBatchErrors(err.responseJSON)));
 };

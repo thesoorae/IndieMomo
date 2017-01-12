@@ -3,17 +3,16 @@ import React from 'react';
 class BatchForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.batch;
+    this.state = this.props.batch === undefined ? {} : this.props.batch;
     this.saveBatch = this.saveBatch.bind(this);
     this.launchBatch = this.launchBatch.bind(this);
   }
 
+
   saveBatch(e){
     e.preventDefault();
-    console.log(this.props);
     this.setState({
-      chef_id: this.props.currentUser.id,
-      active: false}, () => this.props.processForm(this.state));
+      active: false}, () => this.props.updateBatch(this.state));
   }
 
   update(type){
@@ -24,15 +23,15 @@ class BatchForm extends React.Component{
 
   launchBatch(e){
     e.preventDefault();
-    this.setState({active: true});
-    this.props.updateBatch(this.state);
+    this.setState({active: true},
+    () => this.props.updateBatch(this.state));
   }
 
   renderErrors() {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} class="errors">
+          <li key={`error-${i}`} className="errors">
             {error}
           </li>
         ))}
@@ -45,12 +44,10 @@ class BatchForm extends React.Component{
     const BatchButtons = <div className="batch-form-buttons"><button onClick={this.saveBatch}> Save </button>
       <button onClick={this.launchBatch}>Launch</button></div>;
 
-    const formTitle = this.props.formtype === "new" ? "Create New Batch" : "Edit Your Batch";
-
     return(
       <div className="batch-form-container">
         <div className="batch-buttons-bar">
-          <span><h1>{formTitle}</h1></span>
+          <span><h1>Basics</h1></span>
           {BatchButtons}
         </div>
         {this.renderErrors()}
