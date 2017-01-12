@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     formtype,
     batch,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    errors: state.errors.batch
   };
 };
 

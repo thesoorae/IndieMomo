@@ -5,21 +5,11 @@ class BatchForm extends React.Component{
     super(props);
     this.state = this.props.batch;
     this.saveBatch = this.saveBatch.bind(this);
-    this.launchBatch = this.launchBatch.bind(this);
   }
 
   saveBatch(e){
     e.preventDefault();
-    console.log(this.props);
-    this.setState({
-      chef_id: this.props.currentUser.id,
-      active: false}, () => this.props.processForm(this.state));
-  }
-
-  update(type){
-    return (e) => {
-      this.setState({[type]: e.target.value});
-    };
+    this.props.createBatch(this.state);
   }
 
   launchBatch(e){

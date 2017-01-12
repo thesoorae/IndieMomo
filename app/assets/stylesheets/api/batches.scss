@@ -11,12 +11,14 @@
 .form-box label{
   display: flex;
   flex-direction: column;
-
+  width: 80%;
 }
 
 div.batch-buttons-bar {
   display: flex;
   justify-content: space-between;
+  width:80%;
+  margin: 30px;
 }
 .batch-form-buttons {
 text-align: right}
@@ -30,7 +32,7 @@ select {
 
 }
 .batch-form-container input {
-  width: 500px;
+  width: 100%;
 }
 .batch-form-container textarea {
   padding: 8px;
@@ -38,4 +40,8 @@ select {
   margin: 10px;
   border-radius: 5px;
   font-size: 14px;
+}
+
+.batch-form-container h1{
+  font-size: 30px;
 }

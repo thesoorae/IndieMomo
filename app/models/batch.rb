@@ -17,8 +17,9 @@
 class Batch < ActiveRecord::Base
   CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese"]
 
-  validates :title, :category, :zip_code, :goal, :order_description, :chef_id, presence:true
-  validates :category, inclusion:{ in: CATEGORIES}
+  validates :title, :goal, :chef_id, presence:true
+  validates :category, inclusion:{ in: CATEGORIES }
+  validates :zip_code, numericality: {only_integer: true}
 
   belongs_to :chef,
   foreign_key: :chef_id,

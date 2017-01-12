@@ -35,6 +35,7 @@ const Root = ({ store }) => {
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
             <Route path="/batches" component={BatchesIndexContainer} />
+            <Route path="/batches/new" component={BatchFormContainer} />
             <Route path="/batches/:batchId" component={BatchShowContainer} />
         </Route>
       </Router>
