@@ -14,6 +14,7 @@ state = {
       category: "Chinese",
       description: "...",
       orderDescription: "...",
+      qty_in_order: 5,
       orderOptions: {
         1: {
           id: 1,

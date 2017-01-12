@@ -9,6 +9,7 @@ class BatchShow extends React.Component{
         {batch.title}
         {batch.description}
         {batch.category}
+        {batch.qty_in_order}
       </div>
     );
   }

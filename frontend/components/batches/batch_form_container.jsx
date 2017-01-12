@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   console.log(state.batches);
   return(
   { batch: state.batches[ownProps.params.batchId],
+    batchId: ownProps.params.batchId,
     currentUser: state.session.currentUser,
     errors: state.errors.batch
   }
@@ -16,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => (
   { fetchBatches: () => dispatch(fetchBatches()),
     deleteBatch : id => dispatch(deleteBatch(id)),
-    updateBatch: batch => dispatch(updateBatch(batch))  
+    updateBatch: batch => dispatch(updateBatch(batch))
   }
 );
 

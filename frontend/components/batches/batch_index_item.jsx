@@ -42,6 +42,16 @@ class BatchIndexItem extends React.Component {
             {batch.chef_id}
           </span>
 
+          <span className="index-item-category"> Active: </span>
+          <span className="index-item-copy">
+            {batch.active.to_s}
+          </span>
+
+          <span className="index-item-category"> Order quantity: </span>
+          <span className="index-item-copy">
+            {batch.qty_in_order}
+          </span>
+
         </div>
       </div>
     );
