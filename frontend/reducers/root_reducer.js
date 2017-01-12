@@ -8,6 +8,7 @@ const RootReducer = combineReducers({
 session: SessionReducer,
 batches: BatchesReducer,
 errors: ErrorsReducer
+
 });
 
 export default RootReducer;
