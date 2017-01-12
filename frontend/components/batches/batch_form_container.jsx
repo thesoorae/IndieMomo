@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => (
   { fetchBatches: () => dispatch(fetchBatches()),
     deleteBatch : id => dispatch(deleteBatch(id)),
-    updateBatch: batch => dispatch(updateBatch(batch))
+    updateBatch: batch => dispatch(updateBatch(batch))  
   }
 );
 
