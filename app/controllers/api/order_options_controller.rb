@@ -7,7 +7,7 @@ class Api::OrderOptionsController < ApplicationController
   end
 
   def require_owner
-    render json: {base: ['Please only edit your own batches']}, status: 401 unless current_user.id == @current_batch.chef_id
+    render json: {base: ['Please edit your own batches']}, status: 401 unless current_user.id == @current_batch.chef_id
   end
 
   def create
