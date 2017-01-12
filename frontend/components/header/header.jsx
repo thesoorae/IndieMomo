@@ -1,6 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import GreetingContainer from './greeting_container';
+
+const startBatch=() => (
+  hashHistory.replace('/batches/new')
+);
 
 const Header = () => (
   <header className="main-header">
@@ -12,7 +16,8 @@ const Header = () => (
       <h2> How It Works </h2>
     </span>
   <span className="right">
-    <button>Start A Batch</button>
+    <button onClick={startBatch}>Start A Batch</button>
+
     <GreetingContainer />
   </span>
 </header>);
