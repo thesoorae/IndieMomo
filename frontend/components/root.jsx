@@ -21,6 +21,7 @@ import {fetchBatches} from '../actions/batch_actions';
 const Root = ({ store }) => {
 
   const _ensureLoggedIn = (nextState, replace) => {
+    console.log("ensure login");
     const currentUser = store.getState().session.currentUser;
     if (!currentUser) {
       replace('/login');
@@ -28,6 +29,7 @@ const Root = ({ store }) => {
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
+    console.log("redirecting for login");
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
       replace('/');
@@ -36,7 +38,7 @@ const Root = ({ store }) => {
 
 
   const _getBatches = () => {
-    
+    console.log("fetching batches");
     store.dispatch(fetchBatches());
   };
 
@@ -44,6 +46,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={_getBatches}>
+          <IndexRoute component={BatchesIndexContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
             <Route path="/batches" component={BatchesIndexContainer} />

@@ -1,12 +1,16 @@
 import {connect} from 'react-redux';
 import BatchForm from './batch_form';
 import {fetchBatches, createBatch, updateBatch, deleteBatch} from '../../actions/batch_actions';
+import {getBatch} from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.batches);
+  console.log("batches", state.batches);
+  console.log("ownProps" , ownProps);
+  console.log("batch from container", state.batches[ownProps.params.batchId]);
+
   return(
-  { batch: state.batches[ownProps.params.batchId],
+  { batch: getBatch(ownProps.params.batchId, state.batches),
     batchId: ownProps.params.batchId,
     currentUser: state.session.currentUser,
     errors: state.errors.batch

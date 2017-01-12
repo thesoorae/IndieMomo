@@ -8,10 +8,12 @@
   flex-direction: column;
   align-items: center;
 }
+div.form-box {
+  width:75%;
+}
 .form-box label{
   display: flex;
   flex-direction: column;
-  width: 80%;
 }
 
 div.batch-buttons-bar {
@@ -36,7 +38,7 @@ select {
 }
 .batch-form-container textarea {
   padding: 8px;
-  width: 500px;
+  width: 100%;
   margin: 10px;
   border-radius: 5px;
   font-size: 14px;

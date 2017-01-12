@@ -4,11 +4,26 @@ import {hashHistory} from 'react-router';
 class BatchForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.batch === undefined ? {} : this.props.batch;
+    this.state = this.props.batch;
     this.saveBatch = this.saveBatch.bind(this);
     this.launchBatch = this.launchBatch.bind(this);
   }
 
+  componentWillUpdate(nextProps, nextState){
+    console.log("this.props", this.props);
+    console.log("next props", nextProps);
+  }
+
+
+  componentDidUpdate(prevProps){
+  console.log("did update");
+  console.log("previous props", prevProps);
+  console.log("this.props from component did update", this.props);
+}
+
+  componentWillReceiveProps(nextProps){
+    this.setState(nextProps.batch);
+  }
 
   saveBatch(e){
     e.preventDefault();
@@ -16,8 +31,17 @@ class BatchForm extends React.Component{
   }
 
   update(type){
+    console.log("updating something");
     return (e) => {
       this.setState({[type]: e.target.value});
+    };
+  }
+
+  updateOptions(i, attr){
+    return (e) => {
+      let order_options = this.state.order_options;
+      order_options[i][attr] = e.target.value;
+      this.setState({order_options});
     };
   }
 
@@ -42,23 +66,20 @@ class BatchForm extends React.Component{
   }
 
   render(){
-    console.log(this.state);
+
+    console.log("current component state", this.state);
+    console.log("this.props.batch", this.props.batch);
     const BatchButtons = <div className="batch-form-buttons"><button onClick={this.saveBatch}> Save </button>
       <button onClick={this.launchBatch}>Launch</button></div>;
 
-    let NumberDropdown = '';
-    for(let i=1; i<101; i++){
-      NumberDropdown += `<option value='${i}'> ${i} </option>`;
-    }
+
     let totalPieces = this.state.qty_in_order * this.state.goal;
-    console.log(totalPieces);
     return(
       <div className="batch-form-container">
         <div className="batch-buttons-bar">
           <span><h1>Basics</h1></span>
           {BatchButtons}
         </div>
-        {this.renderErrors()}
         <div className="form-box">
           <form>
             <label>
@@ -116,7 +137,11 @@ class BatchForm extends React.Component{
 
             <label>
           Pick Up Location
-          <input type="text" className="batch-input" onChange={this.update('zip_code')} value={this.state.zip_code} placeholder="The zip code where customers can pick up their orders" />
+          <input type="text"
+            className="batch-input"
+            onChange={this.update('zip_code')}
+            value={this.state.zip_code}
+            placeholder="The zip code where customers can pick up their orders" />
           </label>
           <br />
 
@@ -130,6 +155,18 @@ class BatchForm extends React.Component{
           <option value="Thai">Thai</option>
         </select>
       </label>
+
+
+      <div className="options-container">{this.state.order_options.map((option, i) => (
+          <div className="option-box">
+            <h2>Option {i+1}</h2>
+            <span>What is included in this type of order?</span>
+            <input className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
+            <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
+            <input className="option-input" type="text" onChange={this.updateOptions(i, 'description')} value={option.description} />
+            </div>
+          ))}
+      </div>
 
           </form>
 
