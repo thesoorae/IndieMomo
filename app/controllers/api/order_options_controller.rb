@@ -22,7 +22,7 @@ class Api::OrderOptionsController < ApplicationController
 
   def update
     @order_option = OrderOption.find(params[:id])
-    if @order_option.update(options_params)
+    
   end
 
   def index
@@ -36,4 +36,5 @@ class Api::OrderOptionsController < ApplicationController
   def options_params
     params.require(:order_options).permit(:cost, :qty, :description)
   end
+
 end

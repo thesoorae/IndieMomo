@@ -14,6 +14,7 @@ class BatchIndexItem extends React.Component {
 
   render(){
 
+
     const batch = this.props.batch;
     return (
       <div className = "batch-index-item"
@@ -39,12 +40,12 @@ class BatchIndexItem extends React.Component {
 
           <span className="index-item-category"> Chef: </span>
           <span className="index-item-copy">
-            {batch.chef_id}
+            {batch.chef.username}
           </span>
 
           <span className="index-item-category"> Active: </span>
           <span className="index-item-copy">
-            {batch.active.to_s}
+            {`${batch.active}`}
           </span>
 
           <span className="index-item-category"> Order quantity: </span>
