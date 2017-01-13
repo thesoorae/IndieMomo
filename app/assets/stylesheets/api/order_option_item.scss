@@ -1,0 +1,23 @@
+// Place all the styles related to the OrderOptions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+li.order-option-item {
+  margin: 30px;
+  border: 1px LightGray solid;
+  border-radius: 5px;
+}
+
+.order-option-item * {
+  margin: 15px;
+
+}
+
+.cost {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.qty {
+  color:gray;
+  font-size: 20px;
+}

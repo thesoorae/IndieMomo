@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112175512) do
+ActiveRecord::Schema.define(version: 20170113175433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batch_images", force: :cascade do |t|
+    t.string   "url",        null: false
+    t.integer  "batch_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "batch_images", ["batch_id"], name: "index_batch_images_on_batch_id", using: :btree
 
   create_table "batches", force: :cascade do |t|
     t.string   "title",                            null: false

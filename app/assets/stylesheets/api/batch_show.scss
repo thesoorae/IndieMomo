@@ -1,0 +1,63 @@
+div.batch-show-container {
+  width:80%;
+  margin:auto;
+  padding:30px;
+}
+
+div.batch-show-summary {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+ul.right{
+width: 40%;
+margin: 50px;
+margin-top: 0px;
+}
+
+.right li {
+  margin: 10px 0;
+}
+
+
+.color-heading  {
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #33cccc;
+  border-bottom: 3px solid #33cccc;
+  font-size: 22px;
+}
+
+.batch-description {
+  font-size: 20px;
+  color: gray;
+  font-weight: lighter;
+}
+
+.batch-show-summary * {
+  margin: 0px;
+}
+
+li.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+div.batch-show-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.batch-show-details {
+  width: 600px;
+}
+div.order-options-index {
+  width: 40%;
+  margin: 50px;
+}

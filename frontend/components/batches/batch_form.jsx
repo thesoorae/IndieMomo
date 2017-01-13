@@ -149,17 +149,17 @@ class BatchForm extends React.Component{
 
       <div className="options-container">{this.state.order_options.map((option, i) => (
           <div className="option-box" key={option.id}>
-            <h2>Choice {i+1}</h2>
+            <h2>Order Option {i+1}</h2>
+            <div id="cost" className='option-input-label'>
+              <h3>$</h3>
+              <input id="cost" className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
+              </div>
             <label className='option-input-label'>
-              $
-              <input className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
-              </label>
-            <label className='option-input-label'>
-              How many orders are included in this option?
+              How many orders are in this option?
             <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
             </label>
             <label className='option-input-label'>
-              Describe what comes with this option. (i.e. free delivery, special packaging)
+              Brief Description
             <input className="option-input" type="text" onChange={this.updateOptions(i, 'description')} value={option.description} />
             </label>
           </div>

@@ -12,7 +12,7 @@ import BatchesIndexContainer from './batches/batch_index_container';
 import BatchShowContainer from './batches/batch_show_container';
 import BatchFormContainer from './batches/batch_form_container';
 import NewBatchFormContainer from './batches/new_batch_form_container';
-
+import UserProfileContainer from './users/user_profile_container';
 
 
 import {fetchBatches} from '../actions/batch_actions';
@@ -53,6 +53,7 @@ const Root = ({ store }) => {
             <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId" component={BatchShowContainer}>
+              <Route path="/users/:userId" component={UserProfileContainer} />
             </Route>
 
         </Route>

@@ -15,7 +15,7 @@ batch1 = Batch.create!({title: 'Dumplings',
   goal: 30,
   zip_code: 94805,
   qty_in_order: 5,
-  chef_id: 1 })
+  chef_id: user1.id })
 
 batch2 = Batch.create!({title: 'Steamed Buns',
   category: "Cantonese",
@@ -23,4 +23,12 @@ batch2 = Batch.create!({title: 'Steamed Buns',
   goal: 25,
   zip_code: 94804,
   qty_in_order: "1 piece",
-  chef_id: 2 })
+  chef_id: user3.id })
+
+  image1 = BatchImage.create!({url:'http://res.cloudinary.com/indiemomo/image/upload/c_scale,h_300,w_480/v1484332117/dumplings_noxqey.jpg', batch_id: batch1.id})
+  image2 = BatchImage.create!({url:'http://res.cloudinary.com/indiemomo/image/upload/c_crop,g_face,h_300,w_480/v1484332115/baozi_wqgv9p.jpg', batch_id: batch2.id})
+
+  orderoption1 = OrderOption.create!({cost:5, qty: 5, description: "Five delicious dumplings", batch_id: batch1.id})
+  orderoption2 = OrderOption.create!({cost:10, qty: 12, description: "Twelve delicious dumplings", batch_id: batch1.id})
+  orderoption1 = OrderOption.create!({cost:3, qty: 1, description: "One yummy bun", batch_id: batch2.id})
+  orderoption1 = OrderOption.create!({cost:6, qty: 3, description: "So many buns", batch_id: batch2.id})
