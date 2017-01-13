@@ -1,0 +1,29 @@
+
+div.user-summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.user-summary img {
+  margin: 0 20px 0 0 ;
+  border-radius: 5px;
+
+}
+
+.user-summary .name {
+  font-weight: bold;
+}
+
+
+.user-summary .address {
+  font-weight: lighter;
+  color: gray;
+}
+
+.user-summary a {
+  text-decoration: none;
+  color: red;
+}

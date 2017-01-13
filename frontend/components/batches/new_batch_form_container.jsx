@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     category: "Uncategorized",
     description:"No Description yet",
     order_description:"1 Piece",
-    qty_in_order: 1
+    qty_in_order: 1,
 };
     return {
     batch,

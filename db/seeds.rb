@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user1 = User.create!({username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'grandma.jpg'});
-user2 = User.create!({username: 'Bruce Lee', password: '123456', zip_code:'94804', img_url:'bruce.jpg'});
-user3 = User.create!({username: 'Mr. Miyagi', password: '123456', zip_code:'94801', img_url:'miyagi.jpg'})
+user1 = User.create!({username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484343810/grandma-lau.jpg'});
+user2 = User.create!({username: 'Bruce Lee', password: '123456', zip_code:'94804', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344036/Bruce_Lee_1973_l0gfnl.jpg'});
+user3 = User.create!({username: 'Mr. Miyagi', password: '123456', zip_code:'94801', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344090/mr_miyagi_tdvrh8.png'})
 
 batch1 = Batch.create!({title: 'Dumplings',
   category: "Chinese",

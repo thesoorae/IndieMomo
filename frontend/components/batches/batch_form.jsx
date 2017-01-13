@@ -123,7 +123,17 @@ class BatchForm extends React.Component{
 
             <br />
 
-
+            <label>
+              Image URL
+              <br />
+              <input
+                type="text"
+                className="batch-input"
+                onChange={this.update('img_url')}
+                value={this.state.img_url}
+                placeholder="URL of your image"/>
+            </label>
+            <br />
 
             <label>
           Pick Up Location
