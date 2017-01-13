@@ -45,13 +45,13 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App} onEnter={_getBatches}>
+        <Route path="/" component={App} store={store} onEnter={_getBatches}>
           <IndexRoute component={BatchesIndexContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
             <Route path="/batches" component={BatchesIndexContainer} />
-            <Route path="/batches/new" component={NewBatchFormContainer} />
-            <Route path="/batches/:batchId/edit" component={BatchFormContainer} />
+            <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
+            <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId" component={BatchShowContainer}>
             </Route>
 

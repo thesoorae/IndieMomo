@@ -1,15 +1,26 @@
-div.option-container {
+div.options-container {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-direction: row;
   width:100%;
+  margin: 0px;
+  margin-top: 40px;
+
 }
+
 
 div.option-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 30%;
+
+}
+
+.option-box label{
+  padding: 10px;
+  width:100%
 }
 
 input.option-input {
-  width: 20%;
 }

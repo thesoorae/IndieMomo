@@ -1,9 +1,12 @@
 import BatchShow from './batch_show';
 import {connect} from 'react-redux';
 import {updateBatch, deleteBatch} from '../../actions/batch_actions';
+import {getBatch} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  batch: state.batches[ownProps.params.batchId]
+  batch: getBatch(ownProps.params.batchId, state.batches),
+  currentUser: state.session.currentUser
+
 });
 
 

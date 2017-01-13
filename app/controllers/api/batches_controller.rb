@@ -1,5 +1,5 @@
 class Api::BatchesController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
     @batches = Batch.all
@@ -43,16 +43,20 @@ class Api::BatchesController < ApplicationController
 
 
 def createOptions
-  OrderOption.create({batch_id: @batch.id, cost:0, qty:0, description: "A great order!"})
-  OrderOption.create({batch_id: @batch.id, cost:0, qty:0, description: "A great order!"})
-  OrderOption.create({batch_id: @batch.id, cost:0, qty:0, description: "A great order!"})
+  OrderOption.create({batch_id: @batch.id, cost:1, qty:1, description: "A great order!"})
+  OrderOption.create({batch_id: @batch.id, cost:5, qty:5, description: "A great order!"})
+  OrderOption.create({batch_id: @batch.id, cost:10, qty:10, description: "A great order!"})
 end
 
+
+
+
 def updateOptions
-  options = params[:order_options]
-  options.each do |option|
-    order_option = OrderOption.find(option.id)
-    order_option.update(option)
+options = params[:batch][:order_options]
+
+  options.each do |k, option|
+    order_option = OrderOption.find(option['id'])
+    order_option.update({cost: option[:cost], qty: option[:qty], description: option[:description]})
   end
 end
 
@@ -66,8 +70,7 @@ end
     :order_description,
     :chef_id,
     :active,
-    :order_options
-
+    :qty_in_order
     )
   end
 end

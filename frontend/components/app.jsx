@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Header from './header/header';
+import HeaderContainer from './header/header_container';
 import BatchesIndexContainer from './batches/batch_index_container';
 
-const App = ({ children }) => (
+const App = ({ children, store }) => (
   <div>
 
-    <Header />
+    <HeaderContainer store={store} />
     {children}
   </div>
 );

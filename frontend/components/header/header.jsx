@@ -6,6 +6,8 @@ const startBatch=() => (
   hashHistory.replace('/batches/new')
 );
 
+
+
 const Header = () => (
   <header className="main-header">
     <span className="left">
@@ -23,3 +25,13 @@ const Header = () => (
 </header>);
 
 export default Header;
+
+
+
+// const startBatch=(currentUser) => {
+//   console.log("in component" , currentUser);
+//   if(currentUser == null){
+//   hashHistory.replace('/signup');
+// } else {
+//   hashHistory.replace('/batches/new');}
+// };

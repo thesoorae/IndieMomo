@@ -9,17 +9,7 @@ class BatchForm extends React.Component{
     this.launchBatch = this.launchBatch.bind(this);
   }
 
-  componentWillUpdate(nextProps, nextState){
-    console.log("this.props", this.props);
-    console.log("next props", nextProps);
-  }
 
-
-  componentDidUpdate(prevProps){
-  console.log("did update");
-  console.log("previous props", prevProps);
-  console.log("this.props from component did update", this.props);
-}
 
   componentWillReceiveProps(nextProps){
     this.setState(nextProps.batch);
@@ -158,13 +148,21 @@ class BatchForm extends React.Component{
 
 
       <div className="options-container">{this.state.order_options.map((option, i) => (
-          <div className="option-box">
-            <h2>Option {i+1}</h2>
-            <span>What is included in this type of order?</span>
-            <input className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
+          <div className="option-box" key={option.id}>
+            <h2>Choice {i+1}</h2>
+            <label className='option-input-label'>
+              $
+              <input className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
+              </label>
+            <label className='option-input-label'>
+              How many orders are included in this option?
             <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
+            </label>
+            <label className='option-input-label'>
+              Describe what comes with this option. (i.e. free delivery, special packaging)
             <input className="option-input" type="text" onChange={this.updateOptions(i, 'description')} value={option.description} />
-            </div>
+            </label>
+          </div>
           ))}
       </div>
 
