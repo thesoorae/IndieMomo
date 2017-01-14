@@ -4,7 +4,7 @@ import {updateBatch, deleteBatch} from '../../actions/batch_actions';
 import {getBatch} from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  batch: getBatch(ownProps.params.batchId, state.batches),
+  batch: state.batches[ownProps.params.batchId],
   currentUser: state.session.currentUser
 
 });

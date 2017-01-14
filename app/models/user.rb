@@ -23,8 +23,11 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
-  has_many :batches, 
+  has_many :batches,
   foreign_key: :chef_id
+
+  has_many :orders,
+  foreign_key: :customer_id
 
   def password= password
   	self.password_digest = BCrypt::Password.create(password)

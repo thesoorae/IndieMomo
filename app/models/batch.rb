@@ -30,6 +30,7 @@ class Batch < ActiveRecord::Base
   has_many :order_options
   has_many :batch_images
 
+  has_many :orders 
 
 
 end

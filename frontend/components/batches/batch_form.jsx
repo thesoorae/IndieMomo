@@ -39,8 +39,8 @@ class BatchForm extends React.Component{
     e.preventDefault();
     this.setState({active: true},
     () => {
-      this.props.updateBatch(this.state);
-      hashHistory.replace(`/batches/${this.props.batchId}`);
+      this.props.updateBatch(this.state).then(
+      () => hashHistory.replace(`/batches/${this.props.batchId}`));
   });}
 
   renderErrors() {
@@ -57,8 +57,8 @@ class BatchForm extends React.Component{
 
   render(){
 
-    console.log("current component state", this.state);
-    console.log("this.props.batch", this.props.batch);
+    // console.log("current component state", this.state);
+    // console.log("this.props.batch", this.props.batch);
     const BatchButtons = <div className="batch-form-buttons"><button onClick={this.saveBatch}> Save </button>
       <button onClick={this.launchBatch}>Launch</button></div>;
 

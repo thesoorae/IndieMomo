@@ -25,6 +25,7 @@ class Api::BatchesController < ApplicationController
   def update
     @batch = current_user.batches.find(params[:id])
     if @batch.update(batch_params)
+      self.updateImages
       self.updateOptions
       render :show
     else
@@ -49,7 +50,11 @@ def createOptions
 end
 
 
-
+def updateImages
+  
+  url = params[:batch][:img_url]
+  BatchImage.create({batch_id:@batch.id, url: url})
+end
 
 def updateOptions
 options = params[:batch][:order_options]

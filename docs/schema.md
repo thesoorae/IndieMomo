@@ -40,8 +40,7 @@
 |---|---|---|
 |id|integer|not null, primary_key|
 |order_option_id|integer|not null, indexed|
-|user_id|integer|not null, indexed|
-|qty|integer|not null|
+|customer_id|integer|not null, indexed|
 
 
 ## batch_images
