@@ -10,7 +10,6 @@ class BatchForm extends React.Component{
   }
 
 
-
   componentWillReceiveProps(nextProps){
     this.setState(nextProps.batch);
   }

@@ -30,7 +30,17 @@ class Batch < ActiveRecord::Base
   has_many :order_options
   has_many :batch_images
 
-  has_many :orders 
+  has_many :orders,
+  through: :order_options
+
+  def total_orders
+    @total_orders = 0
+    self.orders.each do |order|
+      @total_orders += order.qty_orders
+    end
+    @total_orders
+  end
+
 
 
 end
