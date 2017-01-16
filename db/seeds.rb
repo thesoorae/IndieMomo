@@ -78,7 +78,7 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   image2 = BatchImage.create!(
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_crop,g_face,h_300,w_480/v1484332115/baozi_wqgv9p.jpg', batch_id: batch2.id})
   image_zongzi = BatchImage.create!(
-  {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588442/18568508691_8e68a14dfb_k_din14r.jpg', batch_id: batch2.id})
+  {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588442/18568508691_8e68a14dfb_k_din14r.jpg', batch_id: batch_zongzi.id})
   image_scallion = BatchImage.create!(
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588437/scallion_pancakes.jpg', batch_id: batch_scallion.id})
   image_khanom = BatchImage.create!(
@@ -87,7 +87,6 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588796/korean-green-onion-pancake_ruzw1u.jpg', batch_id: batch_korean_pancakes.id})
   image_curry_puffs = BatchImage.create!(
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588795/12-spiral-skin-curry-puffs-1_njhk0z.jpg', batch_id: batch_curry_puffs.id})
-
 
 
 

@@ -8,7 +8,7 @@ class BatchIndex extends React.Component{
   }
 
   render(){
-    
+
     const {batches} = this.props;
     const batchItems = batches.map( batch =>
       (<BatchIndexItem
@@ -18,10 +18,10 @@ class BatchIndex extends React.Component{
   );
 
   return(
-      <section className="batch-index">
+      <div className="batch-index">
       <h1>Batches</h1>
       {batchItems}
-    </section>
+    </div>
   );
 }
 }

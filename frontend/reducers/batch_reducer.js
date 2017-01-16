@@ -10,7 +10,8 @@ const BatchesReducer = (state={}, action) => {
       return action.batches;
     case RECEIVE_BATCH:
       const newBatch = {[action.batch.id]: action.batch};
-      return merge({}, state, newBatch);
+      const test = merge({}, state, newBatch);
+      return test;
     case REMOVE_BATCH:
       delete newState[action.batch.id];
       return newState;

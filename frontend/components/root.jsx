@@ -16,7 +16,7 @@ import UserProfileContainer from './users/user_profile_container';
 
 
 import {fetchBatches} from '../actions/batch_actions';
-
+import {getUser} from '../actions/user_actions';
 
 const Root = ({ store }) => {
 
@@ -42,6 +42,12 @@ const Root = ({ store }) => {
     store.dispatch(fetchBatches());
   };
 
+  const _getUser = (nextState) =>{
+    console.log("fetching User");
+    console.log("next state", nextState);
+    store.dispatch(getUser(nextState.params.userId));
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -53,7 +59,7 @@ const Root = ({ store }) => {
             <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId" component={BatchShowContainer} />
-              <Route path="/users/:userId" component={UserProfileContainer} />
+              <Route path="/users/:userId" onEnter = {_getUser} component={UserProfileContainer} />
 
         </Route>
       </Router>

@@ -1,17 +1,19 @@
 import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import UserProfile from './user_profile';
-import {getUser} from '../../reducers/selectors';
+import {getUser, editUser} from '../../actions/user_actions';
 
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => (
+{
   currentUser: state.session.currentUser,
-  user: getUser(ownProps.params.userId, state.users),
+  user: state.displayedUser,
   errors: state.session.errors
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  
+  editUser: (user) => dispatch(editUser(user));
+  loadUser: () => dispatch(getUser(ownProps.params.userId));
 };
 
 export default connect(

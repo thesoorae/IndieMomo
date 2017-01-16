@@ -27,6 +27,7 @@ class Api::BatchesController < ApplicationController
     if @batch.update(batch_params)
       self.updateImages
       self.updateOptions
+      
       render :show
     else
       render json: @batch.errors.full_messages, status:422

@@ -28,6 +28,7 @@ class Batch < ActiveRecord::Base
   class_name: :User
 
   has_many :order_options
+
   has_many :batch_images
 
   has_many :orders,

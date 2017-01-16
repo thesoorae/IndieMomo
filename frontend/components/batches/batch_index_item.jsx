@@ -13,45 +13,39 @@ class BatchIndexItem extends React.Component {
   }
 
   render(){
-
-
     const batch = this.props.batch;
-    return (
-      <div className = "batch-index-item"
-        onClick={this.handleClick}>
-        <div className="index-item-info">
+    console.log(batch);
+    let itemImage = "";
+    if (batch.batch_images.length > 0){
+      itemImage = (<img src={batch.batch_images[0]['url']} />);
+    }
 
-          <span className="index-item-category"> Title: </span>
-          <span className="index-item-copy">
-            {batch.title}
-          </span>
+    if(this.props.batch){
+      console.log();
+        return (
+          <div className = "batch-index-item"
+            onClick={this.handleClick}>
+            <div className="index-item-image">
+              {itemImage}
+            </div>
+            <div className="index-item-info">
+              <ul>
+                <li><h4>{batch.category}</h4></li>
+                <li><h3>{batch.title}</h3></li>
+                <li>{batch.description}</li>
+              </ul>
+            </div>
+            <div className="progress">
+              <ul>
+                <li>Progress Bar</li>
+              </ul>
+            </div>
 
-          <span className="index-item-category"> Description: </span>
-          <span className="index-item-copy">
-            {batch.description}
-          </span>
-
-
-          <span className="index-item-category"> Goal: </span>
-          <span className="index-item-copy">
-            {batch.goal}
-          </span>
-
-
-          <span className="index-item-category"> Chef: </span>
-          <span className="index-item-copy">
-            {batch.chef.username}
-          </span>
-
-          <span className="index-item-category"> Active: </span>
-          <span className="index-item-copy">
-            {`${batch.active}`}
-          </span>
-
-
-        </div>
-      </div>
-    );
+          </div>
+      );}
+      else{
+        return (<div>loading</div>);
+      }
   }
 }
 export default withRouter(BatchIndexItem);

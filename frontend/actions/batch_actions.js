@@ -46,9 +46,11 @@ export const createBatch = batch => dispatch => {
 export const updateBatch = batch => dispatch => {
   return APIUtil.updateBatch(batch)
 
-  .then(newbatch => dispatch(receiveBatch(batch)),
+  .then(newbatch => {
+    dispatch(receiveBatch(newbatch));
+    hashHistory.replace(`/batches/${newbatch.id}`);
+  },
   err => dispatch(receiveBatchErrors(err.responseJSON)));
-
 };
 
 export const removeBatch = batch => ({
@@ -66,4 +68,3 @@ export const receiveBatchErrors = errors => ({
   type: RECEIVE_BATCH_ERRORS,
   errors
 });
-

@@ -2,9 +2,20 @@ import React from 'react';
 import {Link} from 'react-router';
 
 class UserSummary extends React.Component{
+  constructor(props){
+    super(props);
+    this.showUser = this.showUser.bind(this);
+  }
+
+  showUser(id){
+    return (e) => {
+    e.preventDefault();
+    this.props.getUser(id);
+  };}
+
   render(){
     const user = this.props.user;
-    return (<div className="user-summary">
+    return (<div  onClick={this.showUser(user.id)} className="user-summary">
     <img src={user.img_url} />
     <ul className="user-text">
       <li className="name">{user.username}</li>

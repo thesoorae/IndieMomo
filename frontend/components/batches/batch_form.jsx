@@ -36,10 +36,8 @@ class BatchForm extends React.Component{
 
   launchBatch(e){
     e.preventDefault();
-    this.setState({active: true},
-    () => {
-      this.props.updateBatch(this.state).then(
-      () => hashHistory.replace(`/batches/${this.props.batchId}`));
+    this.setState({active: true}, () => {
+      this.props.updateBatch(this.state);
   });}
 
   renderErrors() {

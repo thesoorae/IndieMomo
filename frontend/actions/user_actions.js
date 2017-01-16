@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/user_api_util';
 import { receiveErrors } from './session_actions';
+import {hashHistory} from 'react-router';
 
 
 export const RECEIVE_USER = "RECEIVE_USER";
@@ -9,11 +10,14 @@ export const receiveUser = user => ({
   user
 });
 
-export const getUser = id => dispatch => (
+export const getUser = id => dispatch => {
   APIUtil.fetchUser(id)
-    .then(user => dispatch(receiveUser(user)),
-      err => dispatch(receiveErrors(err.responseJSON)))
-);
+    .then(user => {
+      dispatch(receiveUser(user));
+      hashHistory.push(`/users/${id}`);
+    },
+      err => dispatch(receiveErrors(err.responseJSON)));
+};
 
 export const editUser = user => dispatch => (
   APIUtil.updateUser(user)

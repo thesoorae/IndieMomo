@@ -4,32 +4,26 @@ import OrderOptionsIndex from '../order_options/order_options_index';
 import UserSummary from '../users/user_summary';
 
 class BatchShow extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      batch: this.props.batch
-    };
-  }
 
 
-  componentWillReceiveProps(nextProps){
-    console.log("next props", nextProps);
-    let batch = nextProps.batch;
-    if(batch.batch_images.length <1){
-      batch.batch_images[0]= {url: nextProps.batch.img_url};
-    }
-    this.setState({batch: batch});
-  }
+  // componentWillReceiveProps(nextProps){
+  //   console.log("next props", nextProps);
+  //   let batch = nextProps.batch;
+  //   // if(batch.batch_images.length <1){
+  //   //   batch.batch_images[0]= {url: nextProps.batch.img_url};
+  //   // }
+  //   this.setState({batch: batch});
+  // }
 
   render(){
 
 
-    if(this.state.batch){
-      const batch = this.state.batch;
+    if(this.props.batch){
+      const batch = this.props.batch;
       console.log(batch);
-      let mainImage = "http://res.cloudinary.com/indiemomo/image/upload/v1484272483/sample.jpg";
-      if (batch.batch_images[0]){
-        mainImage = batch.batch_images[0]['url'];}
+      // let mainImage = "http://res.cloudinary.com/indiemomo/image/upload/v1484272483/sample.jpg";
+      // if (batch.batch_images[0]){
+        const mainImage = batch.batch_images[0]['url'];
 
       return (
         <div className="batch-show-container">
@@ -46,7 +40,7 @@ class BatchShow extends React.Component{
                 <li><h1>{batch.title}</h1></li>
                 <li className="batch-description">{batch.description}</li>
                 <li >
-                  <UserSummary user={batch.chef} />
+                  <UserSummary getUser={this.props.getUser} user={batch.chef} />
                 </li>
 
               </ul>
