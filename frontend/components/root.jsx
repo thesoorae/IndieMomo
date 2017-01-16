@@ -52,9 +52,8 @@ const Root = ({ store }) => {
             <Route path="/batches" component={BatchesIndexContainer} />
             <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
-            <Route path="/batches/:batchId" component={BatchShowContainer}>
+            <Route path="/batches/:batchId" component={BatchShowContainer} />
               <Route path="/users/:userId" component={UserProfileContainer} />
-            </Route>
 
         </Route>
       </Router>

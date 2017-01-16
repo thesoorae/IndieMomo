@@ -62,7 +62,6 @@ class BatchForm extends React.Component{
       <button onClick={this.launchBatch}>Launch</button></div>;
 
 
-    let totalPieces = this.state.qty_in_order * this.state.goal;
     return(
       <div className="batch-form-container">
         <div className="batch-buttons-bar">
@@ -108,20 +107,6 @@ class BatchForm extends React.Component{
             </label>
             <br />
 
-          <label>
-            How many pieces are in one order?
-            <span className="one-line-span">
-            <input
-              type="number"
-              className="batch-input"
-              onChange={this.update('qty_in_order')}
-              value={this.state.qty_in_order}
-              placeholder="How many do you want to sell?"/>
-              You will need to make {totalPieces} in this batch! </span>
-            </label>
-
-            <br />
-
             <label>
               Image URL
               <br />
@@ -164,7 +149,7 @@ class BatchForm extends React.Component{
               <input id="cost" className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
               </div>
             <label className='option-input-label'>
-              How many orders are in this option?
+              How many pieces are in this order?
             <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
             </label>
             <label className='option-input-label'>

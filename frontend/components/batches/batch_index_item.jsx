@@ -48,10 +48,6 @@ class BatchIndexItem extends React.Component {
             {`${batch.active}`}
           </span>
 
-          <span className="index-item-category"> Order quantity: </span>
-          <span className="index-item-copy">
-            {batch.qty_in_order}
-          </span>
 
         </div>
       </div>

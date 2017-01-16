@@ -51,7 +51,7 @@ end
 
 
 def updateImages
-  
+
   url = params[:batch][:img_url]
   BatchImage.create({batch_id:@batch.id, url: url})
 end
@@ -74,8 +74,6 @@ end
     :zip_code,
     :order_description,
     :chef_id,
-    :active,
-    :qty_in_order
-    )
+    :active    )
   end
 end
