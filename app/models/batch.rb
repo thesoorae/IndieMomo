@@ -35,7 +35,12 @@ class Batch < ActiveRecord::Base
   through: :order_options
 
   def main_image
-    @main_image = self.batch_images.first.url || "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg"
+    if(self.batch_images.length > 0)
+      @main_image = self.batch_images.first.url
+    else
+      @main_image = "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg"
+    end
+    return @main_image
   end
 
   def total_orders

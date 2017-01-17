@@ -24,14 +24,15 @@ class BatchShow extends React.Component{
               <li><img src={option.main_image} /></li>
 
               <li><strong> {option.qty}</strong> Pieces - <strong>$ {option.cost}</strong></li>
-              
+
               </ul>
             </div>
           ));
         }
 
         if(user.batches.length > 0){
-          userBatches = user.batches.map( batch => (
+          console.log("user's batches", user.batches);
+          userBatches = user.batch_details.map( batch => (
             <div className="user-thumbnail">
               <ul>
               <li><img src={batch.main_image} /></li>

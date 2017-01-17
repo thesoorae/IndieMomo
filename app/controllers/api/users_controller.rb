@@ -21,10 +21,14 @@ class Api::UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
     @order_details = []
+    @batch_details = []
 		if @user
       @user.order_options.each do |order|
           @order_details.push({qty: order.qty, cost: order.cost, main_image: order.batch.main_image, batch_id: order.batch.id, order_id: order.id})
       end
+      @user.batches.each do |batch|
+        @batch_details.push({title: batch.title, total_orders: batch.total_orders, goal: batch.goal, main_image: batch.main_image})
+      end 
   			render :show
 		else
 			render json: @user.errors.full_messages, status:422
