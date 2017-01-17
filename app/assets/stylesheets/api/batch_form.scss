@@ -7,9 +7,12 @@
   display:flex;
   flex-direction: column;
   align-items: center;
+
+
 }
 div.form-box {
   width:75%;
+  margin-top: 100px;
 }
 .form-box label{
   display: flex;
@@ -21,10 +24,33 @@ div.batch-buttons-bar {
   justify-content: space-between;
   width:80%;
   margin: 30px;
+  position: fixed;
+  height: 50px;
 }
 .batch-form-buttons {
-text-align: right}
+text-align: right
+}
 
+.batch-form-buttons button{
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+
+button.launch{
+  background-color: #33cccc;
+  color:white;
+
+}
+
+button.save{
+  background-color: white;
+  color: #33cccc
+}
+
+button.save:hover{
+  background-color: lighten(#33cccc, 35%);
+}
 
 select {
   width: 200px;

@@ -12,11 +12,10 @@ div.batch-show-summary {
   display:flex;
   flex-direction: row;
   justify-content: center;
-
 }
 
 div.right{
-width: 40%;
+width: 30%;
 
 
 }
@@ -26,7 +25,7 @@ width: 40%;
 }
 
 div.left{
-  width: 58%;
+  width: 70%;
 }
 
 
@@ -63,5 +62,5 @@ h3.subtitle {
 }
 
 .batch-show-summary img{
-  max-width: 600px;
+
 }

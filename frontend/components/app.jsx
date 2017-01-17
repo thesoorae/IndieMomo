@@ -8,6 +8,9 @@ const App = ({ children, store }) => (
 
     <HeaderContainer store={store} />
     {children}
+    <div className="footer">
+      
+    </div>
   </div>
 );
 

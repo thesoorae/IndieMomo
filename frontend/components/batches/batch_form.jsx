@@ -53,10 +53,11 @@ class BatchForm extends React.Component{
   }
 
   render(){
+    const CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Korean", "Other"]
 
-    
-    const BatchButtons = <div className="batch-form-buttons"><button onClick={this.saveBatch}> Save </button>
-      <button onClick={this.launchBatch}>Launch</button></div>;
+
+    const BatchButtons = <div className="batch-form-buttons"><button className="save" onClick={this.saveBatch}> Save Batch</button>
+      <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
 
 
     return(
@@ -130,11 +131,8 @@ class BatchForm extends React.Component{
         Food Type
           <select value={this.state.category} onChange={this.update('category')}>
           <option value="Uncategorized">Select a Category</option>
-          <option value="Taiwanese">Taiwanese</option>
-          <option value="Cantonese">Cantonese</option>
-          <option value="Chinese">Chinese</option>
-          <option value="Thai">Thai</option>
-        </select>
+          {CATEGORIES.map(category => (<option value={category} key={category}>{category}</option>))}
+          </select>
       </label>
 
 

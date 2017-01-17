@@ -13,6 +13,15 @@ html, body, a, p, span, button, h2, h1, h3, form, li, ul {
   list-style: none;
 }
 
+$turquoise: #33cccc;
+
+button{
+  text-transform: uppercase;
+  padding: 15px;
+}
+button:hover{
+  opacity: .75;
+}
 
 h2{
   font-size: 20px;

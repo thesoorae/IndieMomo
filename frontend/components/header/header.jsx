@@ -18,7 +18,7 @@ const Header = () => (
       <h2> How It Works </h2>
     </span>
   <span className="right">
-    <button onClick={startBatch}>Start A Batch</button>
+    <button className="start-batch" onClick={startBatch}>Start A Batch</button>
 
     <GreetingContainer />
   </span>

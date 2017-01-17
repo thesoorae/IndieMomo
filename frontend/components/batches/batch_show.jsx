@@ -23,7 +23,9 @@ class BatchShow extends React.Component{
       console.log(batch);
       // let mainImage = "http://res.cloudinary.com/indiemomo/image/upload/v1484272483/sample.jpg";
       // if (batch.batch_images[0]){
-        const mainImage = batch.batch_images[0]['url'];
+        const mainImage = batch.batch_images.length > 0 ?
+        batch.batch_images[0]['url'] :
+        "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg";
 
       return (
         <div className="batch-show-container">
