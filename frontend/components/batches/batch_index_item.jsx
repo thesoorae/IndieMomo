@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import ProgressBar from './progress_bar';
 
 class BatchIndexItem extends React.Component {
   constructor(props){
@@ -14,7 +15,6 @@ class BatchIndexItem extends React.Component {
 
   render(){
     const batch = this.props.batch;
-    console.log(batch);
     let itemImage = "";
     if (batch.batch_images.length > 0){
       itemImage = (<img src={batch.batch_images[0]['url']} />);
@@ -30,14 +30,14 @@ class BatchIndexItem extends React.Component {
             </div>
             <div className="index-item-info">
               <ul>
-                <li><h4>{batch.category}</h4></li>
+                <li className="category"><h4>{batch.category}</h4></li>
                 <li><h3>{batch.title}</h3></li>
                 <li>{batch.description}</li>
               </ul>
             </div>
             <div className="progress">
               <ul>
-                <li>Progress Bar</li>
+                <li><ProgressBar batch={batch} /></li>
               </ul>
             </div>
 

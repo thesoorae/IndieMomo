@@ -4,6 +4,7 @@ import Root from './components/root.jsx';
 import configureStore from './store/store';
 import * as SessionActions from './actions/session_actions';
 import * as BatchActions from './actions/batch_actions';
+import * as UserActions from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -28,3 +29,4 @@ window.fetchBatch = BatchActions.fetchBatch;
 window.createBatch = BatchActions.createBatch;
 window.updateBatch = BatchActions.updateBatch;
 window.deleteBatch = BatchActions.deleteBatch;
+window.fetchUsers = UserActions.fetchUsers;

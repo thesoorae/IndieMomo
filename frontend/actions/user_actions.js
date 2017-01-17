@@ -4,6 +4,21 @@ import {hashHistory} from 'react-router';
 
 
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_USERS = "RECEIVE_USERS";
+
+
+
+export const receiveUsers = users => ({
+  type: RECEIVE_USERS,
+  users
+});
+
+
+export const fetchUsers = () => dispatch => {
+  return APIUtil.fetchUsers()
+  .then(users => dispatch(receiveUsers(users)));
+};
+
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
@@ -11,11 +26,10 @@ export const receiveUser = user => ({
 });
 
 export const getUser = id => dispatch => {
-  APIUtil.fetchUser(id)
+  return APIUtil.fetchUser(id)
     .then(user => {
       dispatch(receiveUser(user));
-      hashHistory.push(`/users/${id}`);
-    },
+      },
       err => dispatch(receiveErrors(err.responseJSON)));
 };
 

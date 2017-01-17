@@ -1,0 +1,16 @@
+div.progress-bar {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px;
+  height: 30px;
+
+}
+
+div.progress {
+  background-color: red;
+}
+div.no-progress{
+  background-color: blue;
+}

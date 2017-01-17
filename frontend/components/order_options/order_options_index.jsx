@@ -13,7 +13,6 @@ class OrderOptionsIndex extends React.Component{
     return(e) => {
       e.preventDefault();
       const newOrder = {
-        customer_id: this.props.customerId,
         order_option_id: optionId};
         this.props.createOrder(newOrder);
       };

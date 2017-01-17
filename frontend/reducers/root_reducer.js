@@ -9,7 +9,7 @@ const RootReducer = combineReducers({
 session: SessionReducer,
 batches: BatchesReducer,
 orders: OrdersReducer,
-displayedUser: UserReducer,
+userProfile: UserReducer,
 errors: ErrorsReducer
 
 });

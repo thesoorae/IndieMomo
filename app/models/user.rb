@@ -29,6 +29,9 @@ class User < ActiveRecord::Base
   has_many :orders,
   foreign_key: :customer_id
 
+  has_many :order_options,
+  through: :orders
+
   def password= password
   	self.password_digest = BCrypt::Password.create(password)
   	@password = password

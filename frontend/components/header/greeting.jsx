@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 
 
@@ -29,11 +29,21 @@ const sessionLinks = (login) => (
 
 );
 
+const goToProfile = (id) => {
+  return (e) => {
+  hashHistory.replace(`/users/${id}`);
+  };
+};
+
+
 const personalGreeting = (currentUser, logout) => (
-	<span className="header-group">
+<div className="greeting" onClick={goToProfile(currentUser.id)}>
+  <img src={currentUser.img_url} />
+  <span className="header-group">
     <h3 className="header-name">Hi, {currentUser.username}!</h3>
     <a href="" id="logout" onClick={logout}>Log Out</a>
 	</span>
+</div>
 );
 
 const Greeting = ({ currentUser, logout, login }) => (

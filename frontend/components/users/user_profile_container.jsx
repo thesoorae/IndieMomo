@@ -7,14 +7,13 @@ import {getUser, editUser} from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => (
 {
   currentUser: state.session.currentUser,
-  user: state.displayedUser,
+  user: state.userProfile,
   errors: state.session.errors
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  editUser: (user) => dispatch(editUser(user));
-  loadUser: () => dispatch(getUser(ownProps.params.userId));
-};
+const mapDispatchToProps = dispatch => ({
+  editUser: user => dispatch(editUser(user))
+});
 
 export default connect(
   mapStateToProps,

@@ -1,5 +1,12 @@
 class Api::UsersController < ApplicationController
 
+
+  def index
+    @users = User.all
+    render :index
+  end
+
+
 	def create
 		@user = User.new(user_params)
 
@@ -13,8 +20,12 @@ class Api::UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+    @order_details = []
 		if @user
-			render :show
+      @user.order_options.each do |order|
+          @order_details.push({qty: order.qty, cost: order.cost, main_image: order.batch.main_image, batch_id: order.batch.id, order_id: order.id})
+      end
+  			render :show
 		else
 			render json: @user.errors.full_messages, status:422
 		end

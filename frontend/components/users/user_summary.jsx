@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
 class UserSummary extends React.Component{
   constructor(props){
@@ -10,7 +10,7 @@ class UserSummary extends React.Component{
   showUser(id){
     return (e) => {
     e.preventDefault();
-    this.props.getUser(id);
+    hashHistory.push(`/users/${id}`);
   };}
 
   render(){

@@ -34,6 +34,10 @@ class Batch < ActiveRecord::Base
   has_many :orders,
   through: :order_options
 
+  def main_image
+    @main_image = self.batch_images.first.url || "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg"
+  end
+
   def total_orders
     @total_orders = 0
     self.orders.each do |order|

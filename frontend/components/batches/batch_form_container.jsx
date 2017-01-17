@@ -5,9 +5,7 @@ import {getBatch} from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("batches", state.batches);
-  console.log("ownProps" , ownProps);
-  console.log("batch from container", state.batches[ownProps.params.batchId]);
+  
 
   return(
   { batch: getBatch(ownProps.params.batchId, state.batches),

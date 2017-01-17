@@ -45,3 +45,13 @@ span.header-group {
   font-size: 12px;
   margin-top: 5px;
 }
+
+div.greeting{
+  display:flex;
+  flex-direction: row;
+}
+
+.greeting img{
+  height: 50px;
+  margin:auto;
+}

@@ -2,6 +2,7 @@ class Api::OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
+    @order.customer_id = current_user.id
     if @order.save
       render :show
     else

@@ -14,3 +14,34 @@ div.user-info{
   flex-direction: row;
   justify-content: space-around;
 }
+
+.left img {
+  height: 300px;
+}
+
+div.user-thumbnails {
+  display: flex;
+
+}
+
+div.user-thumbnail{
+  width: 40%;
+  margin: 20px;
+}
+
+.user-thumbnail img{
+  width:100%;
+}
+
+.user-profile h2{
+  margin:30px 0;
+  font-size: 30px;
+}
+
+.user-profile h3{
+  font-size: 24px;
+}
+
+.user-profile h4{
+  font-size: 20px;
+}

@@ -16,7 +16,7 @@ import UserProfileContainer from './users/user_profile_container';
 
 
 import {fetchBatches} from '../actions/batch_actions';
-import {getUser} from '../actions/user_actions';
+import {fetchUsers, getUser} from '../actions/user_actions';
 
 const Root = ({ store }) => {
 
@@ -42,10 +42,15 @@ const Root = ({ store }) => {
     store.dispatch(fetchBatches());
   };
 
-  const _getUser = (nextState) =>{
+  const _getUser = (nextState, replace, cb) =>{
     console.log("fetching User");
     console.log("next state", nextState);
-    store.dispatch(getUser(nextState.params.userId));
+    store.dispatch(getUser(nextState.params.userId)).then(cb);
+  };
+
+  const _getUsers = () => {
+    console.log("fetching users");
+    store.dispatch(fetchUsers());
   };
 
   return (
