@@ -31,7 +31,9 @@ class BatchShow extends React.Component{
         <div className="batch-show-container">
           <div className="batch-show-summary">
             <div className="left">
-            <img src={mainImage} />
+              <div className="main-image-container">
+                <img className="main-image" src={mainImage} />
+              </div>
             </div>
             <div className="right">
               <ul>
@@ -52,7 +54,7 @@ class BatchShow extends React.Component{
             <div className="left" />
               <div className="right">
                 <h3 className="subtitle">Order Options</h3>
-                <OrderOptionsIndex batch={batch} orderOptions={batch.order_options} createOrder={this.props.createOrder} />
+                <OrderOptionsIndex batch={batch} orderOptions={batch.order_options} createOrder={this.props.createOrder} currentUser={this.props.currentUser} />
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
-import OrderOptionsItem from './order_options_item';
+import {Link, hashHistory} from 'react-router';
 
 class OrderOptionsIndex extends React.Component{
   constructor(props){
@@ -9,14 +8,18 @@ class OrderOptionsIndex extends React.Component{
     this.placeOrder = this.placeOrder.bind(this);
   }
 
-  placeOrder(optionId){
+  placeOrder(optionId, currentUser){
     return(e) => {
       e.preventDefault();
+      console.log("current user", currentUser);
+      if(currentUser == null){
+        hashHistory.push('/login');}
+      else {
       const newOrder = {
         order_option_id: optionId};
         this.props.createOrder(newOrder);
-      };
-    }
+      }
+    };}
 
 
   render(){
@@ -26,7 +29,7 @@ class OrderOptionsIndex extends React.Component{
       <li className="cost">$ {option.cost}</li>
       <li className="qty">You get {option.qty} pieces with this order!</li>
       <li className="option-description">{option.description}</li>
-      <button className="order-button" onClick={this.placeOrder(option.id)}>Place an Order</button>
+      <button className="order-button" onClick={this.placeOrder(option.id, this.props.currentUser)}>Place an Order</button>
       </ul>
       </li>
     ));
