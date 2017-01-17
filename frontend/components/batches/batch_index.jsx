@@ -1,6 +1,5 @@
 import BatchIndexItem from './batch_index_item';
 import React from 'react';
-import Slider from 'react-slick';
 
 class BatchIndex extends React.Component{
 
