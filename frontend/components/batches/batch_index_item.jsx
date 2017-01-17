@@ -23,7 +23,7 @@ class BatchIndexItem extends React.Component {
     if(this.props.batch){
       console.log();
         return (
-          <div className = "batch-index-item"
+          <div className = "batch-index-item clickable"
             onClick={this.handleClick}>
             <div className="index-item-image">
               {itemImage}

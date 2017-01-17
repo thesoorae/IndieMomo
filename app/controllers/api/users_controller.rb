@@ -27,8 +27,8 @@ class Api::UsersController < ApplicationController
           @order_details.push({qty: order.qty, cost: order.cost, main_image: order.batch.main_image, batch_id: order.batch.id, order_id: order.id})
       end
       @user.batches.each do |batch|
-        @batch_details.push({title: batch.title, total_orders: batch.total_orders, goal: batch.goal, main_image: batch.main_image})
-      end 
+        @batch_details.push({title: batch.title, total_orders: batch.total_orders, goal: batch.goal, main_image: batch.main_image, batch_id: batch.id})
+      end
   			render :show
 		else
 			render json: @user.errors.full_messages, status:422

@@ -56,7 +56,7 @@ class BatchForm extends React.Component{
     const CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Korean", "Other"]
 
 
-    const BatchButtons = <div className="batch-form-buttons"><button className="save" onClick={this.saveBatch}> Save Batch</button>
+    const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
       <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
 
 

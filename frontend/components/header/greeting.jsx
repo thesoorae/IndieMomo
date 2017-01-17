@@ -37,7 +37,7 @@ const goToProfile = (id) => {
 
 
 const personalGreeting = (currentUser, logout) => (
-<div className="greeting" onClick={goToProfile(currentUser.id)}>
+<div className="greeting clickable" onClick={goToProfile(currentUser.id)}>
   <img src={currentUser.img_url} />
   <span className="header-group">
     <h3 className="header-name">Hi, {currentUser.username}!</h3>

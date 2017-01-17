@@ -64,7 +64,7 @@ class Homepage extends React.Component{
 
   return(
     <div className="home-container">
-      <div onClick={this.startBatch} className="banner">
+      <div onClick={this.startBatch} className="banner clickable">
         <img src="http://res.cloudinary.com/indiemomo/image/upload/c_lfill,g_south,h_500,w_1000/v1484673961/dumpling_banner_s9d7d5.jpg" />
         <span className="banner-title">
         <h2>Only you know how to make them.<span className='spacer' /></h2>
