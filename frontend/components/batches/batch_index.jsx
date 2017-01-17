@@ -1,5 +1,6 @@
 import BatchIndexItem from './batch_index_item';
 import React from 'react';
+import Slider from 'react-slick';
 
 class BatchIndex extends React.Component{
 
@@ -10,12 +11,7 @@ class BatchIndex extends React.Component{
   render(){
 
     const {batches} = this.props;
-    const settings = {
-      infinite:true,
-      speed:500,
-      slidesToShow:5,
-      slidesToScroll:4
-    };
+
 
     const batchItems = batches.map( batch =>
       (<div><BatchIndexItem
@@ -25,13 +21,12 @@ class BatchIndex extends React.Component{
   );
 
   return(
-        <div className="batch-index">
-        <h1>Batches</h1>
+    <div className="batch-index">
+    <h1>Batches</h1>
+    {batchItems}
+    </div>
+    
 
-            {batchItems}
-
-      
-        </div>
 
   );
 }

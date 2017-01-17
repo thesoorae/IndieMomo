@@ -1,17 +1,22 @@
-div.batch-index {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+// div.batch-index {
+//   display:flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   width: 80%;
+//   overflow-x: scroll;
+// }
 
 div.batch-index-item{
-  width: 300px;
-  margin: 20px;
+  width: 90%;
+  margin: 15px;
   border: 2px solid LightGray;
+  display: inline-block;
+  height: 500px;
+
 }
 
 .batch-index-item img{
-  width: 300px;
+  width: 100%;
 }
 
 li.category {
@@ -21,13 +26,7 @@ li.category {
 
 }
 
-.slider-container {
-  margin: 0 auto;
-  padding: 40px;
-  width: 80%;
-  color: #333;
-  background: #419be0;
-}
+
 
 .index-item-info {
   padding: 20px;

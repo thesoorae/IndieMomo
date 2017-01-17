@@ -13,6 +13,7 @@ import BatchShowContainer from './batches/batch_show_container';
 import BatchFormContainer from './batches/batch_form_container';
 import NewBatchFormContainer from './batches/new_batch_form_container';
 import UserProfileContainer from './users/user_profile_container';
+import HomepageContainer from './homepage/homepage_container';
 
 
 import {fetchBatches} from '../actions/batch_actions';
@@ -57,7 +58,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} store={store} onEnter={_getBatches}>
-          <IndexRoute component={BatchesIndexContainer} />
+          <IndexRoute component={HomepageContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
             <Route path="/batches" component={BatchesIndexContainer} />

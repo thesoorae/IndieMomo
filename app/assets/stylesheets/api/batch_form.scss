@@ -10,6 +10,9 @@
 
 
 }
+
+
+
 div.form-box {
   width:75%;
   margin-top: 100px;
@@ -23,9 +26,10 @@ div.batch-buttons-bar {
   display: flex;
   justify-content: space-between;
   width:80%;
-  margin: 30px;
   position: fixed;
-  height: 50px;
+  top: 100px;
+  height: 80px;
+  background: white;
 }
 .batch-form-buttons {
 text-align: right

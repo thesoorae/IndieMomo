@@ -1,4 +1,5 @@
 class Api::OrdersController < ApplicationController
+before_action :require_logged_in
 
   def create
     @order = Order.new(order_params)

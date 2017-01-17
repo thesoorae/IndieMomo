@@ -21,14 +21,14 @@ batch1 = Batch.create!({title: 'Dumplings',
   description: "Yummy vegetarian dumplings",
   goal: 30,
   zip_code: 94805,
-  chef_id: user1.id })
+  chef_id: user3.id })
 
 batch2 = Batch.create!({title: 'Steamed Buns',
   category: "Cantonese",
   description: "Steamed Red Bean Buns",
   goal: 25,
   zip_code: 94804,
-  chef_id: user3.id })
+  chef_id: user2.id })
 
 batch_zongzi = Batch.create!({title: 'Zongzi',
   category: "Chinese",
@@ -47,13 +47,13 @@ batch_korean_pancakes = Batch.create!({title: 'Korean Scallion Pancakes',
   chef_id: user4.id })
 
 batch_khanom = Batch.create!({title: 'Khanom Krog',
-  category: "Korean",
+  category: "Thai",
   description: "Fried mini coconut patties cooked in special pan. Crispy
   edges and delcious filling of various flavors, including green onions, corn,
   yam, and plain.",
   goal: 20,
   zip_code: 94112,
-  chef_id: user4.id })
+  chef_id: user5.id })
 
 batch_scallion = Batch.create!({title: 'Scallion Pancakes',
   category: "Taiwanese",
@@ -69,7 +69,7 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   or eaten cold as a filling snack or a light lunch. A Hong Kong specialty!",
   goal: 30,
   zip_code: 98105,
-  chef_id: user3.id })
+  chef_id: user2.id })
 
 
 
