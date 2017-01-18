@@ -15,6 +15,7 @@ class BatchForm extends React.Component{
     this.launchBatch = this.launchBatch.bind(this);
     this.postImage = this.postImage.bind(this);
     this.addOptions = this.addOptions.bind(this);
+    this.removeImage = this.removeImage.bind(this);
   }
 
 
@@ -45,7 +46,7 @@ class BatchForm extends React.Component{
     let batch = this.state.batch;
     batch.active = true;
     this.setState({batch}, () => {
-      this.props.updateBatch(this.state.batch);
+      this.props.updateBatch(this.state);
   });}
 
   addOptions(e){
@@ -64,21 +65,26 @@ class BatchForm extends React.Component{
     );
   }
 
+
   postImage(images){
     let newimages = this.state.images;
 
     images.forEach(image => {
-      let data = {image:{
-        batch_id: this.props.batchId,
-        url: image.url }};
-
-      $.post(`/api/batches/${this.props.batchId}/batch_images`, data, function(savedImage){
-        newimages.push(savedImage);
+      let data = {
+        url: image.url };
+        newimages.push(data);
       });
-    });
 
     this.setState({images: newimages});
+    }
 
+    removeImage(i){
+      return (e) => {
+        e.preventDefault();
+        let newimages = this.state.images;
+        newimages.splice(i, 1);
+        this.setState({images: newimages});
+      };
     }
 
 
@@ -142,7 +148,7 @@ class BatchForm extends React.Component{
               <br />
               <UploadButton postImage={this.postImage} />
               </label>
-            <ImageList images={this.state.images} />
+            <ImageList images={this.state.images} removeImage={this.removeImage}/>
             </div>
             <br />
 

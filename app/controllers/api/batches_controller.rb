@@ -25,6 +25,7 @@ class Api::BatchesController < ApplicationController
   def update
     @batch = current_user.batches.find(params[:id])
     if @batch.update(batch_params)
+      self.updateImages
       self.updateOptions
       render :show
     else
@@ -49,9 +50,14 @@ end
 
 def updateImages
   images = params[:images]
-  images.each do |image|
-    BatchImage.create({batch_id:@batch.id, url: image.url}) unless image.id
-  end 
+  images.each do |k, image|
+
+    a= BatchImage.create({batch_id:@batch.id, url: image[:url]}) unless image.has_key?(:id)
+    p a
+  end
+  @batch.batch_images.each do |batch_image|
+    batch_image.destroy unless images.any?{|k, v| v[:url] == batch_image.url}
+  end
 end
 
 def updateOptions

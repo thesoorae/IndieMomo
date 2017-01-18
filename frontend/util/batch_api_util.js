@@ -24,12 +24,14 @@ export const createBatch = batch => (
   })
 );
 
-export const updateBatch = batch => (
+export const updateBatch = data => (
   $.ajax({
     method:'PATCH',
-    url:`api/batches/${batch.id}`,
-
-    data: {batch}
+    url:`api/batches/${data.batch.id}`,
+    thing: console.log("data", data),
+    data: {
+      batch: data.batch,
+      images: data.images}
   })
 );
 

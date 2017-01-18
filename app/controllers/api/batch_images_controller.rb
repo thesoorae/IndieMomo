@@ -22,7 +22,7 @@ class Api::BatchImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:image).permit(:url)
+    params.require(:image).permit(:batch_id, :url)
   end
 
 end
