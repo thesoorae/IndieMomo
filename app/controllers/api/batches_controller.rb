@@ -27,7 +27,7 @@ class Api::BatchesController < ApplicationController
     if @batch.update(batch_params)
       self.updateImages
       self.updateOptions
-      
+
       render :show
     else
       render json: @batch.errors.full_messages, status:422
@@ -46,8 +46,6 @@ class Api::BatchesController < ApplicationController
 
 def createOptions
   OrderOption.create({batch_id: @batch.id, cost:1, qty:1, description: "A great order!"})
-  OrderOption.create({batch_id: @batch.id, cost:5, qty:5, description: "A great order!"})
-  OrderOption.create({batch_id: @batch.id, cost:10, qty:10, description: "A great order!"})
 end
 
 
