@@ -14,7 +14,7 @@ import BatchFormContainer from './batches/batch_form_container';
 import NewBatchFormContainer from './batches/new_batch_form_container';
 import UserProfileContainer from './users/user_profile_container';
 import HomepageContainer from './homepage/homepage_container';
-import OrderOptionsFormContainer from './order_options/order_options_form_container';
+import OrderOptionsEditContainer from './order_options/order_options_edit_container';
 
 
 import {fetchBatches} from '../actions/batch_actions';
@@ -66,7 +66,7 @@ const Root = ({ store }) => {
             <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId" component={BatchShowContainer} />
-            <Route path="/batches/:batchId/options/edit" component={OrderOptionsFormContainer} onEnter={_ensureLoggedIn} />
+            <Route path="/batches/:batchId/options/edit" component={OrderOptionsEditContainer} onEnter={_ensureLoggedIn} />
               <Route path="/users/:userId" onEnter = {_getUser} component={UserProfileContainer} />
 
         </Route>

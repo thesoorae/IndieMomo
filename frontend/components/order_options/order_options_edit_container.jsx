@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import OrderOptionsForm from './order_options_form';
+import OrderOptionsEdit from './order_options_edit';
 import {createOption, updateOption, deleteOption} from '../../actions/order_option_actions';
 import {getBatch} from '../../reducers/selectors';
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch, ownProps) => (
   }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderOptionsForm);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderOptionsEdit);

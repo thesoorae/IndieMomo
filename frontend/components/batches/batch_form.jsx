@@ -1,45 +1,52 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
+import UploadButton from '../images/upload_button';
+import {ImageList} from '../images/image_list';
 
 class BatchForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.batch;
+    this.state = {
+      batch: this.props.batch,
+      images: this.props.batch.batch_images
+    };
     this.saveBatch = this.saveBatch.bind(this);
     this.launchBatch = this.launchBatch.bind(this);
+    this.postImage = this.postImage.bind(this);
+    this.addOptions = this.addOptions.bind(this);
   }
 
 
+
   componentWillReceiveProps(nextProps){
-    this.setState(nextProps.batch);
+    this.setState({
+      batch: nextProps.batch});
   }
 
   saveBatch(e){
     e.preventDefault();
-    this.props.updateBatch(this.state);
+    this.props.updateBatch({
+      batch: this.state.batch});
   }
 
   update(type){
     console.log("updating something");
     return (e) => {
-      this.setState({[type]: e.target.value});
+      this.setState({batch:{[type]: e.target.value}});
     };
   }
 
-  updateOptions(i, attr){
-    return (e) => {
-      let order_options = this.state.order_options;
-      order_options[i][attr] = e.target.value;
-      this.setState({order_options});
-    };
-  }
 
   launchBatch(e){
     e.preventDefault();
-    this.setState({active: true}, () => {
-      this.props.updateBatch(this.state);
+    this.setState({batch:{active: true}}, () => {
+      this.props.updateBatch({batch:this.state});
   });}
 
+  addOptions(e){
+    e.preventDefault();
+    hashHistory.push(`/batches/${this.props.batchId}/options/edit`);
+  }
   renderErrors() {
     return(
       <ul>
@@ -52,13 +59,32 @@ class BatchForm extends React.Component{
     );
   }
 
+  postImage(images){
+    let newimages = this.state.images;
+
+    images.forEach(image => {
+      let data = {image:{
+        url: image.url }};
+
+      $.post(`/api/batches/${this.props.batchId}/batch_images`, data, function(savedImage){
+        newimages.push(savedImage);
+      });
+    });
+
+    this.setState({images: newimages});
+
+    }
+
+
   render(){
+    console.log("state", this.state);
     const CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Korean", "Other"]
 
 
     const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
-      <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
+      <button className="options clickable" onClick={this.addOptions}>Add Options</button>    <button className="launch" onClick={this.launchBatch}>Launch & Start</button></div>;
 
+    const batch = this.state.batch;
 
     return(
       <div className="batch-form-container">
@@ -75,7 +101,7 @@ class BatchForm extends React.Component{
               type="text"
               className="batch-input"
               onChange={this.update('title')}
-              value={this.state.title}
+              value={batch.title}
               placeholder={this.props.formtype === "new" ? "What is your snack called?" : ""}/>
             </label>
             <br />
@@ -86,7 +112,7 @@ class BatchForm extends React.Component{
                 <textarea
                   className="batch-input"
                   onChange={this.update('description')}
-                  value={this.state.description}
+                  value={batch.description}
                   placeholder="Describe your snack in detail. What ingredients do you use? Is it sweet or salty? Is there a filling? Are they frozen, fresh, or dried?">
                 </textarea>
               </label>
@@ -100,21 +126,18 @@ class BatchForm extends React.Component{
                 type="text"
                 className="batch-input"
                 onChange={this.update('goal')}
-                value={this.state.goal}
+                value={batch.goal}
                 placeholder="How many do you want to sell?"/>
             </label>
             <br />
-
+            <div className="img-list">
             <label>
               Image URL
               <br />
-              <input
-                type="text"
-                className="batch-input"
-                onChange={this.update('img_url')}
-                value={this.state.img_url}
-                placeholder="URL of your image"/>
-            </label>
+              <UploadButton postImage={this.postImage} />
+              </label>
+            <ImageList images={this.state.images} />
+            </div>
             <br />
 
             <label>
@@ -122,38 +145,20 @@ class BatchForm extends React.Component{
           <input type="text"
             className="batch-input"
             onChange={this.update('zip_code')}
-            value={this.state.zip_code}
+            value={batch.zip_code}
             placeholder="The zip code where customers can pick up their orders" />
           </label>
           <br />
 
         <label>
         Food Type
-          <select value={this.state.category} onChange={this.update('category')}>
+          <select value={batch.category} onChange={this.update('category')}>
           <option value="Uncategorized">Select a Category</option>
           {CATEGORIES.map(category => (<option value={category} key={category}>{category}</option>))}
           </select>
       </label>
 
 
-      <div className="options-container">{this.state.order_options.map((option, i) => (
-          <div className="option-box" key={option.id}>
-            <h2>Order Option {i+1}</h2>
-            <div id="cost" className='option-input-label'>
-              <h3>$</h3>
-              <input id="cost" className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
-              </div>
-            <label className='option-input-label'>
-              How many pieces are in this order?
-            <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
-            </label>
-            <label className='option-input-label'>
-              Brief Description
-            <input className="option-input" type="text" onChange={this.updateOptions(i, 'description')} value={option.description} />
-            </label>
-          </div>
-          ))}
-      </div>
 
           </form>
 
@@ -165,3 +170,22 @@ class BatchForm extends React.Component{
   }
 }
 export default BatchForm;
+
+// <div className="options-container">{batch.order_options.map((option, i) => (
+//     <div className="option-box" key={option.id}>
+//       <h2>Order Option {i+1}</h2>
+//       <div id="cost" className='option-input-label'>
+//         <h3>$</h3>
+//         <input id="cost" className="option-input" type="number" onChange={this.updateOptions(i, 'cost')} value={option.cost} />
+//         </div>
+//       <label className='option-input-label'>
+//         How many pieces are in this order?
+//       <input className="option-input" type="number" onChange={this.updateOptions(i, 'qty')} value={option.qty} />
+//       </label>
+//       <label className='option-input-label'>
+//         Brief Description
+//       <input className="option-input" type="text" onChange={this.updateOptions(i, 'description')} value={option.description} />
+//       </label>
+//     </div>
+//     ))}
+// </div>

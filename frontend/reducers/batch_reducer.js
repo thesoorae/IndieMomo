@@ -4,7 +4,6 @@ import merge from 'lodash/merge';
 const BatchesReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-
   switch(action.type){
     case RECEIVE_BATCHES:
       return action.batches;

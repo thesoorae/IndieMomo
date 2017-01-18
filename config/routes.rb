@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :batches do
       resources :order_options, only:[:create, :update]
+      resources :batch_images, only: [:create, :destroy, :index]
     end
     resources :orders, only:[:create, :destroy]
     resources :order_options, only: [:destroy]
