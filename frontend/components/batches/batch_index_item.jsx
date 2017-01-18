@@ -15,6 +15,8 @@ class BatchIndexItem extends React.Component {
 
   render(){
     const batch = this.props.batch;
+
+
     let itemImage = "";
     if (batch.batch_images.length > 0){
       itemImage = (<img src={batch.batch_images[0]['url']} />);
@@ -25,6 +27,7 @@ class BatchIndexItem extends React.Component {
         return (
           <div className = "batch-index-item clickable"
             onClick={this.handleClick}>
+            <div className="batch-index-item-container">
             <div className="index-item-image">
               {itemImage}
             </div>
@@ -36,11 +39,9 @@ class BatchIndexItem extends React.Component {
               </ul>
             </div>
             <div className="progress">
-              <ul>
-                <li><ProgressBar batch={batch} /></li>
-              </ul>
+              <ProgressBar batch={batch}/>
             </div>
-
+            </div>
           </div>
       );}
       else{

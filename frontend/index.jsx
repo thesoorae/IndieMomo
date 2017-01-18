@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import * as SessionActions from './actions/session_actions';
 import * as BatchActions from './actions/batch_actions';
 import * as UserActions from './actions/user_actions';
+import * as OptionsActions from './actions/order_option_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -30,3 +31,6 @@ window.createBatch = BatchActions.createBatch;
 window.updateBatch = BatchActions.updateBatch;
 window.deleteBatch = BatchActions.deleteBatch;
 window.fetchUsers = UserActions.fetchUsers;
+window.createOption = OptionsActions.createOption;
+window.deleteOption = OptionsActions.deleteOption;
+window.updateOption = OptionsActions.updateOption;

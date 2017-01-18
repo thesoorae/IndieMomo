@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import OrderOptionsIndex from '../order_options/order_options_index';
 import UserSummary from '../users/user_summary';
+import ProgressBar from './progress_bar';
 
 class BatchShow extends React.Component{
 
@@ -46,6 +47,9 @@ class BatchShow extends React.Component{
                 <li >
                   <UserSummary getUser={this.props.getUser} user={batch.chef} />
                 </li>
+                <div className="batch-show-progress">
+                  <ProgressBar batch={batch}/>
+                </div>
 
               </ul>
             </div>

@@ -1,16 +1,11 @@
-div.progress-bar {
-  border: 2px solid black;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 20px;
-  height: 30px;
-
-}
-
 div.progress {
-  background-color: red;
+  position: absolute;
+  bottom: 20px;
+  padding: 0 10px;
+  width: 90%;
 }
-div.no-progress{
-  background-color: blue;
+
+li.percentage {
+  color: gray;
+  font-size: 10px;
 }

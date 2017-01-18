@@ -1,16 +1,20 @@
 class Api::OrderOptionsController < ApplicationController
-  before_action :require_owner
+  before_action :require_owner, only: [:create, :update, :destroy]
   attr_reader :current_batch
 
   def current_batch
-    @current_batch || Batch.find(params[:batchId])
+    debugger
+    @current_batch ||= Batch.find(params[:batch_id])
   end
 
   def require_owner
-    render json: {base: ['Please only edit your own batches']}, status: 401 unless current_user.id == @current_batch.chef_id
+    unless current_user.id == @current_batch.chef_id
+      render json: {errors: ['Please only edit your own batches']}, status: 401
+    end 
   end
 
   def create
+    debugger
     @order_option = OrderOption.new(option_params)
     @order_option.batch_id = @current_batch.id
     if @order_option.save
@@ -22,7 +26,7 @@ class Api::OrderOptionsController < ApplicationController
 
   def update
     @order_option = OrderOption.find(params[:id])
-    
+
   end
 
   def index
@@ -31,10 +35,11 @@ class Api::OrderOptionsController < ApplicationController
   end
 
   def destroy
+
   end
 
   def options_params
-    params.require(:order_options).permit(:cost, :qty, :description)
+    params.require(:order_options).permit(:cost, :qty, :description, :batch_id)
   end
 
 end

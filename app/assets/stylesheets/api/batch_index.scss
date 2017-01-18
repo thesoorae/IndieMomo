@@ -34,3 +34,12 @@ li.category {
 .index-item-info li{
   margin: 20px;
 }
+
+div.batch-index-item-container {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  align-items: center;
+  position: relative;
+
+}
