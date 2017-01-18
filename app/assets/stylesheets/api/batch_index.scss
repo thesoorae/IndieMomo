@@ -1,3 +1,5 @@
+@import "variables";
+
 // div.batch-index {
 //   display:flex;
 //   flex-direction: row;
@@ -20,7 +22,7 @@ div.batch-index-item{
 }
 
 li.category {
-  color: #33cccc;
+  color: $turquoise;
   text-transform: uppercase;
   font-size: 12px;
 

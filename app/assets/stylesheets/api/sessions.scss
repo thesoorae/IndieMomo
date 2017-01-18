@@ -1,3 +1,4 @@
+@import "variables";
 // Place all the styles related to the Api::Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -44,5 +45,5 @@ span.login-change {
 }
 
 button.login-button {
-  background-color: #33cccc;
+  background-color: $turquoise;
 }

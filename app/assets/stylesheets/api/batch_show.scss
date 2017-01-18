@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 div.batch-show-container {
   width:80%;
   margin:auto;
@@ -33,8 +35,8 @@ div.left{
 .color-heading  {
   letter-spacing: 1px;
   font-weight: normal;
-  color: #33cccc;
-  border-bottom: 3px solid #33cccc;
+  color: $turquoise;
+  border-bottom: 3px solid $turquoise;
   font-size: 22px;
 }
 

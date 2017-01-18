@@ -1,4 +1,4 @@
-
+@import "variables";
 // Place all the styles related to the Api::Batches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -49,18 +49,18 @@ text-align: right
 
 
 button.launch{
-  background-color: #33cccc;
+  background-color: $turquoise;
   color:white;
 
 }
 
 button.save{
   background-color: white;
-  color: #33cccc
+  color: $turquoise;
 }
 
 button.save:hover{
-  background-color: lighten(#33cccc, 35%);
+  background-color: lighten($turquoise, 35%);
 }
 
 select {
