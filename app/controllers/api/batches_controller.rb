@@ -25,9 +25,7 @@ class Api::BatchesController < ApplicationController
   def update
     @batch = current_user.batches.find(params[:id])
     if @batch.update(batch_params)
-      self.updateImages
       self.updateOptions
-
       render :show
     else
       render json: @batch.errors.full_messages, status:422
@@ -50,9 +48,10 @@ end
 
 
 def updateImages
-
-  url = params[:batch][:img_url]
-  BatchImage.create({batch_id:@batch.id, url: url})
+  images = params[:images]
+  images.each do |image|
+    BatchImage.create({batch_id:@batch.id, url: image.url}) unless image.id
+  end 
 end
 
 def updateOptions

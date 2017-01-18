@@ -7,6 +7,7 @@ class BatchForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+
       batch: this.props.batch,
       images: this.props.batch.batch_images
     };
@@ -32,15 +33,19 @@ class BatchForm extends React.Component{
   update(type){
     console.log("updating something");
     return (e) => {
-      this.setState({batch:{[type]: e.target.value}});
+      let batch = this.state.batch;
+      batch[type] = e.target.value;
+      this.setState({batch});
     };
   }
 
 
   launchBatch(e){
     e.preventDefault();
-    this.setState({batch:{active: true}}, () => {
-      this.props.updateBatch({batch:this.state});
+    let batch = this.state.batch;
+    batch.active = true;
+    this.setState({batch}, () => {
+      this.props.updateBatch(this.state.batch);
   });}
 
   addOptions(e){
@@ -64,6 +69,7 @@ class BatchForm extends React.Component{
 
     images.forEach(image => {
       let data = {image:{
+        batch_id: this.props.batchId,
         url: image.url }};
 
       $.post(`/api/batches/${this.props.batchId}/batch_images`, data, function(savedImage){
