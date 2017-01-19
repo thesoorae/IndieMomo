@@ -1,7 +1,7 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 import OrderOptionsForm from './order_options_form';
-import OrderOptionsIndex from './order_options_index';
+import OrderOptionsEditIndex from './order_options_edit_index';
 
 class OrderOptionsEdit extends React.Component{
   constructor(props){
@@ -10,6 +10,8 @@ class OrderOptionsEdit extends React.Component{
         batch: this.props.batch,
         order_options: this.props.batch.order_options,
         openForm: false};
+        this.removeOption = this.removeOption.bind(this);
+        this.handleCreateOption = this.handleCreateOption.bind(this);
   }
 
 componentWillReceiveProps(nextProps){
@@ -30,12 +32,31 @@ renderErrors() {
     );
   }
 
-newOptionForm(e){
+
+
+removeOption(id, i){
+  return (e) => {
   e.preventDefault();
-  this.setState=({openForm: true});
+  let currentOptions = this.state.order_options;
+  currentOptions.splice(i, 1);
+  this.setState({order_options: currentOptions}, () => {
+  this.props.deleteOption(id);});
+  };
+}
+
+handleCreateOption(newOption){
+  
+  return (e) => {
+  e.preventDefault();
+  let currentOptions = this.state.order_options;
+  currentOptions.push(newOption);
+  this.setState({order_options: currentOptions}, ()=>{
+  this.props.createOption(newOption);});
+};
 }
 
   render(){
+    console.log("state after create option", this.state);
 
     const new_option = {
       cost: 1,
@@ -56,23 +77,18 @@ newOptionForm(e){
           {BatchButtons}
         </div>
         <div className="order-edit-info">
-        <div className="left">
-          <div className="form-box">
-              <button onClick={this.createNewOption} className="create-new-option">Create New Option </button>
-              <OrderOptionsForm option={new_option} createOrEdit={this.props.createOption} />
+          <div className="current-options">
+            <OrderOptionsEditIndex
+              orderOptions={this.state.order_options}
+              removeOption={this.removeOption}
+              currentUser={this.props.currentUser}
+              />
           </div>
+        <div className="new-option-form">
+              <OrderOptionsForm option={new_option} createOrEdit={this.handleCreateOption} />
         </div>
-        <div className="right">
-        <div className="current-options">
-          <OrderOptionsIndex
-            batch={batch}
-            orderOptions={batch.order_options}
-            createOrder={()=>{}}
-            currentUser={this.props.currentUser}
-            increaseProgress={()=>{}}
-            />
-        </div>
-        </div>
+
+
       </div>
       </div>
     );

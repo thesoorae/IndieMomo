@@ -23,21 +23,20 @@ render(){
   let option = this.state;
   console.log(option);
     return(
-      <div className="options-form-container">
-        <h2>New Option</h2>
-        <div className="options-form-box">
-          <form>
+        <form className="options-form-box">
+          <h2>Add an order option</h2>
             <ul>
-              <li><strong className="cost">$</strong> <input type="number" className="cost" value={this.state.cost} onChange={this.update('cost')}/></li>
-              <li><label>How many pieces are in this order? </label><input type="number" value={this.state.qty} onChange={this.update('qty')} /></li>
-              <li><label>  Brief Description of your order</label> <input type="text" className="description" value={this.state.description} onChange={this.update('description')} /></li>
+              <li><label>How much does this order cost? &nbsp; &nbsp; </label>
+                <div className="cost"><strong className="cost">$</strong>
+                  <input type="number" className="cost" value={this.state.cost} onChange={this.update('cost')}/></div></li>
+              <li><label>How many pieces are in this order? </label>
+              <input type="number" className="qty" value={this.state.qty} onChange={this.update('qty')} /></li>
+              <li><label>Brief Description of this order</label> <input type="text" className="description" value={this.state.description} onChange={this.update('description')} /></li>
+            <li><button onClick={this.saveOption} className="clickable create-option">Create Option </button></li>
             </ul>
-            <button onClick={this.saveOption} className="clickable create-option">Create Option </button>
         </form>
-      </div>
 
 
-      </div>
     );
   }
 }

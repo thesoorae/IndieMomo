@@ -28,9 +28,10 @@ class BatchForm extends React.Component{
   }
 
   saveBatch(e){
+    console.log("this is the state", this.state);
     e.preventDefault();
-    this.props.updateBatch({
-      batch: this.state.batch});
+    this.props.updateBatch(
+      this.state);
   }
 
   update(type){

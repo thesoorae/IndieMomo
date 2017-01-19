@@ -1,0 +1,109 @@
+@import "variables";
+
+div.new-option-form {
+  width:80%;
+  margin: auto;
+  padding: 30px;
+  margin: 50px;
+}
+
+form.options-form-box{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+  margin: auto;
+  background-color: $turquoise-fade;
+  padding: 30px;
+
+}
+
+.options-form-box h2{
+  margin: 30px 0 ;
+}
+
+.options-form-box li{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.options-form-box label, strong{
+  margin: auto 0;
+}
+
+input.description {
+  width: 200px;
+}
+
+
+input.cost, input.qty {
+  font-size: 25px;
+  width: 60px;
+}
+
+.cost h3{
+  font-size: 30px;
+  padding: 10px;
+  margin-top: 5px;
+
+}
+
+div.cost{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+div.order-edit-container {
+  width:80%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+div.order-edit-container {
+  width: 100%;
+  margin: auto;
+}
+
+div.order-edit-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 100%;
+}
+
+div.order-options-index{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+
+div.edit-option-item-container{
+  border: 1px LightGray solid;
+  margin: auto;
+
+}
+
+ul.edit-option-item {
+  padding: 20px;
+}
+
+.edit-option-item li{
+  margin: 10px;
+}
+
+li.remove-option-container{
+  height: 30px;
+  position: relative;
+}
+button.remove-option {
+  font-size: 12px;
+  position: absolute;
+  right: 0px;
+  margin: 0;
+
+}

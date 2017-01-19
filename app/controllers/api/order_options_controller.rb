@@ -13,9 +13,7 @@ class Api::OrderOptionsController < ApplicationController
   end
 
   def create
-
     @order_option = OrderOption.new(option_params)
-    @order_option.batch_id = @current_batch.id
     if @order_option.save
       render :show
     else
@@ -34,7 +32,9 @@ class Api::OrderOptionsController < ApplicationController
   end
 
   def destroy
-
+    @order_option = OrderOption.find(params[:id])
+    @order_option.destroy
+    render json: @order_option
   end
 
   def option_params
