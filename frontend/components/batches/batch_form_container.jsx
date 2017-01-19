@@ -5,10 +5,10 @@ import {getBatch} from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-  
+
 
   return(
-  { batch: getBatch(ownProps.params.batchId, state.batches),
+  { batch: state.batches[ownProps.params.batchId],
     batchId: ownProps.params.batchId,
     currentUser: state.session.currentUser,
     errors: state.errors.batch

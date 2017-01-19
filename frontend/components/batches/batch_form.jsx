@@ -9,7 +9,7 @@ class BatchForm extends React.Component{
     this.state = {
 
       batch: this.props.batch,
-      images: this.props.batch.batch_images
+      images: []
     };
     this.saveBatch = this.saveBatch.bind(this);
     this.launchBatch = this.launchBatch.bind(this);
@@ -21,8 +21,10 @@ class BatchForm extends React.Component{
 
 
   componentWillReceiveProps(nextProps){
+    console.log("next props", nextProps);
     this.setState({
-      batch: nextProps.batch});
+      batch: nextProps.batch,
+      images: nextProps.batch.batch_images});
   }
 
   saveBatch(e){
@@ -46,7 +48,7 @@ class BatchForm extends React.Component{
     let batch = this.state.batch;
     batch.active = true;
     this.setState({batch}, () => {
-      this.props.updateBatch(this.state);
+      this.props.updateBatch(this.state).then(hashHistory.replace(`/batches/${batch.id}`));
   });}
 
   addOptions(e){
@@ -89,12 +91,14 @@ class BatchForm extends React.Component{
 
 
   render(){
-    console.log("state", this.state);
+
+  if(this.props.batch){
     const CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Korean", "Other"]
 
 
     const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
-      <button className="options clickable" onClick={this.addOptions}>Add Options</button>    <button className="launch" onClick={this.launchBatch}>Launch & Start</button></div>;
+      <button className="options clickable" onClick={this.addOptions}>Add Options</button>
+      <button className="launch" onClick={this.launchBatch}>Launch & Start</button></div>;
 
     const batch = this.state.batch;
 
@@ -169,18 +173,15 @@ class BatchForm extends React.Component{
           {CATEGORIES.map(category => (<option value={category} key={category}>{category}</option>))}
           </select>
       </label>
-
-
-
-          </form>
-
-        </div>
-
-
-      </div>
-    );
+    </form>
+  </div>
+  </div>
+    );} else {
+      return(<div>loading</div>);
+    }
   }
 }
+
 export default BatchForm;
 
 // <div className="options-container">{batch.order_options.map((option, i) => (

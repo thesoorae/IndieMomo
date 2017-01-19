@@ -26,22 +26,33 @@ div.option-box {
   width:100%
 }
 
-input.option-input {
-  margin: 0;
-  margin-top: 15px;
+div.options-form-container{
+  display:flex;
+  flex-direction: column;
+text-align: center;
+  width: 30%;
+  margin: auto;
 }
 
-div#cost {
+.options-form-container input{
+  font-size: 20px;
+  width: 100px;
+}
+input.description {
+  width: 200px;
+  height:200px;
+}
+
+label.cost {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-input#cost {
-  width: 100px;
+input.cost {
   font-size: 25px;
 }
 
-#cost h3{
+.cost h3{
   font-size: 30px;
   padding: 10px;
   margin-top: 5px;

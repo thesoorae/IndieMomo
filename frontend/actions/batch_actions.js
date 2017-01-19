@@ -48,7 +48,6 @@ export const updateBatch = batch => dispatch => {
 
   .then(newbatch => {
     dispatch(receiveBatch(newbatch));
-    hashHistory.replace(`/batches/${newbatch.id}`);
   },
   err => dispatch(receiveBatchErrors(err.responseJSON)));
 };

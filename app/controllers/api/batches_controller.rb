@@ -27,6 +27,8 @@ class Api::BatchesController < ApplicationController
     if @batch.update(batch_params)
       self.updateImages
       self.updateOptions
+      p @batch
+      p @batch.batch_images
       render :show
     else
       render json: @batch.errors.full_messages, status:422
@@ -56,8 +58,12 @@ def updateImages
     p a
   end
   @batch.batch_images.each do |batch_image|
-    batch_image.destroy unless images.any?{|k, v| v[:url] == batch_image.url}
+    unless images.any?{|k, v| v[:url] == batch_image.url}
+      p "DESTROYYYY"
+      batch_image.destroy
+    end
   end
+  @batch.reload
 end
 
 def updateOptions
