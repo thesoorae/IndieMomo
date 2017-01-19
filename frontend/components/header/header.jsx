@@ -23,7 +23,7 @@ class Header extends React.Component{
         </Link>
         <h2> Explore </h2>
         <h2> How It Works </h2>
-        <Search batches={this.props.batches} />
+        <Search batches={this.props.batches} fetchSearchResults={this.props.fetchSearchResults}/>
       </span>
     <span className="right">
       <button className="start-batch clickable" onClick={startBatch}>Start A Batch</button>

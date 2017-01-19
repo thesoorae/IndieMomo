@@ -82,7 +82,7 @@ backToEdit(e){
     //   <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
 
     return(
-      <div className="order-edit-container">
+      <div className="batch-form-container">
         <div className="batch-buttons-bar">
           <span><h1>Batch Order Options</h1></span>
           <button className="edit-batch clickable" onClick={this.backToEdit}>Back to Edit</button>

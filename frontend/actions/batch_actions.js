@@ -19,6 +19,13 @@ export const fetchBatches = () => dispatch => {
   .then(batches => dispatch(receiveBatches(batches)));
 };
 
+export const fetchSearchResults = title => dispatch => {
+  return APIUtil.fetchSearchResults(title)
+  .then(batches => {
+    dispatch(receiveBatches(batches));
+    hashHistory.push('/batches/results');
+  });
+};
 
 export const receiveBatch = batch => ({
   type: RECEIVE_BATCH,

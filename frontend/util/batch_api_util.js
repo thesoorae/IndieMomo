@@ -7,6 +7,16 @@ export const fetchBatches = () => (
     })
 );
 
+
+export const fetchSearchResults = (title) => (
+    $.ajax({
+      method: 'GET',
+      url: `api/batches/search/${title}`
+
+    })
+);
+
+
 export const fetchBatch = id => (
   $.ajax({
     method:'GET',

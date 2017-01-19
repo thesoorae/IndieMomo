@@ -2,8 +2,13 @@ class Api::BatchesController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    
+
     @batches = Batch.all
+    render :index
+  end
+
+  def search
+    @batches = Batch.where("title LIKE :title", {:title => params[:title]})
     render :index
   end
 

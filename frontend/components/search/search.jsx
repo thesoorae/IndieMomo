@@ -51,10 +51,13 @@ class Search extends React.Component{
     });
   }
 
-  getBatches(){
+  getBatches(e, {suggestion}){
+    console.log("selected suggestion", suggestion);
 
+      // e.preventDefault();
+      // this.props.fetchSearchResults(this.state.value);
 
-  }
+      }
 
 
   render(){

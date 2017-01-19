@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Header from './header';
 import {asArray} from '../../reducers/selectors';
+import {fetchSearchResults} from '../../actions/batch_actions';
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +11,7 @@ const mapStateToProps = state => {
 };};
 
 const mapDispatchToProps = dispatch => ({
-
+fetchSearchResults: title => dispatch(fetchSearchResults(title))
 });
 
 export default connect(
