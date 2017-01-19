@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { login, logout, signup } from '../../actions/session_actions';
 import UserProfile from './user_profile';
 import {getUser, editUser} from '../../actions/user_actions';
+import {deleteBatch} from '../../actions/batch_actions';
 
 
 const mapStateToProps = (state, ownProps) => (
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => (
 });
 
 const mapDispatchToProps = dispatch => ({
-  editUser: user => dispatch(editUser(user))
+  editUser: user => dispatch(editUser(user)),
+  deleteBatch: id => dispatch(deleteBatch(id))
 });
 
 export default connect(

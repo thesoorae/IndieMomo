@@ -13,7 +13,7 @@ saveOption(e){
     this.props.createOrEdit(this.state);
   }
 
-update(type){
+  update(type){
     return (e) => {
       this.setState({[type]: e.target.value});
     };

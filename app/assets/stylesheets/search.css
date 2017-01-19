@@ -1,0 +1,8 @@
+.react-autosuggest__input{
+  width:150px !important;
+}
+
+.react-autosuggest__container {
+  position: relative;
+  padding: 5px;
+}

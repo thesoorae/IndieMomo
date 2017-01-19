@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import OrderOptionsEdit from './order_options_edit';
 import {createOption, updateOption, deleteOption} from '../../actions/order_option_actions';
 import {getBatch} from '../../reducers/selectors';
+import {updateBatch} from '../../actions/batch_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => (
   { createOption: option => dispatch(createOption(option)),
     deleteOption : id => dispatch(deleteOption(id)),
-    updateOption: option => dispatch(updateOption(option))
+    updateOption: option => dispatch(updateOption(option)),
+    updateBatch : batch => dispatch(updateBatch(batch))
   }
 );
 

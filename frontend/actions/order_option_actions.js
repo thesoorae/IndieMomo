@@ -18,6 +18,7 @@ export const receiveOption = option => ({
 
 
 export const createOption = option => dispatch => {
+  console.log("in action creator", option);
   return APIUtil.createOption(option)
   .then(newoption => {
     dispatch(receiveOption(newoption));
@@ -39,7 +40,7 @@ export const removeOption = option => ({
   option
 });
 
-export const deleteOption = id => dispatch => {
-  return APIUtil.deleteOption(id)
+export const deleteOption = option => dispatch => {
+  return APIUtil.deleteOption(option)
   .then( newoption => dispatch((removeOption(newoption))));
 };

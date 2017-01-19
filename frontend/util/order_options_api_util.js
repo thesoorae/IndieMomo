@@ -10,6 +10,7 @@ export const fetchOptions = (batch_id) => (
 export const createOption= option => (
   $.ajax({
     method:'POST',
+    thing: console.log("in api call", option),
     url:`api/batches/${option.batch_id}/order_options`,
     data: {order_option: option}
 
@@ -24,10 +25,10 @@ export const updateOption= option => (
   })
 );
 
-export const deleteOption= id => (
+export const deleteOption= option => (
   $.ajax({
     method:'DELETE',
-    url: `api/batches/order_options/${id}`
+    url: `api/batches/${option.batch_id}/order_options/${option.id}`
 
   })
 );

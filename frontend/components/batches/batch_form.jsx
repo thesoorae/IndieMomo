@@ -98,7 +98,7 @@ class BatchForm extends React.Component{
 
 
     const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
-      <button className="options clickable" onClick={this.addOptions}>Add Options</button>
+      <button className="options clickable" onClick={this.addOptions}>Edit Options</button>
       <button className="launch" onClick={this.launchBatch}>Launch & Start</button></div>;
 
     const batch = this.state.batch;

@@ -2,6 +2,7 @@ class Api::BatchesController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
+    
     @batches = Batch.all
     render :index
   end
@@ -25,10 +26,7 @@ class Api::BatchesController < ApplicationController
   def update
     @batch = current_user.batches.find(params[:id])
     if @batch.update(batch_params)
-      self.updateImages
-      self.updateOptions
-      p @batch
-      p @batch.batch_images
+      self.updateImages if params[:images]
       render :show
     else
       render json: @batch.errors.full_messages, status:422

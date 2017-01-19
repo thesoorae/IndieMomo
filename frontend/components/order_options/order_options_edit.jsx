@@ -12,6 +12,8 @@ class OrderOptionsEdit extends React.Component{
         openForm: false};
         this.removeOption = this.removeOption.bind(this);
         this.handleCreateOption = this.handleCreateOption.bind(this);
+        this.launchBatch = this.launchBatch.bind(this);
+        this.backToEdit = this.backToEdit.bind(this);
   }
 
 componentWillReceiveProps(nextProps){
@@ -34,25 +36,34 @@ renderErrors() {
 
 
 
-removeOption(id, i){
-  return (e) => {
-  e.preventDefault();
+removeOption(option, i){
+
   let currentOptions = this.state.order_options;
   currentOptions.splice(i, 1);
   this.setState({order_options: currentOptions}, () => {
-  this.props.deleteOption(id);});
-  };
+  this.props.deleteOption(option);});
+
 }
 
 handleCreateOption(newOption){
-  
-  return (e) => {
-  e.preventDefault();
+  console.log("new option", newOption);
   let currentOptions = this.state.order_options;
   currentOptions.push(newOption);
   this.setState({order_options: currentOptions}, ()=>{
   this.props.createOption(newOption);});
-};
+}
+
+launchBatch(e){
+  e.preventDefault();
+  let batch = this.state.batch;
+  batch.active = true;
+  this.setState({batch}, () => {
+    this.props.updateBatch(this.state).then(hashHistory.replace(`/batches/${batch.id}`));
+});}
+
+backToEdit(e){
+  e.preventDefault();
+  hashHistory.replace(`/batches/${this.props.batchId}/edit`);
 }
 
   render(){
@@ -62,19 +73,20 @@ handleCreateOption(newOption){
       cost: 1,
       qty: 1,
       description:"A great order",
-      batch_id: this.state.batch.id
+      batch_id: this.props.batchId
     };
 
     const batch = this.state.batch;
-    const BatchButtons = "";
+
     // const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
     //   <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
 
     return(
       <div className="order-edit-container">
         <div className="batch-buttons-bar">
-          <span><h1>Basics</h1></span>
-          {BatchButtons}
+          <span><h1>Batch Order Options</h1></span>
+          <button className="edit-batch clickable" onClick={this.backToEdit}>Back to Edit</button>
+          <button className="show-batch clickable" onClick={this.launchBatch}>Launch Batch</button>
         </div>
         <div className="order-edit-info">
           <div className="current-options">

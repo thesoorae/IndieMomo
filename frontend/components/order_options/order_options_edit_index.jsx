@@ -9,11 +9,11 @@ class OrderOptionsEditIndex extends React.Component{
   }
 
 
-  handleRemoveOption(id, i){
+  handleRemoveOption(option, i){
 
     return (e) => {
       e.preventDefault();
-      this.props.removeOption(id, i);
+      this.props.removeOption(option, i);
     };
   }
 
@@ -27,7 +27,7 @@ class OrderOptionsEditIndex extends React.Component{
           <li className="qty">You get {option.qty} pieces with this order!</li>
           <li className="option-description">{option.description}</li>
           <li className="remove-option-container">
-            <button className="remove-option" onClick={this.handleRemoveOption(option.id, i)}>Remove</button></li>
+            <button className="remove-option" onClick={this.handleRemoveOption(option, i)}>Remove</button></li>
         </ul>
     </div>
     ));

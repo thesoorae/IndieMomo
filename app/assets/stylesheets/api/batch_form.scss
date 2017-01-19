@@ -2,23 +2,51 @@
 // Place all the styles related to the Api::Batches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.batch-form-container{
+.new-batch-form-container{
   width:80%;
   margin: auto;
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10%;
+}
 
+span.title {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 
+form.new-batch-form{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+button.create-batch {
+  background-color: $turquoise;
+}
+
+.first-form-box input{
+
+}
+
+.batch-form-container{
+  width:80%;
+margin: auto;
+display:flex;
+flex-direction: column;
+align-items: center;
 }
 div.batch-form-container{
   position: fixed;
-  top: 15%;
-  width: 100%;
-  height: 750px;
-  overflow-y: scroll;
-}
+   top: 150px;
+   width: 100%;
+   height: 80%;
+   overflow-y: scroll;
 
+
+}
 
 
 div.form-box {
@@ -48,7 +76,7 @@ text-align: right
 }
 
 
-button.launch{
+button.options{
   background-color: $turquoise;
   color:white;
 
@@ -110,4 +138,11 @@ img.thumbnail{
   width: 100px;
   height: 100px;
   margin: 0 10px;
+}
+
+button.upload-image-button {
+  background: $turquoise;
+  font-size: 14px;
+  color: white;
+  margin-left: 0;
 }

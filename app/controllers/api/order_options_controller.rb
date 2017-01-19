@@ -13,6 +13,7 @@ class Api::OrderOptionsController < ApplicationController
   end
 
   def create
+
     @order_option = OrderOption.new(option_params)
     if @order_option.save
       render :show
@@ -35,6 +36,7 @@ class Api::OrderOptionsController < ApplicationController
     @order_option = OrderOption.find(params[:id])
     @order_option.destroy
     render json: @order_option
+
   end
 
   def option_params
