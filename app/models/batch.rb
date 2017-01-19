@@ -51,6 +51,9 @@ class Batch < ActiveRecord::Base
     @total_orders
   end
 
+  def percentage
+    (self.total_orders / self.goal) * 100
+  end
 
 
 end

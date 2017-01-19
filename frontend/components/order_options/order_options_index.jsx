@@ -8,16 +8,16 @@ class OrderOptionsIndex extends React.Component{
     this.placeOrder = this.placeOrder.bind(this);
   }
 
-  placeOrder(optionId, currentUser){
+  placeOrder(optionId, currentUser, qty){
     return(e) => {
       e.preventDefault();
-      console.log("current user", currentUser);
       if(currentUser == null){
         hashHistory.push('/login');}
       else {
       const newOrder = {
         order_option_id: optionId};
         this.props.createOrder(newOrder);
+        this.props.increaseProgress(qty);
       }
     };}
 
@@ -29,7 +29,7 @@ class OrderOptionsIndex extends React.Component{
       <li className="cost">$ {option.cost}</li>
       <li className="qty">You get {option.qty} pieces with this order!</li>
       <li className="option-description">{option.description}</li>
-      <button className="order-button" onClick={this.placeOrder(option.id, this.props.currentUser)}>Place an Order</button>
+      <button className="order-button" onClick={this.placeOrder(option.id, this.props.currentUser, option.qty)}>Place an Order</button>
       </ul>
       </li>
     ));
