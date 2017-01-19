@@ -45,9 +45,9 @@ newOptionForm(e){
     };
 
     const batch = this.state.batch;
-
-    const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
-      <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
+    const BatchButtons = "";
+    // const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
+    //   <button className="launch" onClick={this.launchBatch}>Review & Launch</button></div>;
 
     return(
       <div className="order-edit-container">
