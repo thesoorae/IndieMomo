@@ -1,10 +1,7 @@
 @import "variables";
 
 div.new-option-form {
-  width:80%;
-  margin: auto;
-  padding: 30px;
-  margin: 50px;
+  width:50%;
 }
 
 form.options-form-box{
@@ -55,12 +52,7 @@ div.cost{
   justify-content: flex-end;
 }
 
-div.order-edit-container {
-  width:80%;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 
 div.order-edit-container {
@@ -70,21 +62,24 @@ div.order-edit-container {
 
 div.order-edit-info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 100px;
-  width: 100%;
+  width: 80%;
+  padding: 30px;
+  justify-content: flex-start;
 }
 
 div.order-options-index{
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 
 div.edit-option-item-container{
   border: 1px LightGray solid;
-  margin: auto;
+  margin: 20px;
+
 
 }
 

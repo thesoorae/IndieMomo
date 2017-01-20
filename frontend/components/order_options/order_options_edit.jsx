@@ -7,6 +7,12 @@ class OrderOptionsEdit extends React.Component{
   constructor(props){
     super(props);
       this.state = {
+        newOption: {
+          cost: 1,
+          qty: 1,
+          description:"A great order",
+          batch_id: this.props.batchId
+        },
         message: "",
         batch: this.props.batch,
         order_options: this.props.batch.order_options,
@@ -15,6 +21,7 @@ class OrderOptionsEdit extends React.Component{
         this.handleCreateOption = this.handleCreateOption.bind(this);
         this.launchBatch = this.launchBatch.bind(this);
         this.backToEdit = this.backToEdit.bind(this);
+        this.resetForm = this.resetForm.bind(this);
   }
 
 componentWillReceiveProps(nextProps){
@@ -35,7 +42,9 @@ renderErrors() {
     );
   }
 
+resetForm(){
 
+}
 
 removeOption(option, i){
 
@@ -47,13 +56,23 @@ removeOption(option, i){
 }
 
 handleCreateOption(newOption){
-  console.log("new option", newOption);
   let currentOptions = this.state.order_options;
   currentOptions.push(newOption);
   this.setState({order_options: currentOptions}, ()=>{
-  this.props.createOption(newOption);
+    this.props.createOption(newOption).then(
+      () => {
+        this.setState({
+          newOption: {
+          cost: 1,
+          qty: 1,
+          description:"A great order",
+          batch_id: this.props.batchId
+        }
+      });}
+    );
   });
 }
+
 
 launchBatch(e){
   e.preventDefault();
@@ -95,7 +114,13 @@ backToEdit(e){
           <button className="show-batch clickable" onClick={this.launchBatch}>Start Selling!</button>
           </div>
         </div>
+
+        
         <div className="order-edit-info">
+          <div className="new-option-form">
+                <OrderOptionsForm option={this.state.newOption} createOrEdit={this.handleCreateOption} />
+          </div>
+
           <div className="current-options">
             <OrderOptionsEditIndex
               orderOptions={this.state.order_options}
@@ -103,9 +128,6 @@ backToEdit(e){
               currentUser={this.props.currentUser}
               />
           </div>
-        <div className="new-option-form">
-              <OrderOptionsForm option={new_option} createOrEdit={this.handleCreateOption} />
-        </div>
 
 
       </div>

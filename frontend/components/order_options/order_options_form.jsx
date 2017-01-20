@@ -1,6 +1,10 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 
+
+
+
+
 class OrderOptionsForm extends React.Component{
   constructor(props){
     super(props);
@@ -10,7 +14,14 @@ class OrderOptionsForm extends React.Component{
 
 saveOption(e){
     e.preventDefault();
+    console.log("function", this.props.createOrEdit);
     this.props.createOrEdit(this.state);
+    }
+
+
+  componentWillReceiveProps(nextProps){
+    if(this.state.option !== nextProps.option){
+    this.setState(nextProps.option);}
   }
 
   update(type){
@@ -20,6 +31,8 @@ saveOption(e){
   }
 
 render(){
+
+
   let option = this.state;
   console.log(option);
     return(

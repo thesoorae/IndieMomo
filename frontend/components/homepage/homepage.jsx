@@ -43,6 +43,14 @@ class Homepage extends React.Component{
 
     };
 
+    const banner_settings = {
+      dots:true,
+      infinite: true,
+      speed: 300,
+      slidesToShow:1,
+      slidesToScroll: 1
+    }
+
     const batchItems = batches.map( batch =>
       (<div><BatchIndexItem
         batch={batch}
@@ -67,9 +75,10 @@ class Homepage extends React.Component{
       <div onClick={this.startBatch} className="banner clickable">
         <img src="http://res.cloudinary.com/indiemomo/image/upload/c_lfill,g_south,h_500,w_1000/v1484673961/dumpling_banner_s9d7d5.jpg" />
         <span className="banner-title">
-        <h2>Only you know how to make them.<span className='spacer' /></h2>
+        <h2>Create a batch to share.</h2>
           <br />
-          <h2>Start your first batch today.</h2>
+          <h2>Get the orders you need </h2>
+            <br /><h2>to launch your business</h2>
           </span>
       </div>
         <div className="homepage-batches">

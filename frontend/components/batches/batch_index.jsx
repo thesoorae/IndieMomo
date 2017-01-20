@@ -10,7 +10,8 @@ class BatchIndex extends React.Component{
 
   render(){
 
-    const {batches} = this.props;
+    let {batches} = this.props;
+    
 
 
     const batchItems = batches.map( batch =>

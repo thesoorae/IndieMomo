@@ -3,7 +3,7 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   cities = City.create([{ name: 'Chicago'  },, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user1 = User.create!({first_name: 'Tsuiyung', last_name: 'Lau', username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484343810/grandma-lau.jpg'})
 user2 = User.create!({first_name: 'Bruce', last_name: 'Lee', username: 'Bruce Lee', password: '123456', zip_code:'98105', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344036/Bruce_Lee_1973_l0gfnl.jpg'});
@@ -17,9 +17,9 @@ filip = User.create!({
    "username" => "angelica_santos",
    "password" => 123456,
    "zip_code" => 98121,
-   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933400/batch_photos/users/8196186971_2237f161bd_b.jpg"
- }
- )
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933400/batch_photos/users/8196186971_2237f161bd_b.jpg.id"
+   }
+   )
  chinese = User.create!({
    "first_name" => "Linda",
    "last_name" => "Lam ",
@@ -95,7 +95,45 @@ filip = User.create!({
    "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484935533/users/Taiwan-2014-308.jpg"
  }
 )
+batch2 = Batch.create!({title: 'Steamed Buns',
+  category: "Cantonese",
+  description: "Steamed Red Bean Buns",
+  goal: 25,
+  zip_code: 94804,
+  long_description: "large, hand-size buns with minced pork filling. Can also be made vegetarian upon request.",
+  chef_id: user2.id })
+  
+pzongzi =  Batch.create!({
+  "title" => "Pork Zongzi ",
+  "description" => "Made with pork, salted egg yolk, shittake mushrooms, and chestnuts ",
+  "long_description" => "Boil for 5 minutes or steam. Can also be microwaved on high for 3 minutes. Freeze after receiving. ",
+  "zip_code" => cantonese2.zip_code,
+  "goal" => 10,
+  "category" => "Chinese",
+  "chef_id" => cantonese2.id
+}
+)
 
+congee =  Batch.create!({
+  "title" => "Preserved Egg Congee ",
+  "description" => "Preserved egg and shredded pork rice porridge. 16 oz. ",
+  "long_description" => "Reheat on stove or microwave.  ",
+  "zip_code" => cantonese.zip_code,
+  "goal" => 15,
+  "category" => "Cantonese",
+  "chef_id" => cantonese.id
+}
+)
+youtiao =  Batch.create!({
+  "title" => "Youtiao",
+  "description" => "Oil stick, or fried cruller, goes great with congee. ",
+  "long_description" => "Reheat in toaster for best results. ",
+  "zip_code" => cantonese.zip_code,
+  "goal" => 15,
+  "category" => "Cantonese",
+  "chef_id" => cantonese.id
+}
+)
 
 
 
@@ -197,7 +235,7 @@ filip = User.create!({
   lumpia =  Batch.create!({
     "title" => "Lumpia ",
     "description" => "Homemade lumpia, like spring rolls. Fry in oil or microwave. ",
-    "long_description" => "Lumpia is a spring roll of Chinese origin commonly found in Indonesia and the Philippines. It is a savoury snack made of thin crepe pastry skin called \"lumpia wrapper\" and savory filling.",
+    "long_description" => "Lumpia is a spring roll of Chinese origin commonly found in Indonesia and the Philippines. It is a savoury snack made of thin crepe pastry skin and savory filling.",
     "zip_code" => filip.zip_code,
     "goal" => 30,
     "category" => "Filipino",
@@ -353,37 +391,6 @@ filip = User.create!({
   }
 )
 
-  pzongzi =  Batch.create!({
-    "title" => "Pork Zongzi ",
-    "description" => "Made with pork, salted egg yolk, shittake mushrooms, and chestnuts ",
-    "long_description" => "Boil for 5 minutes or steam. Can also be microwaved on high for 3 minutes. Freeze after receiving. ",
-    "zip_code" => cantonese2.zip_code,
-    "goal" => 10,
-    "category" => "Chinese",
-    "chef_id" => cantonese2.id
-  }
-)
-
-  congee =  Batch.create!({
-    "title" => "Preserved Egg Congee ",
-    "description" => "Preserved egg and shredded pork rice porridge. 16 oz. ",
-    "long_description" => "Reheat on stove or microwave.  ",
-    "zip_code" => cantonese.zip_code,
-    "goal" => 15,
-    "category" => "Cantonese",
-    "chef_id" => cantonese.id
-  }
-  )
-  youtiao =  Batch.create!({
-    "title" => "Youtiao",
-    "description" => "Oil stick, or fried cruller, goes great with congee. ",
-    "long_description" => "Reheat in toaster for best results. ",
-    "zip_code" => cantonese.zip_code,
-    "goal" => 15,
-    "category" => "Cantonese",
-    "chef_id" => cantonese.id
-  }
-)
 
   noodles = Batch.create!({
     "title" => "Fresh Ramen Noodles ",
@@ -454,13 +461,7 @@ batch1 = Batch.create!({title: 'Dumplings',
   long_description: "Family recipe of cabbage, vermicelli, mushrooms, ginger, garlic, and sesame oil. Boil, steam, or pan fry. ",
   chef_id: user3.id })
 
-batch2 = Batch.create!({title: 'Steamed Buns',
-  category: "Cantonese",
-  description: "Steamed Red Bean Buns",
-  goal: 25,
-  zip_code: 94804,
-  long_description: "large, hand-size buns with minced pork filling. Can also be made vegetarian upon request.",
-  chef_id: user2.id })
+
 
 batch_zongzi = Batch.create!({title: 'Zongzi',
   category: "Chinese",
@@ -734,6 +735,353 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   # zongzi_option1
   # zongzi_option2
 
+
+ order1 = OrderOption.create!({cost: 5,
+   qty: 1,
+   description: "yum",
+   batch_id: gamjajeon.id
+ })
+
+   order2 = OrderOption.create!({
+   cost: 19,
+   qty: 2,
+   description: "free delivery",
+   batch_id: gamjajeon.id
+ })
+ order3 = OrderOption.create!({   cost: 20,
+   qty: 5,
+   description: "",
+   batch_id: lotus.id
+ })
+ order4 = OrderOption.create!({   cost: 30,
+   qty: 10,
+   description: "free delivery",
+   batch_id: lotus.id
+ })
+ order5 = OrderOption.create!({   cost: 20,
+   qty: 5,
+   description: "",
+   batch_id: redbean.id
+ })
+ order6 = OrderOption.create!({   cost: 30,
+   qty: 10,
+   description: "free delivery",
+   batch_id: redbean.id
+ })
+ order7 = OrderOption.create!({   cost: 5,
+   qty: 5,
+   description: "",
+   batch_id: mochi.id
+ })
+ order8 = OrderOption.create!({   cost: 8,
+   qty: 10,
+   description: "free delivery",
+   batch_id: mochi.id
+ })
+ order9 = OrderOption.create!({   cost: 6,
+   qty: 3,
+   description: "",
+   batch_id: radish.id
+ })
+ order10 = OrderOption.create!({
+   cost: 10,
+   qty: 6,
+   description: "free delivery",
+   batch_id: radish.id
+ })
+ order11 = OrderOption.create!({
+   cost: 1,
+   qty: 3,
+   description: "",
+   batch_id: tea.id
+ })
+ order12 = OrderOption.create!({
+   cost: 2,
+   qty: 5,
+   description: "free delivery",
+   batch_id: tea.id
+ })
+ order13 = OrderOption.create!({
+   cost: 3,
+   qty: 10,
+   description: "free delivery",
+   batch_id: tea.id
+ })
+ order14 = OrderOption.create!({
+   cost: 15,
+   qty: 10,
+   description: "",
+   batch_id: spring.id
+ })
+
+ order15 = OrderOption.create!({
+   cost: 25,
+   qty: 20,
+   description: "free delivery",
+   batch_id: spring.id
+ })
+ order16 = OrderOption.create!({
+   cost: 10,
+   qty: 4,
+   description: "",
+   batch_id: vietnamesespring.id
+ })
+ order17 = OrderOption.create!({
+   cost: 20,
+   qty: 10,
+   description: "free delivery",
+   batch_id: vietnamesespring.id
+ })
+ order18 = OrderOption.create!({
+   cost: 7,
+   qty: 5,
+   description: "",
+   batch_id: avocado.id
+ })
+ order19 = OrderOption.create!({
+   cost: 12,
+   qty: 10,
+   description: "free delivery",
+   batch_id: avocado.id
+ })
+ order20 = OrderOption.create!({
+   cost: 5,
+   qty: 10,
+   description: "",
+   batch_id: lumpia.id
+ })
+ order21 = OrderOption.create!({
+   cost: 7,
+   qty: 15,
+   description: "free delivery",
+   batch_id: lumpia.id
+ })
+ order22 = OrderOption.create!({
+   cost: 8,
+   qty: 5,
+   description: "",
+   batch_id: summer.id
+ })
+ order23 = OrderOption.create!({
+   cost: 3,
+   qty: 1,
+   description: "",
+   batch_id: coconut.id
+ })
+ order24 = OrderOption.create!({
+   cost: 6,
+   qty: 5,
+   description: "free delivery",
+   batch_id: coconut.id
+ })
+ order25 = OrderOption.create!({
+   cost: 8,
+   qty: 3,
+   description: "",
+   batch_id: sun.id
+ })
+ order26 = OrderOption.create!({
+   cost: 10,
+   qty: 5,
+   description: "free delivery",
+   batch_id: sun.id
+ })
+ order27 = OrderOption.create!({
+   cost: 3,
+   qty: 1,
+   description: "",
+   batch_id: bawan.id
+ })
+ order28 = OrderOption.create!({
+   cost: 15,
+   qty: 5,
+   description: "free delivery",
+   batch_id: bawan.id
+ })
+ order29 = OrderOption.create!({
+   cost: 10,
+   qty: 10,
+   description: "",
+   batch_id: eggplant.id
+ })
+ order30 = OrderOption.create!({
+   cost: 12,
+   qty: 15,
+   description: "free delivery",
+   batch_id: eggplant.id
+ })
+ order31 = OrderOption.create!({
+   cost: 13,
+   qty: 10,
+   description: "",
+   batch_id: pork.id
+ })
+ order32 = OrderOption.create!({
+   cost: 17,
+   qty: 15,
+   description: "free delivery",
+   batch_id: pork.id
+ })
+ order33 = OrderOption.create!({
+   cost: 7,
+   qty: 3,
+   description: "",
+   batch_id: chive.id
+ })
+ order34 = OrderOption.create!({
+   cost: 10,
+   qty: 10,
+   description: "free delivery",
+   batch_id: chive.id
+ })
+ order35 = OrderOption.create!({
+   cost: 6,
+   qty: 2,
+   description: "",
+   batch_id: wa.id
+ })
+ order36 = OrderOption.create!({
+   cost: 10,
+   qty: 5,
+   description: "free delivery",
+   batch_id: wa.id
+ })
+ order37 = OrderOption.create!({
+   cost: 3,
+   qty: 5,
+   description: "",
+   batch_id: stinky.id
+ })
+ order38 = OrderOption.create!({
+   cost: 6,
+   qty: 10,
+   description: "free delivery",
+   batch_id: stinky.id
+ })
+ order39 = OrderOption.create!({
+   cost: 4,
+   qty: 1,
+   description: "",
+   batch_id: jap.id
+ })
+ order40 = OrderOption.create!({
+   cost: 8,
+   qty: 3,
+   description: "free delivery",
+   batch_id: jap.id
+ })
+ order41 = OrderOption.create!({
+   cost: 5,
+   qty: 10,
+   description: "",
+   batch_id: chicken.id
+ })
+ order42 = OrderOption.create!({
+   cost: 10,
+   qty: 15,
+   description: "free delivery",
+   batch_id: chicken.id
+ })
+ order43 = OrderOption.create!({
+   cost: 4,
+   qty: 3,
+   description: "",
+   batch_id: porksung.id
+ })
+ order44 = OrderOption.create!({
+   cost: 4,
+   qty: 3,
+   description: "",
+   batch_id: pineapple.id
+ })
+ order45 = OrderOption.create!({
+   cost: 7,
+   qty: 3,
+   description: "",
+   batch_id: vzongzi.id
+ })
+ order46 = OrderOption.create!({
+   cost: 7,
+   qty: 3,
+   description: "",
+   batch_id: pzongzi.id
+ })
+ order47 = OrderOption.create!({
+   cost: 20,
+   qty: 10,
+   description: "free delivery",
+   batch_id: pzongzi.id
+ })
+ order48 = OrderOption.create!({
+   cost: 3,
+   qty: 1,
+   description: "",
+   batch_id: congee.id
+ })
+ order49 = OrderOption.create!({
+   cost: 3,
+   qty: 5,
+   description: "",
+   batch_id: youtiao.id
+ })
+ order50 = OrderOption.create!({
+   cost: 5,
+   qty: 10,
+   description: "free delivery",
+   batch_id: youtiao.id
+ })
+ order51 = OrderOption.create!({
+   cost: 5,
+   qty: 1,
+   description: "",
+   batch_id: noodles.id
+ })
+ order52 = OrderOption.create!({
+   cost: 10,
+   qty: 2,
+   description: "",
+   batch_id: noodles.id
+ })
+ order53 = OrderOption.create!({
+   cost: 5,
+   qty: 5,
+   description: "",
+   batch_id: riceroll.id
+ })
+ order54 = OrderOption.create!({
+   cost: 9,
+   qty: 10,
+   description: "free delivery",
+   batch_id: riceroll.id
+ })
+ order55 = OrderOption.create!({
+   cost: 2,
+   qty: 2,
+   description: "",
+   batch_id: puto.id
+ })
+ order56 = OrderOption.create!({
+   cost: 2,
+   qty: 2,
+   description: "",
+   batch_id: pancit.id
+ })
+ order57 = OrderOption.create!({
+   cost: 4,
+   qty: 5,
+   description: "",
+   batch_id: puto.id
+ })
+ order58 = OrderOption.create!({
+   cost: 4,
+   qty: 5,
+   description: "",
+   batch_id: pancit.id
+ })
+
+
+
+
   korean_pancakes_option1 = OrderOption.create!({cost: 4, qty: 1, description: "One order of scallion pancakes", batch_id: batch_korean_pancakes.id})
   korean_pancakes_option2 = OrderOption.create!({cost:7, qty: 2, description: "Delivery included", batch_id: batch_korean_pancakes.id})
   khanom_option1 = OrderOption.create!({cost:5, qty: 1, description: "One order of khanom krog", batch_id: batch_khanom.id})
@@ -744,3 +1092,179 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   curry_puffs_option1 = OrderOption.create!({cost:3, qty: 2, description: "Two flaky curry puffs", batch_id: batch_curry_puffs.id})
   curry_puffs_option2 = OrderOption.create!({cost:5, qty: 4, description: "Discount when you buy 4", batch_id: batch_curry_puffs.id})
   curry_puffs_option3 = OrderOption.create!({cost:10, qty: 10, description: "Discount when you buy 10", batch_id: batch_curry_puffs.id})
+
+orders = Order.create!([
+ {
+   customer_id: filip.id,
+   order_option_id: order1.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order2.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order3.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order4.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order5.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order6.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order7.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order8.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order9.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order10.id },
+ {
+   customer_id: filip.id,
+   order_option_id: order11.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order12.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order13.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order14.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order15.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order16.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order17.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order18.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order19.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order20.id },
+ {
+   customer_id: filip.id,
+   order_option_id: order21.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order22.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order23.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order24.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order25.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order26.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order27.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order28.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order29.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order30.id },
+ {
+   customer_id: filip.id,
+   order_option_id: order31.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order32.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order33.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order34.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order35.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order36.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order37.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order38.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order39.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order40.id },
+ {
+   customer_id: filip.id,
+   order_option_id: order41.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order42.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order43.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order44.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order45.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order46.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order47.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order48.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order49.id },
+ {
+   customer_id: cantonese2.id,
+   order_option_id: order50.id },
+ {
+   customer_id: filip.id,
+   order_option_id: order51.id },
+ {
+   customer_id: chinese.id,
+   order_option_id: order52.id },
+ {
+   customer_id: cantonese.id,
+   order_option_id: order53.id },
+ {
+   customer_id: korean.id,
+   order_option_id: order54.id },
+ {
+   customer_id: vietnam.id,
+   order_option_id: order55.id },
+ {
+   customer_id: japanese.id,
+   order_option_id: order56.id },
+ {
+   customer_id: taiwanese.id,
+   order_option_id: order57.id },
+ {
+   customer_id: taiwanese2.id,
+   order_option_id: order58.id }])
