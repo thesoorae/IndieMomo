@@ -5,7 +5,10 @@ import {Line} from 'rc-progress';
 class ProgressBar extends React.Component {
   render(){
     const batch = this.props.batch;
-    let percentage = (batch.total_orders / batch.goal)*100;
+    let percentage = Math.round(batch.total_orders / batch.goal)*100;
+    if(percentage >= 100){
+      percentage = 100;
+    }
 
     return(
       <ul>

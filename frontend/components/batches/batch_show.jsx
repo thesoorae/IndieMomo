@@ -29,15 +29,16 @@ class BatchShow extends React.Component{
 
   render(){
     let editBatch = "";
-
+    console.log("batch show", this.props);
     if(this.props.batch){
       console.log("the state", this.state);
 
       const batch = this.props.batch;
+          if(this.props.currentUser !== null){
           if(this.props.currentUser.id === batch.chef_id){
             editBatch = <button className="clickable edit-batch" onClick={this.goToEdit}>Edit</button>;
           }
-
+        }
         const mainImage = batch.batch_images.length > 0 ?
         batch.batch_images[0]['url'] :
         "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg";
