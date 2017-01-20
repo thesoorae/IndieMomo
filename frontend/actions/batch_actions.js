@@ -23,7 +23,7 @@ export const fetchSearchResults = title => dispatch => {
   return APIUtil.fetchSearchResults(title)
   .then(batches => {
     dispatch(receiveBatches(batches));
-    hashHistory.push('/batches/results');
+    hashHistory.push(`/batches/results/${title}`);
   });
 };
 

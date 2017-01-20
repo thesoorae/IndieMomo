@@ -15,7 +15,7 @@ import NewBatchFormContainer from './batches/new_batch_form_container';
 import UserProfileContainer from './users/user_profile_container';
 import HomepageContainer from './homepage/homepage_container';
 import OrderOptionsEditContainer from './order_options/order_options_edit_container';
-import Results from './search/results';
+import Results from './search/results_container';
 
 import {fetchBatches} from '../actions/batch_actions';
 import {fetchUsers, getUser} from '../actions/user_actions';
@@ -58,17 +58,18 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App} store={store} onEnter={_getBatches}>
+        <Route path="/" component={App} store={store} >
           <IndexRoute component={HomepageContainer} />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
             <Route path="/batches" component={BatchesIndexContainer} />
             <Route path="/batches/new" component={NewBatchFormContainer} onEnter={_ensureLoggedIn} />
+            <Route path="/batches/results/:search_term" component={Results} />
             <Route path="/batches/:batchId/edit" component={BatchFormContainer} onEnter={_ensureLoggedIn} />
             <Route path="/batches/:batchId" component={BatchShowContainer} />
             <Route path="/batches/:batchId/options/edit" component={OrderOptionsEditContainer} onEnter={_ensureLoggedIn} />
-              <Route path="/users/:userId" onEnter = {_getUser} component={UserProfileContainer} />
-              <Route path="/batches/results" component={Results} />
+            <Route path="/users/:userId" onEnter = {_getUser} component={UserProfileContainer} />
+
 
         </Route>
       </Router>

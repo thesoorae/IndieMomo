@@ -33,9 +33,9 @@ class Search extends React.Component{
     this.getBatches = this.getBatches.bind(this);
   }
 
-  onChange(event, { newValue }){
+  onChange(e){
     this.setState({
-      value: newValue
+      value: e.target.value
     });
   }
 
@@ -51,12 +51,11 @@ class Search extends React.Component{
     });
   }
 
-  getBatches(e, {suggestion}){
-    console.log("selected suggestion", suggestion);
-
-      // e.preventDefault();
-      // this.props.fetchSearchResults(this.state.value);
-
+  getBatches(e){
+    if(e.charCode==13){
+      e.preventDefault();
+      this.props.fetchSearchResults(this.state.value);
+    }
       }
 
 
@@ -71,18 +70,24 @@ class Search extends React.Component{
     };
 
     return(
-      <Autosuggest
-        suggestions = {suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-        onSuggestionSelected={this.getBatches}
+      <div className="search-bar">
+        <input className="search-input" type="text" value={this.state.value} onChange={this.onChange} onKeyPress={this.getBatches} placeholder="Search..."/>
+      </div>
 
-      />
   );
   }
 }
 
 export default Search;
+
+      //
+      // <Autosuggest
+      //   suggestions = {suggestions}
+      //   onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+      //   onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+      //   getSuggestionValue={getSuggestionValue}
+      //   renderSuggestion={renderSuggestion}
+      //   inputProps={inputProps}
+      //   onSuggestionSelected={this.getBatches}
+      //
+      // />
