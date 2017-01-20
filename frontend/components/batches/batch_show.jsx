@@ -46,59 +46,55 @@ class BatchShow extends React.Component{
         let otherImages = "";
         if(batch.batch_images.length >1){
 
-          otherImages = batch.batch_images.map(image => <img className="cell other-batch-image" key={image.id} src={image.url} />);
+          otherImages = batch.batch_images.map(image => <div className="other-batch-image"><img key={image.id} src={image.url} /></div>);
           }
 
       return (
         <div className="batch-show-container">
-          <div className="batch-show-summary">
             <div className="left">
-              <div className="main-image-container">
+              <div className="top main-image-container">
                 <img className="main-image" src={mainImage} />
               </div>
-            </div>
-            <div className="right">
-              <ul>
-                <li><h3 className="color-heading">
-                  {batch.category}
-                </h3></li>
 
-                <li><h1>{batch.title}</h1></li>
-                <li className="batch-description">{batch.description}</li>
-                <li >
-
-                  <UserSummary getUser={this.props.getUser} user={batch.chef} />
-
-              </li>
-                <li><div className="batch-show-progress">
-
-                  <ProgressBar  batch={this.state} />
-
-              </div></li>
-              <li>{editBatch}</li>
-
-              </ul>
-            </div>
-          </div>
-          <div className="batch-show-body">
-            <div className="left">
-              <div className="image-container flex-grid">
-
-                {otherImages}
-
+              <div className="bottom">
+                <div className="other-images-container">
+                  {otherImages}
+                </div>
+                <div className="long-description">
+                  {batch.long_description}
+                </div>
               </div>
             </div>
-              <div className="right">
-                <h3 className="subtitle">Order Options</h3>
-                <OrderOptionsIndex
-                  batch={batch}
-                  orderOptions={batch.order_options}
-                  createOrder={this.props.createOrder}
-                  currentUser={this.props.currentUser}
-                  increaseProgress={this.increaseProgress}/>
+
+            <div className="right">
+              <div className="top batch-summary">
+                <ul>
+                  <li><h3 className="color-heading">
+                    {batch.category}
+                  </h3>
+                  </li>
+
+                  <li><h1>{batch.title}</h1></li>
+                  <li className="batch-description">{batch.description}</li>
+                  <li >
+                    <UserSummary getUser={this.props.getUser} user={batch.chef} />
+                  </li>
+                  <li><div className="batch-show-progress">
+                    <ProgressBar  batch={this.state} />
+                    </div>
+                  </li>
+                  <li>{editBatch}</li>
+                </ul>
+              </div>
+              <h3 className="subtitle">Order Options</h3>
+              <OrderOptionsIndex
+                batch={batch}
+                orderOptions={batch.order_options}
+                createOrder={this.props.createOrder}
+                currentUser={this.props.currentUser}
+                increaseProgress={this.increaseProgress}/>
             </div>
           </div>
-        </div>
       );
     } else {
       return(<div>loading</div>);

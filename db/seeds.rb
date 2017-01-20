@@ -5,11 +5,441 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user1 = User.create!({first_name: 'Tsuiyung', last_name: 'Lau', username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484343810/grandma-lau.jpg'});
+user1 = User.create!({first_name: 'Tsuiyung', last_name: 'Lau', username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484343810/grandma-lau.jpg'})
 user2 = User.create!({first_name: 'Bruce', last_name: 'Lee', username: 'Bruce Lee', password: '123456', zip_code:'98105', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344036/Bruce_Lee_1973_l0gfnl.jpg'});
 user3 = User.create!({first_name: 'Ken', last_name:'Miyagi', username: 'Mr. Miyagi', password: '123456', zip_code:'94801', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344090/mr_miyagi_tdvrh8.png'})
 user4 = User.create!({first_name: 'Janice', last_name:'Kim', username: 'Mrs. Kim', password: '123456', zip_code:'94110', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_245,w_245/v1484588179/korean_grandma_rn6mrt.jpg'})
 user5 = User.create!({first_name: 'Visrin', last_name:'Sadavit', username: 'ThaiMa', password: '123456', zip_code:'94112', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_561,w_561/v1484588025/thai_grandma_jjfhoc.jpg'})
+
+filip = User.create!({
+   "first_name" => "Angelica",
+   "last_name" => "Santos",
+   "username" => "angelica_santos",
+   "password" => 123456,
+   "zip_code" => 98121,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933400/batch_photos/users/8196186971_2237f161bd_b.jpg"
+ }
+ )
+ chinese = User.create!({
+   "first_name" => "Linda",
+   "last_name" => "Lam ",
+   "username" => "mrs_lam",
+   "password" => 123456,
+   "zip_code" => 98105,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484935372/users/Grandma.jpg"
+ }
+ )
+ cantonese =  User.create!({
+   "first_name" => "Albert ",
+   "last_name" => "Lee",
+   "username" => "grandpa_lee",
+   "password" => 123456,
+   "zip_code" => 98148,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484933799/users/lee.jpg"
+ }
+ )
+ korean = User.create!({
+   "first_name" => "David",
+   "last_name" => "Kim ",
+   "username" => "mr_kim",
+   "password" => 123456,
+   "zip_code" => 98112,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933705/users/2256463549_a0d51b3a30_b.jpg"
+ }
+ )
+ vietnam = User.create!({
+   "first_name" => "Kim",
+   "last_name" => "Nguyen ",
+   "username" => "kim_nguyen",
+   "password" => 123456,
+   "zip_code" => 98105,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_300/v1484935209/users/dam-cuoi_8.jpg"
+ }
+)
+
+ japanese =  User.create!({
+   "first_name" => "Hiro",
+   "last_name" => "Fujiwara",
+   "username" => "fujiwara",
+   "password" => 123456,
+   "zip_code" => 98405,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484933847/users/bfefa2e13ce90a922063364ec387303c_japan-300x300_gallery.jpg"
+ }
+ )
+ taiwanese = User.create!({
+   "first_name" => "Martin ",
+   "last_name" => "Chan",
+   "username" => "martin_chan",
+   "password" => 123456,
+   "zip_code" => 98112,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484935614/users/cantonese_dinner_walter_grandpa.jpg"
+ }
+)
+
+ taiwanese2 =  User.create!({
+   "first_name" => "Emily",
+   "last_name" => "Tsu",
+   "username" => "grandma_tsu",
+   "password" => 123456,
+   "zip_code" => 98105,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933408/batch_photos/users/elderly-Chinese-2.3-CPR.jpg"
+ }
+)
+
+ cantonese2 = User.create!({
+   "first_name" => "Chung",
+   "last_name" => "Kee",
+   "username" => "grandpa_chung",
+   "password" => 123456,
+   "zip_code" => 94805,
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/v1484935533/users/Taiwan-2014-308.jpg"
+ }
+)
+
+
+
+
+ gamjajeon =  Batch.create!({
+    "title" => "Gamjajeon ",
+    "description" => "Korean potato pancake, refrigerated. Just fry and serve!",
+    "long_description" => "Gamjajeon is a variety of jeon, or Korean style pancake, made by pan-frying finely grated potato on a frying pan with any type of vegetable oil until golden brown.",
+    "zip_code" => korean.zip_code,
+    "goal" => 30,
+    "category" => "Korean",
+    "chef_id" => korean.id
+  }
+  )
+  lotus = Batch.create!({
+    "title" => "Lotus Paste Moon Cake ",
+    "description" => "Hand made moon cakes with lotus bean paste and salted egg yolk inside. A family recipe. Great for Chinese New Year. ",
+    "long_description" => "A mooncakeis a Chinese bakery product traditionally eaten during the Mid-Autumn Festival (Zhongqiujie). The festival is for lunar appreciation and moon watching, when mooncakes are regarded as an indispensable delicacy. ",
+    "zip_code" => cantonese.zip_code,
+    "goal" => 25,
+    "category" => "Cantonese",
+    "chef_id" => cantonese.id
+  }
+)
+
+  redbean =  Batch.create!({
+    "title" => "Red Bean Moon Cake",
+    "description" => "Hand made moon cakes with red bean paste and salted egg yolk inside. A family recipe. Great for Chinese New Year. ",
+    "long_description" => "A mooncakeis a Chinese bakery product traditionally eaten during the Mid-Autumn Festival (Zhongqiujie). The festival is for lunar appreciation and moon watching, when mooncakes are regarded as an indispensable delicacy. ",
+    "zip_code" => cantonese.zip_code,
+    "goal" => 25,
+    "category" => "Cantonese",
+    "chef_id" => cantonese.id
+  }
+  )
+  mochi =  Batch.create!({
+    "title" => "Mochi ",
+    "description" => "Soft delicious mochi made in 3 flavors red bean, green tea, and sesame. ",
+    "long_description" => "Mochi is Japanese rice cake made of mochigome, a short-grain japonica glutinous rice. The rice is pounded into paste and molded into the desired shape. In Japan it is traditionally made in a ceremony called mochitsuki.",
+    "zip_code" => japanese.zip_code,
+    "goal" => 22,
+    "category" => "Japanese",
+    "chef_id" => japanese.id
+  }
+)
+
+  radish = Batch.create!({
+    "title" => "Radish Cake ",
+    "description" => "Made with daikon radish, this is a steamed rice flour cake with shrimp, pork, and garlic. Fry in hot oil before serving. Can be frozen. ",
+    "long_description" => "Turnip cake is a Chinese dim sum dish made of shredded radish and plain rice flour. The less commonly used radish cake is a more accurate name",
+    "zip_code" => taiwanese.zip_code,
+    "goal" => 40,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese.id
+  }
+)
+
+  tea = Batch.create!({
+    "title" => "Tea Eggs ",
+    "description" => "Salty, fragrant, and beautifully decorated, these tea eggs are stewed for over 24 hours in my secret recipe of spices. ",
+    "long_description" => "Tea egg is a typical Chinese savory food commonly sold as a snack, in which a boiled egg is cracked and then boiled again in tea, sauce and/or spices. ",
+    "zip_code" => taiwanese.zip_code,
+    "goal" => 30,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese.id
+  }
+  )
+  spring = Batch.create!({
+    "title" => "Spring Rolls ",
+    "description" => "Crispy pork and cabbage spring rolls, frozen. ",
+    "long_description" => "Spring rolls are a large variety of filled, rolled appetizers or dim sum found in East Asian and Southeast Asian cuisine. The name is a literal translation of the Chinese chūn juǎn.",
+    "zip_code" => chinese.zip_code,
+    "goal" => 100,
+    "category" => "Chinese",
+    "chef_id" => chinese.id
+  }
+)
+
+  vietnamesespring =  Batch.create!({
+    "title" => "Vietnamese Spring Rolls ",
+    "description" => "Light and summery, I make these spring rolls with cilantro, mint, cucumber, and fried tofu. Also comes with dipping sauce. ",
+    "long_description" => "",
+    "zip_code" => vietnam.zip_code,
+    "goal" => 30,
+    "category" => "Vietnamese",
+    "chef_id" => vietnam.id
+  }
+  )
+  avocado =  Batch.create!({
+    "title" => "Avocado Sushi Rolls",
+    "description" => "Handmade avocado sushi rolls. One piece contains about five slices. ",
+    "long_description" => "",
+    "zip_code" => japanese.zip_code,
+    "goal" => 25,
+    "category" => "Japanese",
+    "chef_id" => japanese.id
+  }
+)
+
+  lumpia =  Batch.create!({
+    "title" => "Lumpia ",
+    "description" => "Homemade lumpia, like spring rolls. Fry in oil or microwave. ",
+    "long_description" => "Lumpia is a spring roll of Chinese origin commonly found in Indonesia and the Philippines. It is a savoury snack made of thin crepe pastry skin called \"lumpia wrapper\" and savory filling.",
+    "zip_code" => filip.zip_code,
+    "goal" => 30,
+    "category" => "Filipino",
+    "chef_id" => filip.id
+  }
+)
+
+  summer = Batch.create!({
+    "title" => "Summer Rolls ",
+    "description" => "Made with lettuce, shrimp, and basil. Also known as vietnamese spring rolls. Comes with peanut dipping sauce. ",
+    "long_description" => "Goi cuon, Vietnamese spring roll, is a Vietnamese dish traditionally consisting of pork, prawn, vegetables, bún, and other ingredients wrapped in Vietnamese bánh tráng.",
+    "zip_code" => vietnam.zip_code,
+    "goal" => 15,
+    "category" => "Vietnamese",
+    "chef_id" => vietnam.id
+  }
+)
+
+  coconut =  Batch.create!({
+    "title" => "Coconut Jelly ",
+    "description" => "Delicious, light, refreshing, sweet coconut jelly. One order comes with one 16 oz container.",
+    "long_description" => "Of japanese or Chinese origin, popular in Hawaii. Made with coconut milk and agar. ",
+    "zip_code" => chinese.zip_code,
+    "goal" => 30,
+    "category" => "Chinese",
+    "chef_id" => chinese.id
+  }
+  )
+  sun =  Batch.create!({
+    "title" => "Sun Cake ",
+    "description" => "Flaky light homemade taiwanese pastry. ",
+    "long_description" => "A suncake, or taiyang bing, is a popular Taiwanese dessert originally from the city of Taichung, Taiwan. The typical fillings consist of maltose",
+    "zip_code" => taiwanese.zip_code,
+    "goal" => 25,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese.id
+  }
+)
+
+  bawan =  Batch.create!({
+    "title" => "Bawan ",
+    "description" => "Meat filled rice flour steamed dumpling. Comes with red sauce and cilantro. ",
+    "long_description" => "Ba-wan is a large-sized Taiwanese dumpling and street food, consisting of a 6–8 cm diameter disk-shaped translucent dough filled with a savory stuffing and served with a sweet and savory sauce.",
+    "zip_code" => taiwanese.zip_code,
+    "goal" => 25,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese.id
+  }
+  )
+  eggplant =  Batch.create!({
+    "title" => "Eggplant Gyoza ",
+    "description" => "Miso, ginger, and sesame flavored eggplant in these light and delicious gyoza. ",
+    "long_description" => "Fry in oil with some water to steam. Can be frozen. ",
+    "zip_code" => japanese.zip_code,
+    "goal" => 15,
+    "category" => "Japanese",
+    "chef_id" => japanese.id
+  }
+)
+
+  pork =  Batch.create!({
+    "title" => "Pork Mushroom Dumplings",
+    "description" => "Family recipe of pork and mushroom dumplings. Comes frozen. ",
+    "long_description" => "Can be steamed, boiled, or pan fried for pot stickers. ",
+    "zip_code" => chinese.zip_code,
+    "goal" => 30,
+    "category" => "Chinese",
+    "chef_id" => chinese.id
+  }
+)
+
+  chive = Batch.create!({
+    "title" => "Chive Box ",
+    "description" => "Chive, clear bean noodle, and egg inside of a thick fried pastry. Comes frozen, can be microwaved, toasted, or pan fried. ",
+    "long_description" => "Chinese chive boxes are considered to be one of the many classic street foods that we have in Taiwan.",
+    "zip_code" => taiwanese.zip_code,
+    "goal" => 20,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese.id
+  }
+)
+
+  wa = Batch.create!({
+    "title" => "Wa gui ",
+    "description" => "My own recipe of the steamed rice flour with mushroom, pork topping in bowl. Steam to cook. ",
+    "long_description" => "Taiwanese specialty of a one-bowl meal. Delicious when steamed. Comes with special soy sauce garlic blend. ",
+    "zip_code" => taiwanese2.zip_code,
+    "goal" => 20,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese2.id
+  }
+  )
+  stinky =  Batch.create!({
+    "title" => "Stinky Tofu",
+    "description" => "Not for the faint of heart. I've perfected this recipe of the popular Taiwanese street food. Comes with cabbage relish. ",
+    "long_description" => "The traditional method of producing stinky tofu is to prepare a brine made from fermented milk, vegetables, and meat the brine can also include dried shrimp, amaranth greens, mustard greens, bamboo shoots, and Chinese herbs. The brine fermentation can take as long as several months.",
+    "zip_code" => taiwanese2.zip_code,
+    "goal" => 20,
+    "category" => "Taiwanese",
+    "chef_id" => taiwanese2.id
+  }
+)
+
+  jap =  Batch.create!({
+    "title" => "Jap Chae Noodles",
+    "description" => "Try my japchae glass noodles. A great snack or light meal. ",
+    "long_description" => "At any gathering it’s hard to pass up these chewy, sweet, and slightly slippery noodles with colorful stir-fried vegetables and mushrooms, its irresistible sesame flavor, healthy amount of garlic, and light, refreshing taste.",
+    "zip_code" => korean.zip_code,
+    "goal" => 30,
+    "category" => "Korean",
+    "chef_id" => korean.id
+  }
+  )
+  chicken =  Batch.create!({
+    "title" => "Korean Fried Chicken ",
+    "description" => "Sweet, sticky, sesame and honey fried chicken wings. ",
+    "long_description" => "Korean fried chicken or seasoned chicken is a fried chicken dish prepared in a Korean style. It is consumed as a meal, fast food at bars, or as an after meal snack in Korea. ",
+    "zip_code" => korean.zip_code,
+    "goal" => 15,
+    "category" => "Korean",
+    "chef_id" => korean.id
+  }
+)
+
+  porksung =  Batch.create!({
+    "title" => "Pork Sung Buns ",
+    "description" => "Rou song mian bao. Comes with mayonnaise and green onions. ",
+    "long_description" => "I used to work at a Chinese Cantonese bakery, where I learned this recipe for these buns. ",
+    "zip_code" => cantonese2.zip_code,
+    "goal" => 15,
+    "category" => "Cantonese",
+    "chef_id" => cantonese2.id
+  }
+  )
+  pineapple =   Batch.create!({
+    "title" => "Pineapple Buns ",
+    "description" => "Buo luo bao, looks like pineapple, but there is no pineapple inside. ",
+    "long_description" => "I used to work at a Chinese Cantonese bakery, where I learned this recipe for these buns. ",
+    "zip_code" => cantonese2.zip_code,
+    "goal" => 15,
+    "category" => "Cantonese",
+    "chef_id" => cantonese2.id
+  }
+  )
+  vzongzi =  Batch.create!({
+    "title" => "Vegetarian Zongzi ",
+    "description" => "Made with mock duck, shittake mushrooms, chestnuts, and salted egg yolk. And of course glutinous rice. ",
+    "long_description" => "Boil for 5 minutes or steam. Can also be microwaved on high for 3 minutes. Freeze after receiving. ",
+    "zip_code" => cantonese2.zip_code,
+    "goal" => 20,
+    "category" => "Chinese",
+    "chef_id" => cantonese2.id
+  }
+)
+
+  pzongzi =  Batch.create!({
+    "title" => "Pork Zongzi ",
+    "description" => "Made with pork, salted egg yolk, shittake mushrooms, and chestnuts ",
+    "long_description" => "Boil for 5 minutes or steam. Can also be microwaved on high for 3 minutes. Freeze after receiving. ",
+    "zip_code" => cantonese2.zip_code,
+    "goal" => 10,
+    "category" => "Chinese",
+    "chef_id" => cantonese2.id
+  }
+)
+
+  congee =  Batch.create!({
+    "title" => "Preserved Egg Congee ",
+    "description" => "Preserved egg and shredded pork rice porridge. 16 oz. ",
+    "long_description" => "Reheat on stove or microwave.  ",
+    "zip_code" => cantonese.zip_code,
+    "goal" => 15,
+    "category" => "Cantonese",
+    "chef_id" => cantonese.id
+  }
+  )
+  youtiao =  Batch.create!({
+    "title" => "Youtiao",
+    "description" => "Oil stick, or fried cruller, goes great with congee. ",
+    "long_description" => "Reheat in toaster for best results. ",
+    "zip_code" => cantonese.zip_code,
+    "goal" => 15,
+    "category" => "Cantonese",
+    "chef_id" => cantonese.id
+  }
+)
+
+  noodles = Batch.create!({
+    "title" => "Fresh Ramen Noodles ",
+    "description" => "Homemade fresh ramen noodles, keep refrigerated. ",
+    "long_description" => "Boil for 1 minute and serve with your favorite broth or stir fry as yakisoba. ",
+    "zip_code" => japanese.zip_code,
+    "goal" => 18,
+    "category" => "Japanese",
+    "chef_id" => japanese.id
+  }
+)
+
+  riceroll =  Batch.create!({
+    "title" => "Fresh steamed rice roll ",
+    "description" => "Banh cuon, steamed rice rolls with scallions and fried onions. ",
+    "long_description" => "Steam or microwave. ",
+    "zip_code" => vietnam.zip_code,
+    "goal" => 20,
+    "category" => "Vietnamese",
+    "chef_id" => vietnam.id
+  }
+)
+
+  puto =  Batch.create!({
+    "title" => "Puto Bumbong ",
+    "description" => "Coconut and glutinous rice snack. ",
+    "long_description" => "",
+    "zip_code" => filip.zip_code,
+    "goal" => 30,
+    "category" => "Filipino",
+    "chef_id" => filip.id
+  }
+)
+
+  pancit =  Batch.create!({
+    "title" => "Pancit",
+    "description" => "Filipino stir fried noodles. Comes with 1 lb. ",
+    "long_description" => "In Filipino cuisine, pancit or pansit are noodles. Noodles were introduced into the Philippines by the Chinese and have since been adopted into local cuisine.",
+    "zip_code" => filip.zip_code,
+    "goal" => 20,
+    "category" => "Filipino",
+    "chef_id" => filip.id
+  }
+)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -21,6 +451,7 @@ batch1 = Batch.create!({title: 'Dumplings',
   description: "Yummy vegetarian dumplings",
   goal: 30,
   zip_code: 94805,
+  long_description: "Family recipe of cabbage, vermicelli, mushrooms, ginger, garlic, and sesame oil. Boil, steam, or pan fry. ",
   chef_id: user3.id })
 
 batch2 = Batch.create!({title: 'Steamed Buns',
@@ -28,6 +459,7 @@ batch2 = Batch.create!({title: 'Steamed Buns',
   description: "Steamed Red Bean Buns",
   goal: 25,
   zip_code: 94804,
+  long_description: "large, hand-size buns with minced pork filling. Can also be made vegetarian upon request.",
   chef_id: user2.id })
 
 batch_zongzi = Batch.create!({title: 'Zongzi',
@@ -36,6 +468,7 @@ batch_zongzi = Batch.create!({title: 'Zongzi',
   chestnuts, peanuts, and mushrooms in bamboo leaf. Microwave for 3 minutes before eating.",
   goal: 10,
   zip_code: 94805,
+  long_description: "Wrapped in bamboo leaf, a wonderful light dinner or snack.",
   chef_id: user1.id })
 
 batch_korean_pancakes = Batch.create!({title: 'Korean Scallion Pancakes',
@@ -44,6 +477,7 @@ batch_korean_pancakes = Batch.create!({title: 'Korean Scallion Pancakes',
   stove or griddle or in microwave.",
   goal: 20,
   zip_code: 94111,
+  long_description: "Not the same as Chinese scallion pancakes. Lighter and softer. Traditional korean recipe.",
   chef_id: user4.id })
 
 batch_khanom = Batch.create!({title: 'Khanom Krog',
@@ -53,6 +487,7 @@ batch_khanom = Batch.create!({title: 'Khanom Krog',
   yam, and plain.",
   goal: 20,
   zip_code: 94112,
+  long_description: "",
   chef_id: user5.id })
 
 batch_scallion = Batch.create!({title: 'Scallion Pancakes',
@@ -61,6 +496,7 @@ batch_scallion = Batch.create!({title: 'Scallion Pancakes',
   and green onions throughout. Can be fried on the pan or toasted in the oven. Comes frozen.",
   goal: 15,
   zip_code: 94804,
+  long_description: "",
   chef_id: user1.id })
 
 batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
@@ -69,6 +505,7 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   or eaten cold as a filling snack or a light lunch. A Hong Kong specialty!",
   goal: 30,
   zip_code: 98105,
+  long_description: "",
   chef_id: user2.id })
 
 
@@ -87,6 +524,205 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588796/korean-green-onion-pancake_ruzw1u.jpg', batch_id: batch_korean_pancakes.id})
   image_curry_puffs = BatchImage.create!(
   {url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484588795/12-spiral-skin-curry-puffs-1_njhk0z.jpg', batch_id: batch_curry_puffs.id})
+
+  images = BatchImage.create!([
+   {
+     batch_id: gamjajeon.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934005/batch_photos/gamja-jun-6.jpg"
+   },
+   {
+     batch_id: gamjajeon.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_800/v1484934035/batch_photos/potato-pancake-piece.jpg"
+   },
+   {
+     batch_id: lotus.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934074/batch_photos/8310_1280x800.jpg"
+   },
+   {
+     batch_id: lotus.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934103/batch_photos/Cara-Mudah-Membuat-Moon-Cake-Kering-Nikmat.jpg"
+   },
+   {
+     batch_id: redbean.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484941796/batch_photos/mooncake.jpg"
+   },
+   {
+     batch_id: mochi.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_450,w_700/v1484934192/batch_photos/mochi-box3_0.jpg"
+   },
+   {
+     batch_id: mochi.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934205/batch_photos/mochi-for-website2.jpg"
+   },
+   {
+     batch_id: radish.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934219/batch_photos/pan-fried-radish-cake-988x658.jpg"
+   },
+   {
+     batch_id: radish.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934233/batch_photos/6a00d8341ef22f53ef01b7c701ec80970b-500wi.jpg"
+   },
+   {
+     batch_id: tea.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934249/batch_photos/teaeggs.jpg"
+   },
+   {
+     batch_id: spring.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934277/batch_photos/1-Chicken-Spring-Rolls-9-1-of-1.jpg"
+   },
+   {
+     batch_id: spring.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934261/batch_photos/Homemade_Spring_Rolls.jpg"
+   },
+   {
+     batch_id: vietnamesespring.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934300/batch_photos/661622.jpg"
+   },
+   {
+     batch_id: avocado.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934317/batch_photos/avocado-roll.jpg"
+   },
+   {
+     batch_id: lumpia.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934334/batch_photos/Lumpia_276.jpg"
+   },
+   {
+     batch_id: lumpia.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934352/batch_photos/1713216.jpg"
+   },
+   {
+     batch_id: summer.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934363/batch_photos/20140709-vietnamese-shrimp-summer-rolls-joshua-bousel-thumb-1500xauto-407798.jpg"
+   },
+   {
+     batch_id: coconut.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934384/batch_photos/NIK_2883.jpg"
+   },
+   {
+     batch_id: sun.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934402/batch_photos/DSC00713.jpg"
+   },
+   {
+     batch_id: sun.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934424/batch_photos/m203-3.jpg"
+   },
+   {
+     batch_id: bawan.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934439/batch_photos/2012-12-18-10-41-01.jpg"
+   },
+   {
+     batch_id: bawan.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934459/batch_photos/img_2615.jpg"
+   },
+   {
+     batch_id: eggplant.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934478/batch_photos/dsc00788.jpg"
+   },
+   {
+     batch_id: eggplant.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934492/batch_photos/a487279a804a8c6666743a7ee8c0d729.jpg"
+   },
+   {
+     batch_id: pork.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934561/batch_photos/36-duck-with-mushroom-dumpling.w710.h473.2x.jpg"
+   },
+   {
+     batch_id: pork.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934578/batch_photos/20110406-chinese-appetizers-dumplings-16.jpg"
+   },
+   {
+     batch_id: chive.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934596/batch_photos/IMG_1326-1024x768.jpg"
+   },
+   {
+     batch_id: chive.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934614/batch_photos/36a544fcd232a648f48697011fb1b935.jpg"
+   },
+   {
+     batch_id: wa.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934628/batch_photos/6499859529_4e3e962546.jpg"
+   },
+   {
+     batch_id: stinky.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934651/batch_photos/img_2214.jpg"
+   },
+   {
+     batch_id: jap.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934677/batch_photos/japchae-11.jpg"
+   },
+   {
+     batch_id: jap.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934666/batch_photos/Japchae_4271.jpg"
+   },
+   {
+     batch_id: chicken.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934733/batch_photos/plate12.jpg"
+   },
+   {
+     batch_id: chicken.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934747/batch_photos/6a00e55015ee5288330120a9483cb9970b-500wi.jpg"
+   },
+   {
+     batch_id: porksung.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934758/batch_photos/bakery_9_of_68.jpg"
+   },
+   {
+     batch_id: pineapple.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934772/batch_photos/DSC_0415.jpg"
+   },
+   {
+     batch_id: vzongzi.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934809/batch_photos/2222.jpg"
+   },
+   {
+     batch_id: pzongzi.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934809/batch_photos/zongzi.jpg"
+   },
+   {
+     batch_id: pzongzi.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934840/batch_photos/zongzi-1.jpg"
+   },
+   {
+     batch_id: congee.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934856/batch_photos/maxresdefault.jpg"
+   },
+   {
+     batch_id: youtiao.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934873/batch_photos/cantoneseyoutiao.jpg"
+   },
+   {
+     batch_id: noodles.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484777884/batch_photos/fxdopqqr4kcliuawkxt8.jpg"
+   },
+   {
+     batch_id: noodles.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484790800/batch_photos/fu5cfawcpyv7c0opn0ur.jpg"
+   },
+   {
+     batch_id: riceroll.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934926/batch_photos/hanoi_street_food_ban_cuon.jpg"
+   },
+   {
+     batch_id: puto.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934942/batch_photos/puto_bumbong_1.png"
+   },
+   {
+     batch_id: pancit.id,
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934957/batch_photos/4594679346_b28d8eec81_b.jpg"
+   }
+  ])
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

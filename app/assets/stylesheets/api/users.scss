@@ -13,6 +13,8 @@ div.user-info{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  width: 90%;
+  margin: auto;
 }
 
 
@@ -20,6 +22,7 @@ div.user-info{
   width: 35%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 img.user-image{
@@ -30,25 +33,34 @@ img.user-image{
 
 .user-info div.right {
   width: 60%;
+  padding-top: 150px;
 
 }
 div.user-thumbnails {
   display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width:1000px;
 
 }
 
 div.user-thumbnail{
-  width: 40%;
-  margin: 20px;
+  width: 30%;
+  margin: 10px;
+}
+li.thumbnail-img-container{
+  width: 200px;
+  height: 125px;
+  overflow: hidden;
 }
 
 .user-thumbnail img{
   width:200px;
 }
 
-.user-profile h2{
+.user-profile h1{
   margin:30px 0;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .user-profile h3{

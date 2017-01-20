@@ -7,6 +7,7 @@ class OrderOptionsEdit extends React.Component{
   constructor(props){
     super(props);
       this.state = {
+        message: "",
         batch: this.props.batch,
         order_options: this.props.batch.order_options,
         openForm: false};
@@ -50,7 +51,8 @@ handleCreateOption(newOption){
   let currentOptions = this.state.order_options;
   currentOptions.push(newOption);
   this.setState({order_options: currentOptions}, ()=>{
-  this.props.createOption(newOption);});
+  this.props.createOption(newOption);
+  });
 }
 
 launchBatch(e){
@@ -83,10 +85,15 @@ backToEdit(e){
 
     return(
       <div className="batch-form-container">
+        <div className="alert-message">
+          {this.state.message}
+        </div>
         <div className="batch-buttons-bar">
           <span><h1>Batch Order Options</h1></span>
+          <div className="batch-form-buttons">
           <button className="edit-batch clickable" onClick={this.backToEdit}>Back to Edit</button>
-          <button className="show-batch clickable" onClick={this.launchBatch}>Launch Batch</button>
+          <button className="show-batch clickable" onClick={this.launchBatch}>Start Selling!</button>
+          </div>
         </div>
         <div className="order-edit-info">
           <div className="current-options">

@@ -25,7 +25,7 @@ class BatchIndex extends React.Component{
     <h1>Batches</h1>
     {batchItems}
     </div>
-    
+
 
 
   );

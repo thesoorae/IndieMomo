@@ -65,7 +65,7 @@ class Search extends React.Component{
     const {value, suggestions} = this.state;
 
     const inputProps = {
-      placeholder: 'Search...',
+      placeholder: 'Search Batches',
       value,
       onChange: this.onChange
     };

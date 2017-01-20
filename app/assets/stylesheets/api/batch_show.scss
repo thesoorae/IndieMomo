@@ -3,33 +3,45 @@
 div.batch-show-container {
   width:80%;
   margin:auto;
-  padding:30px;
-}
-
-.batch-show-container div:first-child{
-  margin: 20px;
-}
-
-div.batch-show-summary {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+div.left{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+
+div.top {
+  height: 500px;
+}
+
+div.main-image-container{
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
 }
 
 div.right{
 width: 35%;
 margin-left: 30px;
-
-
 }
-
+div.batch-show-summary {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .right li {
   margin: 10px 0;
 }
 
-div.left{
-  width: 65%;
-}
+
 
 
 .color-heading  {
@@ -64,18 +76,16 @@ h3.subtitle {
   color: gray;
 }
 
-.main-image-container{
-  width:100%;
-  height:400px;
-  position: relative;
-  overflow: hidden;
-}
 
-.main-image-container img{
+.main-image-container img.main-image{
   position:absolute;
-  display: block;
-  min-width: 100%;
-  min-height: 100%;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+     -ms-transform: translate(-50%,-50%);
+         transform: translate(-50%,-50%);
 
 }
 
@@ -89,11 +99,35 @@ div.batch-show-progress{
   font-size: 16px;
 }
 
-div.image-container {
-  display: flex;
-  flex-direction: column;
+
+
+
+
+div.bottom {
+display: flex;
+flex-direction: column;
 }
 
-.order-edit-container .batch-buttons-bar {
-  
+div.other-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.other-batch-image {
+  width: 300px;
+  margin: 30px;
+}
+
+.other-batch-image img{
+  width: 30%;
+  min-width: 300px;
+
+}
+
+div.long-description {
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
 }

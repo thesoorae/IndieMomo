@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "", zip_code:"", first_name: "", last_name: "" };
+		this.state = { username: "", password: "", zip_code:"", first_name: "", last_name: "", img_url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_300/v1484946992/batch_photos/placeholder-user.png" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.demoLogin = this.demoLogin.bind(this);
 	}

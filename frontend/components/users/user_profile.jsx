@@ -38,7 +38,7 @@ class BatchShow extends React.Component{
     console.log("user", user);
     let userOrders = "";
     let userBatches ="";
-
+    let callUser = `${user.first_name}'s`;
 
       if(this.props.user){
         if(user.order_details.length > 0){
@@ -54,15 +54,17 @@ class BatchShow extends React.Component{
           ));
         }
         let deleteLinks = (id, i) => ("");
-        if(user.id === this.props.currentUser.id){
+        if( this.props.currentUser !== null){
+          if(user.id === this.props.currentUser.id){
           deleteLinks = (id, i) =>(<a href="" onClick={this.deleteBatch(id, i)}>Delete</a>);
-        }
+          callUser = "Your";
+        }}
 
         if(this.state.batches.length > 0){
           userBatches = this.state.batches.map( (batch, i) => (
             <div className="user-thumbnail clickable" >
               <ul onClick={this.goToBatch(batch.batch_id)}>
-              <li><img src={batch.main_image} /></li>
+              <li className="thumbnail-img-container"><img src={batch.main_image} /></li>
               <li>{batch.title}</li>
               </ul>
               {deleteLinks(batch.batch_id, i)}
@@ -80,13 +82,12 @@ class BatchShow extends React.Component{
               <img className="user-image" src={user.img_url} />
             </div>
             <div className="right">
-              <h2>About Me</h2>
-              <h3>My Orders ( {user.order_details.length} )</h3>
+              <h3>{callUser} Orders ( {user.order_details.length} )</h3>
 
               <div className="user-thumbnails">
                 {userOrders}
               </div>
-                <h3> My Batches ({user.batches.length})  </h3>
+                <h3>{callUser} Batches ({user.batches.length})  </h3>
                 <div className="user-thumbnails">
                   {userBatches}
                 </div>

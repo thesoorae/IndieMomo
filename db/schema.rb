@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120010129) do
+ActiveRecord::Schema.define(version: 20170120172713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170120010129) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.boolean  "active",            default: true
+    t.text     "long_description"
   end
 
   add_index "batches", ["category"], name: "index_batches_on_category", using: :btree
