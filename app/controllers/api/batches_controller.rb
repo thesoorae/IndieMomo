@@ -8,7 +8,7 @@ class Api::BatchesController < ApplicationController
   end
 
   def search
-    @batches = Batch.where("LOWER(title) LIKE LOWER(:title) ", {:title => params[:title]})
+    @batches = Batch.where("LOWER(title) LIKE ? ", "%#{params[:title]}%")
     render :index
   end
 

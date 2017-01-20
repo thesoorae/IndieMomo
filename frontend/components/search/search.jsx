@@ -54,7 +54,8 @@ class Search extends React.Component{
   getBatches(e){
     if(e.charCode==13){
       e.preventDefault();
-      this.props.fetchSearchResults(this.state.value);
+      let value = this.state.value.toLowerCase();
+      this.props.fetchSearchResults(value);
     }
       }
 
