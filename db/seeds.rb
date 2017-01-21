@@ -124,7 +124,16 @@ lumpia =  Batch.create!({
 }
 )
 
-
+tea = Batch.create!({
+  "title" => "Tea Eggs ",
+  "description" => "Salty, fragrant, and beautifully decorated, these tea eggs are stewed for over 24 hours in my secret recipe of spices. ",
+  "long_description" => "Tea egg is a typical Chinese savory food commonly sold as a snack, in which a boiled egg is cracked and then boiled again in tea, sauce and/or spices. ",
+  "zip_code" => taiwanese.zip_code,
+  "goal" => 30,
+  "category" => "Taiwanese",
+  "chef_id" => taiwanese.id
+}
+)
 youtiao =  Batch.create!({
   "title" => "Youtiao",
   "description" => "Oil stick, or fried cruller, goes great with congee. ",
@@ -191,16 +200,7 @@ youtiao =  Batch.create!({
   }
 )
 
-  tea = Batch.create!({
-    "title" => "Tea Eggs ",
-    "description" => "Salty, fragrant, and beautifully decorated, these tea eggs are stewed for over 24 hours in my secret recipe of spices. ",
-    "long_description" => "Tea egg is a typical Chinese savory food commonly sold as a snack, in which a boiled egg is cracked and then boiled again in tea, sauce and/or spices. ",
-    "zip_code" => taiwanese.zip_code,
-    "goal" => 30,
-    "category" => "Taiwanese",
-    "chef_id" => taiwanese.id
-  }
-  )
+
   spring = Batch.create!({
     "title" => "Spring Rolls ",
     "description" => "Crispy pork and cabbage spring rolls, frozen. ",
