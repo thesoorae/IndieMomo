@@ -102,7 +102,7 @@ batch2 = Batch.create!({title: 'Steamed Buns',
   zip_code: 94804,
   long_description: "large, hand-size buns with minced pork filling. Can also be made vegetarian upon request.",
   chef_id: user2.id })
-  
+
 pzongzi =  Batch.create!({
   "title" => "Pork Zongzi ",
   "description" => "Made with pork, salted egg yolk, shittake mushrooms, and chestnuts ",
@@ -113,17 +113,18 @@ pzongzi =  Batch.create!({
   "chef_id" => cantonese2.id
 }
 )
-
-congee =  Batch.create!({
-  "title" => "Preserved Egg Congee ",
-  "description" => "Preserved egg and shredded pork rice porridge. 16 oz. ",
-  "long_description" => "Reheat on stove or microwave.  ",
-  "zip_code" => cantonese.zip_code,
-  "goal" => 15,
-  "category" => "Cantonese",
-  "chef_id" => cantonese.id
+lumpia =  Batch.create!({
+  "title" => "Lumpia ",
+  "description" => "Homemade lumpia, like spring rolls. Fry in oil or microwave. ",
+  "long_description" => "Lumpia is a spring roll of Chinese origin commonly found in Indonesia and the Philippines. It is a savoury snack made of thin crepe pastry skin and savory filling.",
+  "zip_code" => filip.zip_code,
+  "goal" => 30,
+  "category" => "Filipino",
+  "chef_id" => filip.id
 }
 )
+
+
 youtiao =  Batch.create!({
   "title" => "Youtiao",
   "description" => "Oil stick, or fried cruller, goes great with congee. ",
@@ -232,16 +233,6 @@ youtiao =  Batch.create!({
   }
 )
 
-  lumpia =  Batch.create!({
-    "title" => "Lumpia ",
-    "description" => "Homemade lumpia, like spring rolls. Fry in oil or microwave. ",
-    "long_description" => "Lumpia is a spring roll of Chinese origin commonly found in Indonesia and the Philippines. It is a savoury snack made of thin crepe pastry skin and savory filling.",
-    "zip_code" => filip.zip_code,
-    "goal" => 30,
-    "category" => "Filipino",
-    "chef_id" => filip.id
-  }
-)
 
   summer = Batch.create!({
     "title" => "Summer Rolls ",
@@ -378,6 +369,17 @@ youtiao =  Batch.create!({
     "goal" => 15,
     "category" => "Cantonese",
     "chef_id" => cantonese2.id
+  }
+  )
+
+  congee =  Batch.create!({
+    "title" => "Preserved Egg Congee ",
+    "description" => "Preserved egg and shredded pork rice porridge. 16 oz. ",
+    "long_description" => "Reheat on stove or microwave.  ",
+    "zip_code" => cantonese.zip_code,
+    "goal" => 15,
+    "category" => "Cantonese",
+    "chef_id" => cantonese.id
   }
   )
   vzongzi =  Batch.create!({
