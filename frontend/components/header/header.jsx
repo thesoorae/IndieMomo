@@ -7,6 +7,9 @@ const startBatch=() => (
   hashHistory.replace('/batches/new')
 );
 
+const goToAll=() => (
+  hashHistory.replace('/batches/results/a')
+);
 
 
 class Header extends React.Component{
@@ -21,7 +24,7 @@ class Header extends React.Component{
         <Link to="/" className="header-link">
           <h1 >Indiemomo</h1>
         </Link>
-        <h2> Explore </h2>
+        <h2 className="clickable" onClick={goToAll}> Explore </h2>
         <h2> How It Works </h2>
         <Search batches={this.props.batches} fetchSearchResults={this.props.fetchSearchResults}/>
       </span>
