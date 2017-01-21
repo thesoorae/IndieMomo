@@ -18,6 +18,7 @@ class OrderOptionsIndex extends React.Component{
         order_option_id: optionId};
         this.props.createOrder(newOrder);
         this.props.increaseProgress(qty);
+        alert("Go to your profile to see your orders!");
       }
     };}
 
@@ -29,7 +30,7 @@ class OrderOptionsIndex extends React.Component{
       <li className="cost">$ {option.cost}</li>
       <li className="qty">You get {option.qty} pieces with this order!</li>
       <li className="option-description">{option.description}</li>
-      <button className="order-button" onClick={this.placeOrder(option.id, this.props.currentUser, option.qty)}>Place an Order</button>
+      <button className="clickable order-button" onClick={this.placeOrder(option.id, this.props.currentUser, option.qty)}>Place an Order</button>
       </ul>
       </li>
     ));
