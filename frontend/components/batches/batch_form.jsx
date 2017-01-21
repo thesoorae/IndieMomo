@@ -54,7 +54,9 @@ class BatchForm extends React.Component{
 
   addOptions(e){
     e.preventDefault();
-    hashHistory.push(`/batches/${this.props.batchId}/options/edit`);
+    this.setState({batch}, () => {
+      this.props.updateBatch(this.state).then(hashHistory.replace(`/batches/${batch.id}/options/edit`));
+    
   }
   renderErrors() {
     return(
