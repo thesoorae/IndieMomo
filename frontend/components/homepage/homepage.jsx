@@ -74,12 +74,17 @@ class Homepage extends React.Component{
     <div className="home-container">
       <div onClick={this.startBatch} className="banner clickable">
         <img src="http://res.cloudinary.com/indiemomo/image/upload/c_lfill,g_south,h_500,w_1000/v1484673961/dumpling_banner_s9d7d5.jpg" />
-        <span className="banner-title">
-        <h2>Create a batch to share.</h2>
+        <div className="banner-title">
+        <strong>
+        Create a batch to share.
           <br />
-          <h2>Get the orders you need </h2>
-            <br /><h2>to launch your business</h2>
-          </span>
+
+          Get the orders you need
+            <br />
+
+            to launch your business
+            </strong>
+          </div>
       </div>
         <div className="homepage-batches">
         <div className="batch-index-nav">
