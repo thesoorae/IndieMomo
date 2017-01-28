@@ -78,8 +78,9 @@ class BatchShow extends React.Component{
             </div>
             <div className="user-info">
             <div className="left">
-                <h1>{user.first_name} {user.last_name}</h1>
-              <img className="user-image" src={user.img_url} />
+
+            <div className="user-image"><img  src={user.img_url} /></div>
+            <div><h1>{user.first_name} {user.last_name}</h1></div>
             </div>
             <div className="right">
               <h3>{callUser} Orders ( {user.order_details.length} )</h3>

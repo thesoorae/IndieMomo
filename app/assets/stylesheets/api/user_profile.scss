@@ -22,7 +22,7 @@ div.user-info{
   width: 35%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 img.user-image{
@@ -33,8 +33,7 @@ img.user-image{
 
 .user-info div.right {
   width: 60%;
-  padding-top: 150px;
-
+  margin: 20px;
 }
 div.user-thumbnails {
   display: flex;
