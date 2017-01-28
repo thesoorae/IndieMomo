@@ -14,6 +14,8 @@ class Api::BatchesController < ApplicationController
 
   def show
     @batch = Batch.find(params[:id])
+    # @main_image = @batch.main_image
+    # render :show
   end
 
   def create

@@ -16,20 +16,19 @@ class BatchIndexItem extends React.Component {
   render(){
     const batch = this.props.batch;
 
+    const mainImage = batch.batch_images.length > 0 ?
+    batch.batch_images[0]['url'] :
+    "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg";
 
-    let itemImage = "";
-    if (batch.batch_images.length > 0){
-      itemImage = (<img src={batch.batch_images[0]['url']} />);
-    }
+
 
     if(this.props.batch){
-      console.log();
         return (
           <div className = "batch-index-item clickable"
             onClick={this.handleClick}>
             <div className="batch-index-item-container">
             <div className="index-item-image">
-              {itemImage}
+              <img src={mainImage} />
             </div>
             <div className="index-item-info">
               <ul>

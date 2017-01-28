@@ -34,6 +34,7 @@ class Batch < ActiveRecord::Base
   has_many :orders,
   through: :order_options
 
+
   def main_image
     if(self.batch_images.length > 0)
       @main_image = self.batch_images.first.url
