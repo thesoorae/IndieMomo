@@ -17,7 +17,7 @@ filip = User.create!({
    "username" => "angelica_santos",
    "password" => 123456,
    "zip_code" => 98121,
-   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_400/v1484933400/batch_photos/users/8196186971_2237f161bd_b.jpg.id"
+   "img_url" => "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_180/v1484933400/users/8196186971_2237f161bd_b.jpg"
    }
    )
  chinese = User.create!({
@@ -531,155 +531,155 @@ batch_curry_puffs = Batch.create!({title: 'Curry Puffs',
   images = BatchImage.create!([
    {
      batch_id: gamjajeon.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934005/batch_photos/gamja-jun-6.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934005/batch_photos/gamja-jun-6.jpg"
    },
    {
      batch_id: gamjajeon.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_800/v1484934035/batch_photos/potato-pancake-piece.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934035/batch_photos/potato-pancake-piece.jpg"
    },
    {
      batch_id: lotus.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934074/batch_photos/8310_1280x800.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934074/batch_photos/8310_1280x800.jpg"
    },
    {
      batch_id: lotus.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934103/batch_photos/Cara-Mudah-Membuat-Moon-Cake-Kering-Nikmat.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934103/batch_photos/Cara-Mudah-Membuat-Moon-Cake-Kering-Nikmat.jpg"
    },
    {
      batch_id: redbean.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484941796/batch_photos/mooncake.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484941796/batch_photos/mooncake.jpg"
    },
    {
      batch_id: mochi.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_450,w_700/v1484934192/batch_photos/mochi-box3_0.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934192/batch_photos/mochi-box3_0.jpg"
    },
    {
      batch_id: mochi.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934205/batch_photos/mochi-for-website2.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934205/batch_photos/mochi-for-website2.jpg"
    },
    {
      batch_id: radish.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934219/batch_photos/pan-fried-radish-cake-988x658.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934219/batch_photos/pan-fried-radish-cake-988x658.jpg"
    },
    {
      batch_id: radish.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934233/batch_photos/6a00d8341ef22f53ef01b7c701ec80970b-500wi.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934233/batch_photos/6a00d8341ef22f53ef01b7c701ec80970b-500wi.jpg"
    },
    {
      batch_id: tea.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934249/batch_photos/teaeggs.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934249/batch_photos/teaeggs.jpg"
    },
    {
      batch_id: spring.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934277/batch_photos/1-Chicken-Spring-Rolls-9-1-of-1.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934277/batch_photos/1-Chicken-Spring-Rolls-9-1-of-1.jpg"
    },
    {
      batch_id: spring.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934261/batch_photos/Homemade_Spring_Rolls.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934261/batch_photos/Homemade_Spring_Rolls.jpg"
    },
    {
      batch_id: vietnamesespring.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934300/batch_photos/661622.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934300/batch_photos/661622.jpg"
    },
    {
      batch_id: avocado.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934317/batch_photos/avocado-roll.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934317/batch_photos/avocado-roll.jpg"
    },
    {
      batch_id: lumpia.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934334/batch_photos/Lumpia_276.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934334/batch_photos/Lumpia_276.jpg"
    },
    {
      batch_id: lumpia.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934352/batch_photos/1713216.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934352/batch_photos/1713216.jpg"
    },
    {
      batch_id: summer.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934363/batch_photos/20140709-vietnamese-shrimp-summer-rolls-joshua-bousel-thumb-1500xauto-407798.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934363/batch_photos/20140709-vietnamese-shrimp-summer-rolls-joshua-bousel-thumb-1500xauto-407798.jpg"
    },
    {
      batch_id: coconut.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934384/batch_photos/NIK_2883.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934384/batch_photos/NIK_2883.jpg"
    },
    {
      batch_id: sun.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934402/batch_photos/DSC00713.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934402/batch_photos/DSC00713.jpg"
    },
    {
      batch_id: sun.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934424/batch_photos/m203-3.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934424/batch_photos/m203-3.jpg"
    },
    {
      batch_id: bawan.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934439/batch_photos/2012-12-18-10-41-01.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934439/batch_photos/2012-12-18-10-41-01.jpg"
    },
    {
      batch_id: bawan.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934459/batch_photos/img_2615.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934459/batch_photos/img_2615.jpg"
    },
    {
      batch_id: eggplant.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934478/batch_photos/dsc00788.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934478/batch_photos/dsc00788.jpg"
    },
    {
      batch_id: eggplant.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934492/batch_photos/a487279a804a8c6666743a7ee8c0d729.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934492/batch_photos/a487279a804a8c6666743a7ee8c0d729.jpg"
    },
    {
      batch_id: pork.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934561/batch_photos/36-duck-with-mushroom-dumpling.w710.h473.2x.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934561/batch_photos/36-duck-with-mushroom-dumpling.w710.h473.2x.jpg"
    },
    {
      batch_id: pork.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934578/batch_photos/20110406-chinese-appetizers-dumplings-16.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934578/batch_photos/20110406-chinese-appetizers-dumplings-16.jpg"
    },
    {
      batch_id: chive.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934596/batch_photos/IMG_1326-1024x768.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934596/batch_photos/IMG_1326-1024x768.jpg"
    },
    {
      batch_id: chive.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934614/batch_photos/36a544fcd232a648f48697011fb1b935.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934614/batch_photos/36a544fcd232a648f48697011fb1b935.jpg"
    },
    {
      batch_id: wa.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934628/batch_photos/6499859529_4e3e962546.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934628/batch_photos/6499859529_4e3e962546.jpg"
    },
    {
      batch_id: stinky.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934651/batch_photos/img_2214.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934651/batch_photos/img_2214.jpg"
    },
    {
      batch_id: jap.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934677/batch_photos/japchae-11.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934677/batch_photos/japchae-11.jpg"
    },
    {
      batch_id: jap.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934666/batch_photos/Japchae_4271.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934666/batch_photos/Japchae_4271.jpg"
    },
    {
      batch_id: chicken.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934733/batch_photos/plate12.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934733/batch_photos/plate12.jpg"
    },
    {
      batch_id: chicken.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934747/batch_photos/6a00e55015ee5288330120a9483cb9970b-500wi.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934747/batch_photos/6a00e55015ee5288330120a9483cb9970b-500wi.jpg"
    },
    {
      batch_id: porksung.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934758/batch_photos/bakery_9_of_68.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934758/batch_photos/bakery_9_of_68.jpg"
    },
    {
      batch_id: pineapple.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_900/v1484934772/batch_photos/DSC_0415.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/c_scale,w_900/v1484934772/batch_photos/DSC_0415.jpg"
    },
    {
      batch_id: vzongzi.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934809/batch_photos/2222.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934809/batch_photos/2222.jpg"
    },
    {
      batch_id: pzongzi.id,
-     url: "http://res.cloudinary.com/indiemomo/image/upload/v1484934809/batch_photos/zongzi.jpg"
+     url: "http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_300,w_480/v1484934809/batch_photos/zongzi.jpg"
    },
    {
      batch_id: pzongzi.id,

@@ -76,13 +76,13 @@ class Homepage extends React.Component{
         <img src="http://res.cloudinary.com/indiemomo/image/upload/c_lfill,g_south,h_500,w_1000/v1484673961/dumpling_banner_s9d7d5.jpg" />
         <div className="banner-title">
         <strong>
-        Create a batch to share.
+        Create a batch to share,
           <br />
 
-          Get the orders you need
+          and get the orders you need.
             <br />
 
-            to launch your business
+            Find the food you love. 
             </strong>
           </div>
       </div>
