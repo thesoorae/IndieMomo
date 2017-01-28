@@ -1,7 +1,8 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url('https://fonts.googleapis.com/css?family=Ramabhadra');
+@import url('https://fonts.googleapis.com/css?family=Assistant');
+
 html, body, a, p, span, button, h2, h1, h3, form, li, ul {
 
   margin: 0px;
@@ -12,6 +13,11 @@ html, body, a, p, span, button, h2, h1, h3, form, li, ul {
 
   color: inherit;
   list-style: none;
+}
+
+html, body, a, p, span, li {
+  font-family: 'Assistant', sans-serif;
+
 }
 
 #cloudinary-overlay.modal {

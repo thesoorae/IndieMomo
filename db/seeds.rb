@@ -5,11 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago'  },, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user1 = User.create!({first_name: 'Tsuiyung', last_name: 'Lau', username: 'Grandma Lau', password: '123456', zip_code:'94805', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484343810/grandma-lau.jpg'})
-user2 = User.create!({first_name: 'Bruce', last_name: 'Lee', username: 'Bruce Lee', password: '123456', zip_code:'98105', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344036/Bruce_Lee_1973_l0gfnl.jpg'});
-user3 = User.create!({first_name: 'Ken', last_name:'Miyagi', username: 'Mr. Miyagi', password: '123456', zip_code:'94801', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_100,w_100/v1484344090/mr_miyagi_tdvrh8.png'})
-user4 = User.create!({first_name: 'Janice', last_name:'Kim', username: 'Mrs. Kim', password: '123456', zip_code:'94110', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_245,w_245/v1484588179/korean_grandma_rn6mrt.jpg'})
-user5 = User.create!({first_name: 'Visrin', last_name:'Sadavit', username: 'ThaiMa', password: '123456', zip_code:'94112', img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_561,w_561/v1484588025/thai_grandma_jjfhoc.jpg'})
+user1 = User.create!({first_name: 'Tsuiyung', last_name: 'Lau', username: 'Grandma Lau', password: '123456', zip_code:'94805',
+  img_url:'http://res.cloudinary.com/indiemomo/image/upload/v1484343810/grandma-lau.jpg'})
+user2 = User.create!({first_name: 'Bruce', last_name: 'Lee', username: 'Bruce Lee', password: '123456', zip_code:'98105',
+  img_url:'http://res.cloudinary.com/indiemomo/image/upload/v1484344036/Bruce_Lee_1973_l0gfnl.jpg'});
+user3 = User.create!({first_name: 'Ken', last_name:'Miyagi', username: 'Mr. Miyagi', password: '123456', zip_code:'94801',
+  img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,g_west,h_300,w_300/v1484344090/mr_miyagi_tdvrh8.png'})
+user4 = User.create!({first_name: 'Janice', last_name:'Kim', username: 'Mrs. Kim', password: '123456', zip_code:'94110',
+  img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_245,w_245/v1484588179/korean_grandma_rn6mrt.jpg'})
+user5 = User.create!({first_name: 'Visrin', last_name:'Sadavit', username: 'ThaiMa', password: '123456', zip_code:'94112',
+  img_url:'http://res.cloudinary.com/indiemomo/image/upload/c_fill,h_561,w_561/v1484588025/thai_grandma_jjfhoc.jpg'})
 
 filip = User.create!({
    "first_name" => "Angelica",
@@ -126,7 +131,7 @@ lumpia =  Batch.create!({
 
 tea = Batch.create!({
   "title" => "Tea Eggs ",
-  "description" => "Salty, fragrant, and beautifully decorated, these tea eggs are stewed for over 24 hours in my secret recipe of spices. ",
+  "description" => "These tea eggs are stewed for over 24 hours in my secret recipe of spices. ",
   "long_description" => "Tea egg is a typical Chinese savory food commonly sold as a snack, in which a boiled egg is cracked and then boiled again in tea, sauce and/or spices. ",
   "zip_code" => taiwanese.zip_code,
   "goal" => 30,
@@ -159,7 +164,7 @@ youtiao =  Batch.create!({
   )
   lotus = Batch.create!({
     "title" => "Lotus Paste Moon Cake ",
-    "description" => "Hand made moon cakes with lotus bean paste and salted egg yolk inside. A family recipe. Great for Chinese New Year. ",
+    "description" => "Hand made moon cakes with lotus bean paste and salted egg yolk inside.",
     "long_description" => "A mooncakeis a Chinese bakery product traditionally eaten during the Mid-Autumn Festival (Zhongqiujie). The festival is for lunar appreciation and moon watching, when mooncakes are regarded as an indispensable delicacy. ",
     "zip_code" => cantonese.zip_code,
     "goal" => 25,
@@ -170,7 +175,7 @@ youtiao =  Batch.create!({
 
   redbean =  Batch.create!({
     "title" => "Red Bean Moon Cake",
-    "description" => "Hand made moon cakes with red bean paste and salted egg yolk inside. A family recipe. Great for Chinese New Year. ",
+    "description" => "A family recipe. Great for Chinese New Year. ",
     "long_description" => "A mooncakeis a Chinese bakery product traditionally eaten during the Mid-Autumn Festival (Zhongqiujie). The festival is for lunar appreciation and moon watching, when mooncakes are regarded as an indispensable delicacy. ",
     "zip_code" => cantonese.zip_code,
     "goal" => 25,
@@ -191,8 +196,8 @@ youtiao =  Batch.create!({
 
   radish = Batch.create!({
     "title" => "Radish Cake ",
-    "description" => "Made with daikon radish, this is a steamed rice flour cake with shrimp, pork, and garlic. Fry in hot oil before serving. Can be frozen. ",
-    "long_description" => "Turnip cake is a Chinese dim sum dish made of shredded radish and plain rice flour. The less commonly used radish cake is a more accurate name",
+    "description" => "Fry in hot oil before serving. Can be frozen. ",
+    "long_description" => "Made with daikon radish, this is a steamed rice flour cake with shrimp, pork, and garlic. Turnip cake is a Chinese dim sum dish made of shredded radish and plain rice flour. The less commonly used radish cake is a more accurate name",
     "zip_code" => taiwanese.zip_code,
     "goal" => 40,
     "category" => "Taiwanese",
@@ -214,8 +219,8 @@ youtiao =  Batch.create!({
 
   vietnamesespring =  Batch.create!({
     "title" => "Vietnamese Spring Rolls ",
-    "description" => "Light and summery, I make these spring rolls with cilantro, mint, cucumber, and fried tofu. Also comes with dipping sauce. ",
-    "long_description" => "",
+    "description" => "Also comes with dipping sauce. ",
+    "long_description" => "Light and summery, I make these spring rolls with cilantro, mint, cucumber, and fried tofu.",
     "zip_code" => vietnam.zip_code,
     "goal" => 30,
     "category" => "Vietnamese",
@@ -236,8 +241,8 @@ youtiao =  Batch.create!({
 
   summer = Batch.create!({
     "title" => "Summer Rolls ",
-    "description" => "Made with lettuce, shrimp, and basil. Also known as vietnamese spring rolls. Comes with peanut dipping sauce. ",
-    "long_description" => "Goi cuon, Vietnamese spring roll, is a Vietnamese dish traditionally consisting of pork, prawn, vegetables, bún, and other ingredients wrapped in Vietnamese bánh tráng.",
+    "description" => "Comes with peanut dipping sauce. ",
+    "long_description" => "Made with lettuce, shrimp, and basil. Also known as vietnamese spring rolls. Goi cuon, Vietnamese spring roll, is a Vietnamese dish traditionally consisting of pork, prawn, vegetables, bún, and other ingredients wrapped in Vietnamese bánh tráng.",
     "zip_code" => vietnam.zip_code,
     "goal" => 15,
     "category" => "Vietnamese",
@@ -247,8 +252,8 @@ youtiao =  Batch.create!({
 
   coconut =  Batch.create!({
     "title" => "Coconut Jelly ",
-    "description" => "Delicious, light, refreshing, sweet coconut jelly. One order comes with one 16 oz container.",
-    "long_description" => "Of japanese or Chinese origin, popular in Hawaii. Made with coconut milk and agar. ",
+    "description" => "One order comes with one 16 oz container.",
+    "long_description" => "Delicious, light, refreshing, sweet coconut jelly. Of japanese or Chinese origin, popular in Hawaii. Made with coconut milk and agar. ",
     "zip_code" => chinese.zip_code,
     "goal" => 30,
     "category" => "Chinese",
@@ -268,8 +273,8 @@ youtiao =  Batch.create!({
 
   bawan =  Batch.create!({
     "title" => "Bawan ",
-    "description" => "Meat filled rice flour steamed dumpling. Comes with red sauce and cilantro. ",
-    "long_description" => "Ba-wan is a large-sized Taiwanese dumpling and street food, consisting of a 6–8 cm diameter disk-shaped translucent dough filled with a savory stuffing and served with a sweet and savory sauce.",
+    "description" => "Meat filled rice flour steamed dumpling. ",
+    "long_description" => "Comes with red sauce and cilantro. Ba-wan is a large-sized Taiwanese dumpling and street food, consisting of a 6–8 cm diameter disk-shaped translucent dough filled with a savory stuffing and served with a sweet and savory sauce.",
     "zip_code" => taiwanese.zip_code,
     "goal" => 25,
     "category" => "Taiwanese",
@@ -300,8 +305,8 @@ youtiao =  Batch.create!({
 
   chive = Batch.create!({
     "title" => "Chive Box ",
-    "description" => "Chive, clear bean noodle, and egg inside of a thick fried pastry. Comes frozen, can be microwaved, toasted, or pan fried. ",
-    "long_description" => "Chinese chive boxes are considered to be one of the many classic street foods that we have in Taiwan.",
+    "description" => "Comes frozen, can be microwaved, toasted, or pan fried. ",
+    "long_description" => "Chive, clear bean noodle, and egg inside of a thick fried pastry. Chinese chive boxes are considered to be one of the many classic street foods that we have in Taiwan.",
     "zip_code" => taiwanese.zip_code,
     "goal" => 20,
     "category" => "Taiwanese",
@@ -311,8 +316,8 @@ youtiao =  Batch.create!({
 
   wa = Batch.create!({
     "title" => "Wa gui ",
-    "description" => "My own recipe of the steamed rice flour with mushroom, pork topping in bowl. Steam to cook. ",
-    "long_description" => "Taiwanese specialty of a one-bowl meal. Delicious when steamed. Comes with special soy sauce garlic blend. ",
+    "description" => "Steam to cook. ",
+    "long_description" => "My own recipe of the steamed rice flour with mushroom, pork topping in bowl. Taiwanese specialty of a one-bowl meal. Delicious when steamed. Comes with special soy sauce garlic blend. ",
     "zip_code" => taiwanese2.zip_code,
     "goal" => 20,
     "category" => "Taiwanese",
@@ -321,8 +326,8 @@ youtiao =  Batch.create!({
   )
   stinky =  Batch.create!({
     "title" => "Stinky Tofu",
-    "description" => "Not for the faint of heart. I've perfected this recipe of the popular Taiwanese street food. Comes with cabbage relish. ",
-    "long_description" => "The traditional method of producing stinky tofu is to prepare a brine made from fermented milk, vegetables, and meat the brine can also include dried shrimp, amaranth greens, mustard greens, bamboo shoots, and Chinese herbs. The brine fermentation can take as long as several months.",
+    "description" => "Not for the faint of heart. ",
+    "long_description" => "I've perfected this recipe of the popular Taiwanese street food. Comes with cabbage relish. The traditional method of producing stinky tofu is to prepare a brine made from fermented milk, vegetables, and meat the brine can also include dried shrimp, amaranth greens, mustard greens, bamboo shoots, and Chinese herbs. The brine fermentation can take as long as several months.",
     "zip_code" => taiwanese2.zip_code,
     "goal" => 20,
     "category" => "Taiwanese",
@@ -363,7 +368,7 @@ youtiao =  Batch.create!({
   )
   pineapple =   Batch.create!({
     "title" => "Pineapple Buns ",
-    "description" => "Buo luo bao, looks like pineapple, but there is no pineapple inside. ",
+    "description" => "Buo luo bao, no pineapple inside. ",
     "long_description" => "I used to work at a Chinese Cantonese bakery, where I learned this recipe for these buns. ",
     "zip_code" => cantonese2.zip_code,
     "goal" => 15,
@@ -384,7 +389,7 @@ youtiao =  Batch.create!({
   )
   vzongzi =  Batch.create!({
     "title" => "Vegetarian Zongzi ",
-    "description" => "Made with mock duck, shittake mushrooms, chestnuts, and salted egg yolk. And of course glutinous rice. ",
+    "description" => "Made with mock duck, shittake mushrooms, chestnuts, and salted egg yolk.",
     "long_description" => "Boil for 5 minutes or steam. Can also be microwaved on high for 3 minutes. Freeze after receiving. ",
     "zip_code" => cantonese2.zip_code,
     "goal" => 20,
