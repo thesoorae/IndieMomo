@@ -13,7 +13,7 @@ div.batch-index-item{
   margin: 15px;
   border: 2px solid LightGray;
   display: inline-block;
-  height: 500px;
+  height: 400px;
 
 }
 
@@ -36,17 +36,20 @@ li.category {
 
 
 .index-item-info {
-  padding: 20px;
+  padding: 10px;
 }
 .index-item-info li{
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
 div.batch-index-item-container {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 400px;
   align-items: center;
   position: relative;
+}
 
+.index-item-info h4{
+  margin: 0;
 }
