@@ -11,6 +11,10 @@ const goToAll=() => (
   hashHistory.replace('/batches/results/a')
 );
 
+const howItWorks=() => (
+  hashHistory.replace('/how_it_works')
+);
+
 
 class Header extends React.Component{
   constructor(props){
@@ -25,7 +29,7 @@ class Header extends React.Component{
           <h1 >Indiemomo</h1>
         </Link>
         <h2 className="clickable" onClick={goToAll}> Explore </h2>
-        <h2> How It Works </h2>
+        <h2 className="clickable" onClick={howItWorks}> How It Works </h2>
         <Search batches={this.props.batches} fetchSearchResults={this.props.fetchSearchResults}/>
       </span>
     <span className="right">

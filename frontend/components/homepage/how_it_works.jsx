@@ -19,9 +19,9 @@ class Explanation extends React.Component {
 
     <div className="homepage-section">
       <div className="homepage-index-nav">
-        <h2>Make your Own Momos</h2>
+        <h2>How it Works</h2>
       </div>
-      <div className="make-instructions">
+      <div className="how-it-works">
         <div className="instruction">
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/think-of-momo.png' />
           1. Think about what you love to cook.

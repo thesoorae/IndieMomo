@@ -25,3 +25,18 @@ div.banner-explanation-title{
     text-shadow: 2px 2px 4px #000000;
 
 }
+
+div.how-it-works{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.how-it-works .instruction{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 25%;
+
+
+}
