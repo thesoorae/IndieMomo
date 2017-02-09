@@ -13,17 +13,17 @@ div.batch-index-item{
   margin: 15px;
   border: 2px solid LightGray;
   display: inline-block;
-  height: 400px;
+  height: 450px;
 
 }
 
 div.index-item-image {
   width: 100%;
-  height: 40%;
+  height: 50%;
   overflow: hidden;
 }
 .batch-index-item img{
-  width: 100%;
+  height: 100%;
 }
 
 li.category {
@@ -39,13 +39,14 @@ li.category {
   padding: 10px;
 }
 .index-item-info li{
+  font-size: 14px;
   margin-bottom: 20px;
 }
 
 div.batch-index-item-container {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 450px;
   align-items: center;
   position: relative;
 }
