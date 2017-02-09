@@ -99,8 +99,8 @@ class BatchForm extends React.Component{
     const CATEGORIES = ["Taiwanese", "Chinese", "Filipino", "Thai", "Vietnamese", "Cambodian", "Cantonese", "Korean", "Other"]
 
 
-    const BatchButtons = <div className="batch-form-buttons"><button className="save clickable" onClick={this.saveBatch}> Save Batch</button>
-      <button className="options clickable" onClick={this.addOptions}>Next Step &#58; Options</button></div>;
+    const BatchButtons = <div className="batch-form-buttons"><button className="save clickable hover-button" onClick={this.saveBatch}> Save Batch</button>
+      <button className="options clickable hover-button" onClick={this.addOptions}>Next Step &#58; Options</button></div>;
       // <button className="launch" onClick={this.launchBatch}>Launch & Start</button></div>;
 
     const batch = this.state.batch;
@@ -177,6 +177,10 @@ class BatchForm extends React.Component{
           </select>
       </label>
     </form>
+
+  </div>
+  <div className="bottom-buttons-bar">
+    {BatchButtons}
   </div>
   </div>
     );} else {

@@ -9,6 +9,7 @@ form.options-form-box{
   flex-direction: column;
   justify-content: space-around;
   width: 50%;
+  min-width: 300px;
   margin: auto;
   background-color: $turquoise-fade;
   padding: 30px;
@@ -106,4 +107,8 @@ button.remove-option {
 button.show-batch {
   background-color: $turquoise;
   color: white;
+}
+
+.turquoise-button:hover{
+  background-color: red;
 }

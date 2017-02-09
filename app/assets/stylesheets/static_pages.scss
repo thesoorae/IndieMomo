@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Assistant');
+@import "variables";
 
 html, body, a, p, span, button, h2, h1, h3, form, li, ul {
 
@@ -28,6 +29,13 @@ html, body, a, p, span, li {
   cursor:pointer;
 }
 
+.hover-text:hover{
+  color: $turquoise;
+}
+.hover-button:hover{
+  color: inherit;
+  background-color: $turquoise;
+}
 
 button{
   text-transform: uppercase;

@@ -129,7 +129,7 @@ class Homepage extends React.Component{
           </div>
           <div className="get-started">
 
-            <span onClick={this.startBatch} className="get-started-text clickable">
+            <span onClick={this.startBatch} className="get-started-text clickable hover-text">
             <h3>Make a
             <br />Batch!</h3></span>
           </div>

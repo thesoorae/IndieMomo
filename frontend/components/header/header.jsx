@@ -28,12 +28,12 @@ class Header extends React.Component{
         <Link to="/" className="header-link">
           <h1 >Indiemomo</h1>
         </Link>
-        <h2 className="clickable" onClick={goToAll}> Explore </h2>
-        <h2 className="clickable" onClick={howItWorks}> How It Works </h2>
+        <h2 className="clickable hover-text" onClick={goToAll}> Explore </h2>
+        <h2 className="clickable hover-text" onClick={howItWorks}> How It Works </h2>
         <Search batches={this.props.batches} fetchSearchResults={this.props.fetchSearchResults}/>
       </span>
     <span className="right">
-      <button className="start-batch clickable" onClick={startBatch}>Start A Batch</button>
+      <button className="start-batch clickable hover-button" onClick={startBatch}>Start A Batch</button>
 
       <GreetingContainer />
     </span>

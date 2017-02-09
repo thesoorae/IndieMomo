@@ -20,6 +20,7 @@ class BatchIndexItem extends React.Component {
     batch.batch_images[0]['url'] :
     "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg";
 
+    const description = batch.description.substring(0, 70) + ' . .'
 
 
     if(this.props.batch){
@@ -27,19 +28,19 @@ class BatchIndexItem extends React.Component {
           <div className = "batch-index-item clickable"
             onClick={this.handleClick}>
             <div className="batch-index-item-container">
-            <div className="index-item-image">
-              <img src={mainImage} />
-            </div>
-            <div className="index-item-info">
-              <ul>
-                <li className="category"><h4>{batch.category}</h4></li>
-                <li><h3>{batch.title}</h3></li>
-                <li>{batch.description}</li>
-              </ul>
-            </div>
-            <div className="progress">
-              <ProgressBar batch={batch}/>
-            </div>
+              <div className="index-item-image">
+                <img src={mainImage} />
+              </div>
+              <div className="index-item-info">
+                <ul>
+                  <li className="category"><h4>{batch.category}</h4></li>
+                  <li><h3>{batch.title}</h3></li>
+                  <li>{description}</li>
+                </ul>
+              </div>
+              <div className="progress">
+                <ProgressBar batch={batch}/>
+              </div>
             </div>
           </div>
       );}

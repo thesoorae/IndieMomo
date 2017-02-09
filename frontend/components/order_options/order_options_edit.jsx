@@ -111,11 +111,11 @@ backToEdit(e){
           <span><h1>Batch Order Options</h1></span>
           <div className="batch-form-buttons">
           <button className="edit-batch clickable" onClick={this.backToEdit}>Back to Edit</button>
-          <button className="show-batch clickable" onClick={this.launchBatch}>Start Selling!</button>
+          <button className="show-batch clickable turquoise-button" onClick={this.launchBatch}>Start Selling!</button>
           </div>
         </div>
 
-        
+
         <div className="order-edit-info">
           <div className="new-option-form">
                 <OrderOptionsForm option={this.state.newOption} createOrEdit={this.handleCreateOption} />

@@ -22,7 +22,7 @@ class Explanation extends React.Component {
             into a business.
           </strong>
             <br />
-            <button className="start-batch clickable turquoise" onClick={this.startBatch}>Get Started</button>
+            <button className="start-batch clickable hover-button turquoise" onClick={this.startBatch}>Get Started</button>
           </div>
         </div>
 

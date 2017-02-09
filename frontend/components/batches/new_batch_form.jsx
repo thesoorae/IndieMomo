@@ -65,7 +65,7 @@ class BatchForm extends React.Component{
                     onChange={this.update('goal')}
                     value={this.state.goal}
                     />
-                <button className="clickable create-batch" onClick={this.saveBatch}> CREATE MY BATCH </button>
+                <button className="clickable hover-button create-batch" onClick={this.saveBatch}> CREATE MY BATCH </button>
               </form>
 
             </div>

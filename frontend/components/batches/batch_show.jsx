@@ -44,11 +44,17 @@ class BatchShow extends React.Component{
         "http://res.cloudinary.com/indiemomo/image/upload/v1484614981/default-image_uu7kx4.jpg";
 
         let otherImages = "";
+        let imagesTitle = "";
+        let longDescriptionTitle = "";
         if(batch.batch_images.length >1){
+          imagesTitle =  <h3 className="color-heading"> Other Images </h3>
 
           otherImages = batch.batch_images.map(image => <div className="other-batch-image"><img key={image.id} src={image.url} /></div>);
           }
+          if(batch.long_description){
+            longDescriptionTitle=   <h3 className="color-heading"> Detailed Description </h3>
 
+          }
       return (
         <div className="batch-show-container">
             <div className="left">
@@ -57,12 +63,18 @@ class BatchShow extends React.Component{
               </div>
 
               <div className="bottom">
+              <div className="long-description">
+                <h3 className="color-heading"> Short Description </h3>
+                {batch.description}
+              </div>
+              {imagesTitle}
                 <div className="other-images-container">
+
                   {otherImages}
                 </div>
-                <h3 className="color-heading"> Description </h3>
-                <div className="long-description">
 
+                <div className="long-description">
+                {longDescriptionTitle}
                   {batch.long_description}
                 </div>
               </div>
