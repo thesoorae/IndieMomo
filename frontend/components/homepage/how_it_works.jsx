@@ -32,46 +32,42 @@ class Explanation extends React.Component {
       recipes. Get the orders you need.
       Make money cooking the foods you love.</h2>
 
-      <div className="how-it-works">
-        <div className="instruction">
-          <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/think-of-momo.png' />
-          1. Think about what you love to cook.
-        </div>
-        <div className="instruction">
+    <div className="make-instructions">
+
+      <div className="instruction">
 
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582871/icons/momo-quantity.png' />
-            2. Decide how many orders you need to make a batch.
+            1. Decide how many orders you need to make a batch of momos.
         </div>
+      </div>
+      <div className="make-instructions">
         <div className="instruction">
 
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582929/icons/take-pics.jpg' />
-          3. Take pictures and write a good description of your momo.
+          2. Take pictures and write a good description of your momo.
         </div>
         <div className="instruction">
 
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486583109/icons/take-orders.jpg' />
-          4. Give order options to your customers. Sometimes people will want to buy more than one!
+          3. Give order options to your customers. Sometimes people will want to buy more than one!
         </div>
+      </div>
+      <div className="make-instructions">
         <div className="instruction">
 
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/progress_bar.jpg' />
-          5. Your batch is online! Start tracking your orders!
+          4. Your batch is online! Start seeing those orders roll in!
         </div>
-        <div className="instruction">
 
+        <div className="instruction">
           <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/35367-200.png' />
-          6. Get cooking!
+          5. Once you've hit your order goal, start cooking. Customers will be automatically notified that their momos will be ready within one week.
         </div>
-        <div className="instruction">
-
-          <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/sell.jpg' />
-          7. Get paid for making delicious momos.
-        </div>
-    </div>
     </div>
   </div>
+  </div>
 
-    )
+);
   }
 
 }
