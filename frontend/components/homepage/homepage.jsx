@@ -79,11 +79,11 @@ class Homepage extends React.Component{
       <div onClick={this.startBatch} className="banner clickable">
         <div className="banner-title">
           <strong>
-          Get those hard-to-find
+          Find those hard to find
           <br />
-          foods you had when
+          foods from your
           <br />
-          you were little
+          childhood
           </strong>
         </div>
       </div>
@@ -110,22 +110,22 @@ class Homepage extends React.Component{
         </div>
         <div className="make-instructions">
           <div className="instruction">
-            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/think-of-momo.png' />
-            1. Know how to make a special momo?
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/v1486611765/icons/think-of-momo.png' />
+            <strong>STEP 1</strong> Know how to make a special momo?
           </div>
           <div className="instruction">
-            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582871/icons/momo-quantity.png' />
-              2. Get the orders you need.
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/v1486611765/icons/momo-quantity.png' />
+              <strong>STEP 2</strong> Get the orders you need.
           </div>
           <div className="instruction">
 
             <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/35367-200.png' />
-            3. Get cooking!
+            <strong>STEP 3</strong> Get cooking!
           </div>
           <div className="instruction">
 
-            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/sell.jpg' />
-            4. Make money.
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486611765/icons/sell.png' />
+            <strong>STEP 4</strong> Make money.
           </div>
           <div className="get-started">
 

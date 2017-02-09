@@ -20,10 +20,13 @@ div.batch-index-item{
 div.index-item-image {
   width: 100%;
   height: 50%;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 .batch-index-item img{
   height: 100%;
+  flex: none;
 }
 
 li.category {
