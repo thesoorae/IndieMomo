@@ -40,7 +40,6 @@ const Root = ({ store }) => {
 
 
   const _getBatches = () => {
-    console.log("fetching batches");
     store.dispatch(fetchBatches());
   };
 

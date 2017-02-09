@@ -60,7 +60,9 @@ class BatchShow extends React.Component{
                 <div className="other-images-container">
                   {otherImages}
                 </div>
+                <h3 className="color-heading"> Description </h3>
                 <div className="long-description">
+
                   {batch.long_description}
                 </div>
               </div>

@@ -3,15 +3,26 @@ import { Link } from 'react-router';
 import HeaderContainer from './header/header_container';
 import BatchesIndexContainer from './batches/batch_index_container';
 
-const App = ({ children, store }) => (
-  <div>
+class App extends React.Component{
+  constructor(props) {
+    super(props);
 
-    <HeaderContainer store={store} />
-    {children}
-    <div className="footer">
-      
-    </div>
-  </div>
-);
+
+  };
+
+    render(){
+      return (
+        <div>
+
+        <HeaderContainer store={this.props.store} />
+        {this.props.children}
+        <div className="footer">
+
+        </div>
+      </div>
+
+      )
+    }
+  };
 
 export default App;

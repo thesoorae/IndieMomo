@@ -73,30 +73,61 @@ class Homepage extends React.Component{
   return(
     <div className="home-container">
       <div onClick={this.startBatch} className="banner clickable">
-        <img src="http://res.cloudinary.com/indiemomo/image/upload/c_lfill,g_south,h_500,w_1000/v1484673961/dumpling_banner_s9d7d5.jpg" />
         <div className="banner-title">
-        <strong>
-        Find the food you love.
-        <br />
-        Or create a batch to share,
-
-        <br />
-
-          and get the orders you need.
-            </strong>
-          </div>
+          <strong>
+          Get those hard-to-find
+          <br />
+          foods you had when
+          <br />
+          you were little
+          </strong>
+        </div>
       </div>
-        <div className="homepage-batches">
-        <div className="batch-index-nav">
-          <h2>Top picks for you</h2>
-        </div>
-        <div className="slider-bar">
-        <i className="fa fa-angle-left" aria-hidden="true" onClick={this.previous}></i>
 
-        {batchesSlider}
-        <i className="fa fa-angle-right" aria-hidden="true" onClick={this.next}></i>
+      <div className="homepage-section">
+        <div className="homepage-index-nav">
+          <h2>Make Momos and Sell them Online</h2>
+        </div>
+        <div className="make-instructions">
+          <div className="instruction">
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/think-of-momo.png' />
+            1. Know how to make a special momo?
+          </div>
+          <div className="instruction">
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582871/icons/momo-quantity.png' />
+              2. Get the orders you need.
+          </div>
+          <div className="instruction">
+
+            <img src='https://d30y9cdsu7xlg0.cloudfront.net/png/35367-200.png' />
+            3. Get cooking!
+          </div>
+          <div className="instruction">
+
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/sell.jpg' />
+            4. Make money.
+          </div>
+          <div className="get-started">
+
+            <span onClick={this.startBatch} className="get-started-text clickable">
+            <h2>Make a
+            <br />Batch!</h2></span>
+          </div>
+        </div>
+
+
+        <div className="homepage-section">
+          <div className="homepage-index-nav">
+            <h2>Top Momos for You</h2>
+          </div>
+          <div className="slider-bar">
+          <i className="fa fa-angle-left" aria-hidden="true" onClick={this.previous}></i>
+          {batchesSlider}
+          <i className="fa fa-angle-right" aria-hidden="true" onClick={this.next}></i>
+          </div>
         </div>
         </div>
+
       </div>
   );
 }

@@ -115,18 +115,23 @@ div.other-images-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 div.other-batch-image {
-  width: 300px;
-
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 30px;
+  margin-left: 0px;
+  position: relative;
 }
-
 .other-batch-image img{
-  width: 30%;
-  min-width: 300px;
+  height: 200px;
+  position: absolute;
+  left: -40%;
 }
+
 
 div.long-description {
   width: 100%;

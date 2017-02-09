@@ -9,14 +9,28 @@ div.home-container {
 }
 
 div.banner {
-  width:80%;
-  margin:auto;
-  position: relative;
+  width:100%;
+  height: 350px;
+
+  padding-top: 90px;
+  background-color: #000000;
+  background-position: center;
+  background-image: url(http://res.cloudinary.com/indiemomo/image/upload/v1486603139/banners/home-banner.jpg);
+  background-repeat: no-repeat;
+
 }
+
+
+//
+// div.banner {
+//   width:80%;
+//   margin:auto;
+//   position: relative;
+// }
 
 .banner img{
   width:100%;
-  margin: auto;
+  height: 100%;
   top: 0;
   left: 0;
 
@@ -24,9 +38,9 @@ div.banner {
 
 div.banner-title{
   position:absolute;
-  left: 5%;
+  left: 12%;
   z-index:100;
-  top: 50%;
+  top: 30%;
   width: 100%;
   // background: rgb(0, 0, 0); /* fallback color */
   //  background: rgba(0, 0, 0, 0.65);
@@ -44,18 +58,50 @@ div.banner-title{
 div.batch-index {
   padding: 30px;
 }
-div.homepage-batches{
+div.homepage-section{
   display: flex;
   flex-direction: column;
   width:100%;
 }
-.batch-index-nav h2{
+.homepage-index-nav h2{
   font-weight:600;
   color: red;
   text-align: left;
   margin-top: 50px;
   margin-left: 10%;
   padding-bottom: 10px;
-  width: 12%;
+  width: 250px;
   border-bottom: 3px red solid;
+}
+
+div.make-instructions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 5% 10%;
+}
+
+div.instruction{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 200px;
+}
+.instruction img{
+  margin-bottom: 20px;
+}
+span.get-started-text{
+  font-size: 20px;
+  color: $turquoise;
+  text-align: center;
+  margin: auto;
+  font-weight: 600;
+}
+
+div.get-started{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+
 }
