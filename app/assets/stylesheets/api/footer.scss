@@ -4,4 +4,14 @@ div.footer {
   height: 150px;
   margin-top: 300px;
   background-color: $black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.footer > img{
+
+  height: 40px;
+  margin: 30px;
+  
 }

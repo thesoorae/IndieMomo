@@ -16,6 +16,7 @@ import UserProfileContainer from './users/user_profile_container';
 import HomepageContainer from './homepage/homepage_container';
 import OrderOptionsEditContainer from './order_options/order_options_edit_container';
 import Results from './search/results_container';
+import Explanation from './homepage/how_it_works';
 
 import {fetchBatches} from '../actions/batch_actions';
 import {fetchUsers, getUser} from '../actions/user_actions';
@@ -68,7 +69,7 @@ const Root = ({ store }) => {
             <Route path="/batches/:batchId" component={BatchShowContainer} onEnter={_getBatches}/>
             <Route path="/batches/:batchId/options/edit" component={OrderOptionsEditContainer} onEnter={_ensureLoggedIn} />
             <Route path="/users/:userId" onEnter = {_getUser} component={UserProfileContainer} />
-
+            <Route path="/how_it_works" component={Explanation} />
 
         </Route>
       </Router>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import HeaderContainer from './header/header_container';
 import BatchesIndexContainer from './batches/batch_index_container';
+import Footer from './footer/footer';
 
 class App extends React.Component{
   constructor(props) {
@@ -10,15 +11,25 @@ class App extends React.Component{
 
   };
 
+    openGithub(e){
+      e.preventDefault();
+      window.open('https://www.linkedin.com/in/soorae')
+    }
+
+    openLinkedin(e){
+      e.preventDefault();
+      window.open('https://www.linkedin.com/in/soorae')
+
+    }
+
     render(){
       return (
         <div>
 
         <HeaderContainer store={this.props.store} />
         {this.props.children}
-        <div className="footer">
 
-        </div>
+        <Footer />
       </div>
 
       )
