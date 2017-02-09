@@ -124,7 +124,7 @@ class Homepage extends React.Component{
           </div>
           <div className="instruction">
 
-            <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486611765/icons/sell.png' />
+            <img src='http://res.cloudinary.com/indiemomo/image/upload/v1486679591/icons/sell.png' />
             <strong>STEP 4</strong> Make money.
           </div>
           <div className="get-started">
