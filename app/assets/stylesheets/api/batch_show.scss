@@ -65,7 +65,14 @@ div.batch-show-summary {
   border-bottom: 3px solid $turquoise;
   font-size: 22px;
 }
-
+.short-heading {
+  width: 250px;
+  border: 0;
+  margin-bottom: 15px;
+  color: red;
+  text-transform: uppercase;
+  font-size: 20px;
+}
 .batch-description {
   font-size: 20px;
   color: gray;
@@ -135,7 +142,7 @@ div.other-batch-image {
 
 div.long-description {
   width: 100%;
-  margin: 30px auto;
+  margin: 20px auto;
   font-size: 20px;
   color: gray;
 

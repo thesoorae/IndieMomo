@@ -6,20 +6,26 @@ class OrderOptionsIndex extends React.Component{
     super(props);
 
     this.placeOrder = this.placeOrder.bind(this);
+    this.state = {
+      message: ""};
   }
 
   placeOrder(optionId, currentUser, qty){
     return(e) => {
       e.preventDefault();
       if(currentUser == null){
-        hashHistory.push('/login');}
-      else {
-      const newOrder = {
-        order_option_id: optionId};
-        this.props.createOrder(newOrder);
-        this.props.increaseProgress(qty);
-        alert("Go to your profile to see your orders!");
-      }
+        this.setState({message: "Please login to place an order."}, () => {console.log(this.state);});
+
+      } else {
+
+        this.setState(
+          {message: "Your order is confirmed! Click on your profile to see your orders."}, () =>{
+            const newOrder = {
+              order_option_id: optionId};
+              this.props.createOrder(newOrder);
+              this.props.increaseProgress(qty);
+          });
+        console.log("hello");}
     };}
 
 
@@ -30,6 +36,7 @@ class OrderOptionsIndex extends React.Component{
       <li className="cost">$ {option.cost}</li>
       <li className="qty">You get {option.qty} pieces with this order!</li>
       <li className="option-description">{option.description}</li>
+      <li className="order-message">{this.state.message}</li>
       <button className="clickable order-button" onClick={this.placeOrder(option.id, this.props.currentUser, option.qty)}>Place an Order</button>
       </ul>
       </li>

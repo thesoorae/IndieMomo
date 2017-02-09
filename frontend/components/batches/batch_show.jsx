@@ -47,12 +47,12 @@ class BatchShow extends React.Component{
         let imagesTitle = "";
         let longDescriptionTitle = "";
         if(batch.batch_images.length >1){
-          imagesTitle =  <h3 className="color-heading"> Other Images </h3>
+          imagesTitle =  <h3 className="short-heading"> Other Images </h3>
 
           otherImages = batch.batch_images.map(image => <div className="other-batch-image"><img key={image.id} src={image.url} /></div>);
           }
           if(batch.long_description){
-            longDescriptionTitle=   <h3 className="color-heading"> Detailed Description </h3>
+            longDescriptionTitle=   <h3 className="short-heading"> Detailed Description </h3>
 
           }
       return (
@@ -64,7 +64,7 @@ class BatchShow extends React.Component{
 
               <div className="bottom">
               <div className="long-description">
-                <h3 className="color-heading"> Short Description </h3>
+                <h3 className="short-heading"> Short Description </h3>
                 {batch.description}
               </div>
               {imagesTitle}
