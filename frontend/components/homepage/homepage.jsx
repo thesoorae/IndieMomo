@@ -18,6 +18,10 @@ class Homepage extends React.Component{
       e.preventDefault();
       hashHistory.push('/batches/new');
   }
+  goToAll(e){
+      e.preventDefault();
+      hashHistory.push('batches/results/a');
+  }
 
   next(){
     this.slider.slickNext()
@@ -85,7 +89,23 @@ class Homepage extends React.Component{
       </div>
 
       <div className="homepage-section">
-        <div className="homepage-index-nav">
+
+
+        <div className="homepage-section">
+          <div className="homepage-index-nav">
+            <h2>Top Momos for You</h2>
+            <p className="clickable" onClick={this.goToAll}>See All</p>
+          </div>
+          <div className="slider-bar">
+          <i className="fa fa-angle-left" aria-hidden="true" onClick={this.previous}></i>
+          {batchesSlider}
+          <i className="fa fa-angle-right" aria-hidden="true" onClick={this.next}></i>
+          </div>
+        </div>
+        </div>
+        <div className="make-index">
+
+        <div className="homepage-index-nav ">
           <h2>Make Momos and Sell them Online</h2>
         </div>
         <div className="make-instructions">
@@ -110,23 +130,11 @@ class Homepage extends React.Component{
           <div className="get-started">
 
             <span onClick={this.startBatch} className="get-started-text clickable">
-            <h2>Make a
-            <br />Batch!</h2></span>
+            <h3>Make a
+            <br />Batch!</h3></span>
           </div>
         </div>
-
-
-        <div className="homepage-section">
-          <div className="homepage-index-nav">
-            <h2>Top Momos for You</h2>
-          </div>
-          <div className="slider-bar">
-          <i className="fa fa-angle-left" aria-hidden="true" onClick={this.previous}></i>
-          {batchesSlider}
-          <i className="fa fa-angle-right" aria-hidden="true" onClick={this.next}></i>
-          </div>
-        </div>
-        </div>
+      </div>
 
       </div>
   );

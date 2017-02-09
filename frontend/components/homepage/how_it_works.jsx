@@ -1,26 +1,37 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
+
 
 class Explanation extends React.Component {
+
+
+  startBatch(){
+    hashHistory.replace('/batches/new');
+  }
+
   render(){
 
     return(
       <div className="explanation">
-      <div onClick={this.startBatch} className="banner-explanation">
+        <div onClick={this.startBatch} className="banner-explanation">
 
-        <div className="banner-explanation-title">
-          <strong>
-          Turn your family recipes
-          <br />
-          into a business.
-
+          <div className="banner-explanation-title">
+            <strong>
+            Turn your family recipes
+            <br />
+            into a business.
           </strong>
+            <br />
+            <button className="start-batch clickable turquoise" onClick={this.startBatch}>Get Started</button>
+          </div>
         </div>
-      </div>
 
-    <div className="homepage-section">
-      <div className="homepage-index-nav">
-        <h2>How it Works</h2>
-      </div>
+    <div className="explanation-section">
+
+      <h2>Share your favorite
+      recipes. Get the orders you need.
+      Make money cooking the foods you love.</h2>
+
       <div className="how-it-works">
         <div className="instruction">
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/think-of-momo.png' />
@@ -56,9 +67,9 @@ class Explanation extends React.Component {
           <img src='http://res.cloudinary.com/indiemomo/image/upload/c_scale,w_200/v1486582870/icons/sell.jpg' />
           7. Get paid for making delicious momos.
         </div>
-        </div>
     </div>
     </div>
+  </div>
 
     )
   }
