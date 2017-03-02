@@ -1,7 +1,6 @@
 # Indiemomo
 
-[Heroku Link](https://indiemomo.herokuapp.com)
-[Trello Link](https://trello.com/b/RGytZ2SN/indiemomo)
+[Live Link](https://indiemomo.herokuapp.com)
 
 Indiemomo is a full-stack web application inspired by Indiegogo and built for users to sell and purchase batches of their food. It is built using Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.
 
